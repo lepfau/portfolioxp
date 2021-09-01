@@ -1,12 +1,16 @@
 import React from "react";
+import Draggable from "react-draggable";
 
 function Fenetre(props) {
   return (
-    <div className="fenetre">
-      <p className="noselect" onClick={() => props.closePdt()}>
-        X
-      </p>
-    </div>
+    <Draggable>
+      <div className="fenetre">
+        <p className="noselect" onClick={() => props.closePdt()}>
+          X
+        </p>
+        <p>{props.text}</p>
+      </div>
+    </Draggable>
   );
 }
 

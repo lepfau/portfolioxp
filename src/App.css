@@ -186,3 +186,38 @@
   position: absolute;
   left: 517px;
 }
+
+.horloge {
+  width: 171px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: rgb(29, 102, 131);
+  height: 20px;
+
+  background: linear-gradient(
+      to bottom,
+      #006edd 0%,
+      #26cddc 9%,
+      #42a1bb 18%,
+      #07768e 92%,
+      #333 100%
+    )
+    center/cover no-repeat;
+  font-size: 13px;
+}
+
+.icone {
+  height: 40px;
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+
+.trashcontainer {
+  height: 95%;
+  width: 95%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+}
