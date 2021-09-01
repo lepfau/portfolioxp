@@ -1,21 +1,16 @@
 import React, { useState } from "react";
-import Menuderoule from "./Menuderoule";
 
-function Demarrer() {
-  const [menu, setMenu] = useState(false);
-
-  function showMenu() {
-    setMenu(!menu);
-  }
-
+function Demarrer(props) {
   return (
-    <div style={{ display: "flex", height: "20px" }}>
-      <div onClick={() => showMenu()} className="demarrer">
+    <div
+      onClick={() => props.setmenu()}
+      style={{ display: "flex", height: "20px", alignSelf: "flex-end" }}
+    >
+      <div className="demarrer">
         <p className="noselect" style={{ cursor: "default" }}>
           Démarrer
         </p>
       </div>
-      {menu && <Menuderoule />}
     </div>
   );
 }

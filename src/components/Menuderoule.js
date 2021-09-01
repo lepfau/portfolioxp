@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import Fenetre from "./Fenetre";
 
-function menuderoule() {
+function Menuderoule(props) {
   return (
     <div className="menuderoule">
-      <p>Menu windows</p>
-      <p>Click me</p>
-      <p>{Date.now}</p>
+      <p className="noselect">Menu windows</p>
+      <p className="noselect" onClick={() => props.setPostetravail()}>
+        Poste de travail
+      </p>
     </div>
   );
 }
 
-export default menuderoule;
+export default Menuderoule;

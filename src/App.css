@@ -161,11 +161,28 @@
   width: 255px;
   background-color: wheat;
   z-index: 999;
-  position: relative;
-  bottom: 118px;
-  left: -114px;
+  /* position: relative; */
+  bottom: 214px;
+  /* right: 783px; */
+  position: fixed;
 }
 
 .noselect {
   user-select: none;
+}
+
+.fenetre {
+  background-color: white;
+  height: 250px;
+  width: 250px;
+  position: absolute;
+  top: 304px;
+  left: 800px;
+}
+
+.classbar {
+  background: white;
+  align-self: ;
+  position: absolute;
+  left: 517px;
 }
