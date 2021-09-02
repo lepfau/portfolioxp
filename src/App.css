@@ -101,11 +101,16 @@
   }
 } */
 
+.body {
+  margin: none;
+}
+
 .App {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  min-height: 800px;
   background-color: black;
 }
 .windows_all {
@@ -115,8 +120,8 @@
   background-position: center;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  height: 720px;
-  width: 960px;
+  height: 800px;
+  width: 1100px;
   display: flex;
 }
 
@@ -157,14 +162,18 @@
 }
 
 .menuderoule {
-  height: 118px;
   width: 255px;
   background-color: wheat;
-  z-index: 999;
-  /* position: relative; */
-  bottom: 214px;
-  /* right: 783px; */
-  position: fixed;
+  position: absolute;
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+
+.menuderoule_container {
+  display: flex;
+  position: absolute;
+  /* top: 911px; */
+  height: 800px;
 }
 
 .noselect {
@@ -209,15 +218,15 @@
 
 .icone {
   height: 40px;
-  align-self: flex-end;
-  justify-self: flex-end;
 }
 
 .trashcontainer {
-  height: 95%;
-  width: 95%;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   flex-direction: column;
+  position: relative;
+  width: 100%;
+  margin-right: 35px;
+  margin-bottom: 20px;
 }

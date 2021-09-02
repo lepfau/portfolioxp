@@ -64,7 +64,7 @@ function Main() {
       <div style={{ display: "flex" }}>
         <Demarrer setmenu={setmenu} />
         <Menu />
-        {menuderoule && <Menuderoule setPostetravail={showPdt} />}
+
         {taskbarPdt && (
           <Taskbar appname={"Poste de travail"} hidewindow={hidePdt} />
         )}
@@ -73,11 +73,18 @@ function Main() {
           <Clock format={"hh-mm"} hour12={false} />
         </div>
       </div>
+
       {posteTravail && (
         <Fenetre closePdt={closePdt} text={"Poste de travail"} />
       )}
-      {trash && <Fenetre closePdt={closeTrash} text={"Corbeille"} />}
+
+      <div className="trash_container">
+        {trash && <Fenetre closePdt={closeTrash} text={"Corbeille"} />}
+      </div>
       {taskbarTrash && <Taskbar appname={"Corbeille"} hidewindow={hideTrash} />}
+      <div className="menuderoule_container">
+        {menuderoule && <Menuderoule setPostetravail={showPdt} />}
+      </div>
     </div>
   );
 }
