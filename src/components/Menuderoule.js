@@ -1,13 +1,76 @@
 import React, { useState } from "react";
 import Fenetre from "./Fenetre";
+import photoed from "../assets/photoed.PNG";
+import logointernet from "../assets/internetlogo.png";
+import TopMenuItem from "./TopMenuItem";
+import MiddleMenuItem from "./MiddleMenuItem";
 
 function Menuderoule(props) {
   return (
     <div className="menuderoule">
-      <p className="noselect">Menu windows</p>
+      <div className="menuderoule_header">
+        <img src={photoed} alt="photode profil" className="profilepic"></img>
+        <p className="namemenu">Edouard Pfauwadel</p>
+      </div>
+
+      <div className="menuderoule_middle">
+        <div className="menuderoule_leftpart">
+          <TopMenuItem
+            picture={logointernet}
+            firsttext={"Internet"}
+            secondtext={"Internet Explorer"}
+          />
+          <TopMenuItem
+            picture={
+              "https://upload.wikimedia.org/wikipedia/fr/5/53/Outlook_express_logo-200-200.jpg"
+            }
+            firsttext={"E-mail"}
+            secondtext={"Outlook Express"}
+          />
+          <div class="fade_rule"></div>
+          <MiddleMenuItem
+            picture={
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCYaWMh4FOpU2v52g1VVqj7Rn-CR9JjLUErDdQ6KBSIVwU6ZqB2ySPVl2TRjLVCcFXtbE&usqp=CAU"
+            }
+            text={"MSN Explorer"}
+          />
+          <MiddleMenuItem
+            picture={
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvv7j1N-bKqOST0LHtRF5ttHPN6jj7w50uu47XDeq98dKu3RJbQEfwldIN9u6KWKAjiTs&usqp=CAU"
+            }
+            text={"Windows Media Player"}
+          />
+          <MiddleMenuItem
+            picture={
+              "https://www.kindpng.com/picc/m/27-270400_windows-movie-maker-hd-png-download.png"
+            }
+            text={"Windows Movie Maker"}
+          />
+          <MiddleMenuItem
+            picture={
+              "https://i1.sndcdn.com/artworks-000078425043-oloazo-t500x500.jpg"
+            }
+            text={"Paint"}
+            todo={props.setPaint}
+          />
+          <MiddleMenuItem
+            picture={
+              "https://img.favpng.com/13/5/9/microsoft-word-office-open-xml-document-computer-icons-computer-file-png-favpng-7SuhHUxg3rqzd8iAKkryFYKCy.jpg"
+            }
+            text={"Word"}
+            todo={props.setPaint}
+          />
+        </div>
+
+        <div className="menuderoule_rightpart"></div>
+      </div>
+
+      <div className="menuderoule_footer"></div>
+
+      {/* <p className="noselect">Menu windows</p>
       <p className="noselect" onClick={() => props.setPostetravail()}>
         Poste de travail
-      </p>
+      </p> */}
     </div>
   );
 }

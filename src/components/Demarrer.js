@@ -1,14 +1,13 @@
 import React, { useState } from "react";
+import logoxp from "../assets/logoxp.png";
 
 function Demarrer(props) {
   return (
-    <div
-      onClick={() => props.setmenu()}
-      style={{ display: "flex", height: "20px", alignSelf: "flex-end" }}
-    >
+    <div onClick={() => props.setmenu()} style={{ display: "flex" }}>
       <div className="demarrer">
+        <img src={logoxp} alt="logo xp" className="logoxp"></img>
         <p className="noselect" style={{ cursor: "default" }}>
-          Démarrer
+          démarrer
         </p>
       </div>
     </div>
