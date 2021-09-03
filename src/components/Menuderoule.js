@@ -4,6 +4,8 @@ import photoed from "../assets/photoed.PNG";
 import logointernet from "../assets/internetlogo.png";
 import TopMenuItem from "./TopMenuItem";
 import MiddleMenuItem from "./MiddleMenuItem";
+import RightTopMenu from "./RightTopMenu";
+import postetravail from "../assets/5131-tOo-Postedetravail.png";
 
 function Menuderoule(props) {
   return (
@@ -60,9 +62,32 @@ function Menuderoule(props) {
             text={"Word"}
             todo={props.setPaint}
           />
+          <div style={{ marginTop: "40px" }} class="fade_rule"></div>
         </div>
 
-        <div className="menuderoule_rightpart"></div>
+        <div className="menuderoule_rightpart">
+          <RightTopMenu
+            picture={
+              "https://iconarchive.com/download/i95231/dtafalonso/modern-xp/ModernXP-16-Folder-Documents.ico"
+            }
+            text={"Mes Documents"}
+          />
+          <RightTopMenu
+            picture={
+              "https://icons.iconarchive.com/icons/dtafalonso/modern-xp/256/ModernXP-62-Folder-Images-icon.png"
+            }
+            text={"Mes Images"}
+          />
+          <RightTopMenu
+            picture={
+              "https://icons.iconarchive.com/icons/dtafalonso/modern-xp/512/ModernXP-38-Folder-Music-icon.png"
+            }
+            text={"Ma Musique"}
+          />
+
+          <RightTopMenu picture={postetravail} text={"Poste de travail"} />
+          <div class="fade_rule2"></div>
+        </div>
       </div>
 
       <div className="menuderoule_footer"></div>

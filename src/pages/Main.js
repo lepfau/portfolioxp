@@ -18,6 +18,7 @@ function Main() {
   const [taskbarPaint, setTaskbarPaint] = useState(false);
   const [trash, setTrash] = useState(false);
   const [paint, setPaint] = useState(false);
+  const [trashselect, setTrashselect] = useState(false);
 
   function showPaint() {
     setPaint(true);
@@ -32,6 +33,7 @@ function Main() {
 
   function hidePaint() {
     setPaint(!paint);
+    setMenuderoule(false);
   }
 
   function setmenu() {
@@ -39,6 +41,10 @@ function Main() {
   }
 
   function closemenu() {
+    if (trashselect) {
+      setTrashselect(false);
+    }
+
     setMenuderoule(false);
   }
 
@@ -71,6 +77,10 @@ function Main() {
     setTaskbartrash(false);
   }
 
+  function trashselection() {
+    setTrashselect(!trashselect);
+  }
+
   return (
     <div
       style={{
@@ -79,7 +89,11 @@ function Main() {
       }}
     >
       <div onClick={() => closemenu()} className="windows_all">
-        <Trash showtrash={showTrash} />
+        <Trash
+          showtrash={showTrash}
+          trashselect={trashselection}
+          trashboolean={trashselect}
+        />
         {paint && <img className="window" src={paintapp}></img>}
         {paint && <img className="window" src={paintapp}></img>}
         {paint && (
@@ -101,7 +115,7 @@ function Main() {
         >
           XXX
         </p>
-        )}
+
         {paint && (
           <p
             style={{ cursor: "default" }}
