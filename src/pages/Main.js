@@ -9,6 +9,7 @@ import Trash from "../components/Trash";
 import trashlogo from "../assets/trash.png";
 import paintapp from "../assets/paint.png";
 import CanvasDraw from "react-canvas-draw";
+import Draggable from "react-draggable";
 
 function Main() {
   const [menuderoule, setMenuderoule] = useState(false);
@@ -94,8 +95,9 @@ function Main() {
           trashselect={trashselection}
           trashboolean={trashselect}
         />
+
         {paint && <img className="window" src={paintapp}></img>}
-        {paint && <img className="window" src={paintapp}></img>}
+
         {paint && (
           <div className="canvas">
             <CanvasDraw
