@@ -11,6 +11,8 @@ import paintapp from "../assets/paint.png";
 import CanvasDraw from "react-canvas-draw";
 import Draggable from "react-draggable";
 import postetravail from "../assets/5131-tOo-Postedetravail.png";
+import ContentPdt from "../components/ContentPdt.js";
+import ContentTrash from "../components/ContentTrash";
 
 function Main() {
   const [menuderoule, setMenuderoule] = useState(false);
@@ -21,6 +23,7 @@ function Main() {
   const [trash, setTrash] = useState(false);
   const [paint, setPaint] = useState(false);
   const [trashselect, setTrashselect] = useState(false);
+  const [index, setZindex] = useState(3);
 
   function showPaint() {
     setPaint(true);
@@ -54,6 +57,7 @@ function Main() {
     setPostetravail(true);
     setMenuderoule(false);
     setTaskbarpdt(true);
+    setZindex(index + 1);
   }
 
   function closePdt() {
@@ -82,6 +86,8 @@ function Main() {
   function trashselection() {
     setTrashselect(!trashselect);
   }
+
+  function changeZindex() {}
 
   return (
     <div
@@ -164,21 +170,31 @@ function Main() {
         </div>
       </div>
 
-      <div className="corbeille_container">
-        {posteTravail && (
-          <Fenetre
-            closePdt={closePdt}
-            text={"Poste de travail"}
-            logo={postetravail}
-          />
-        )}
-      </div>
+      {posteTravail && (
+        <Fenetre
+          closemenu={closemenu}
+          closePdt={closePdt}
+          width={"550px"}
+          text={"Poste de travail"}
+          logo={postetravail}
+          hidewindow={hidePdt}
+          index={index}
+          content={<ContentPdt />}
+        />
+      )}
 
-      <div className="corbeille_container">
-        {trash && (
-          <Fenetre closePdt={closeTrash} text={"Corbeille"} logo={trashlogo} />
-        )}
-      </div>
+      {trash && (
+        <Fenetre
+          closemenu={closemenu}
+          content={<ContentTrash />}
+          width={"500px"}
+          closePdt={closeTrash}
+          text={"Corbeille"}
+          logo={trashlogo}
+          hidewindow={hideTrash}
+          index={index}
+        />
+      )}
 
       <div className="menuderoule_container">
         {menuderoule && (

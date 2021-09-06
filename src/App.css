@@ -125,6 +125,16 @@
   justify-self: center;
 } */
 
+.window {
+  width: 762px;
+  height: 476px;
+  background-color: white;
+  transform: translate(0px, 0px);
+  position: absolute;
+  margin-left: 299px;
+  margin-top: 241px;
+}
+
 .testestest {
   position: absolute;
   align-self: center;
@@ -135,6 +145,30 @@
   position: absolute;
   margin-top: -49px;
   margin-left: 55px;
+}
+
+.trash_picture {
+  padding: 12px;
+  height: 55px;
+  border: dotted 1px black;
+}
+
+.pdt_fulldrive {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 160px;
+  font-size: 13px;
+  margin: 10px;
+}
+
+.pdt_content {
+  display: flex;
+}
+
+.pdt_drive {
+  height: 50px;
+  margin-right: 10px;
 }
 
 .corbeille_container {
@@ -288,7 +322,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 81px;
+  width: auto;
 }
 
 .fenetre_content {
