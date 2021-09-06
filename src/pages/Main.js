@@ -1,18 +1,10 @@
 import React, { useState } from "react";
-import Menu from "../components/Menu";
 import Demarrer from "../components/Demarrer";
 import Menuderoule from "../components/Menuderoule";
-import Fenetre from "../components/Fenetre";
 import Taskbar from "../components/Taskbar";
 import Clock from "react-digital-clock";
-
 import trashlogo from "../assets/trash.png";
-import paintapp from "../assets/paint.png";
-
-import Draggable from "react-draggable";
 import postetravail from "../assets/5131-tOo-Postedetravail.png";
-import ContentPdt from "../components/ContentPdt.js";
-import ContentTrash from "../components/ContentTrash";
 import WindowsArea from "../components/WindowsArea";
 
 function Main() {
@@ -20,11 +12,9 @@ function Main() {
   const [posteTravail, setPostetravail] = useState(false);
   const [taskbarPdt, setTaskbarpdt] = useState(false);
   const [taskbarTrash, setTaskbartrash] = useState(false);
-  const [taskbarPaint, setTaskbarPaint] = useState(false);
   const [trash, setTrash] = useState(false);
-
   const [trashselect, setTrashselect] = useState(false);
-  const [index, setZindex] = useState(3);
+  const [windowsArray, setWindowsarray] = useState([]);
 
   function setmenu() {
     setMenuderoule(!menuderoule);
@@ -42,29 +32,46 @@ function Main() {
     setPostetravail(true);
     setMenuderoule(false);
     setTaskbarpdt(true);
+    let newArray = windowsArray;
+    newArray.push("Poste de travail");
+    setWindowsarray(newArray);
+    console.log(windowsArray);
+  }
+
+  function showTrash() {
+    setTrash(true);
+    setMenuderoule(false);
+    setTaskbartrash(true);
+    let newArray = windowsArray;
+    newArray.push("Corbeille");
+    setWindowsarray(newArray);
+    console.log(windowsArray);
   }
 
   function closePdt() {
     setPostetravail(false);
     setTaskbarpdt(false);
+    setWindowsarray(
+      windowsArray.filter((window) => window !== "Poste de travail")
+    );
   }
 
   function closeTrash() {
     setTrash(false);
     setTaskbartrash(false);
+    setWindowsarray(windowsArray.filter((window) => window !== "Corbeille"));
   }
 
   function hidePdt() {
     setPostetravail(!posteTravail);
   }
 
-  function hideTrash() {
-    setTrash(!trash);
-  }
-
-  function showTrash() {
-    setTrash(true);
-    setTaskbartrash(true);
+  function hideTrash(window) {
+    if (window === "Poste de travail") {
+      setPostetravail(!posteTravail);
+    } else if (window === "Corbeille") {
+      setTrash(!trash);
+    }
   }
 
   function trashselection() {
@@ -99,20 +106,17 @@ function Main() {
           <Demarrer setmenu={setmenu} />
         </div>
         <div className="barremenu">
-          {taskbarTrash && (
-            <Taskbar
-              appname={"Corbeille"}
-              hidewindow={hideTrash}
-              image={trashlogo}
-            />
-          )}
-          {taskbarPdt && (
-            <Taskbar
-              appname={"Poste de travail"}
-              hidewindow={hidePdt}
-              image={postetravail}
-            />
-          )}
+          {windowsArray.map((window) => {
+            return (
+              <Taskbar
+                key={window.length}
+                appname={window}
+                hidewindow={hideTrash}
+                image={trashlogo}
+                window={window}
+              />
+            );
+          })}
         </div>
         ;
         <div className="horloge">
