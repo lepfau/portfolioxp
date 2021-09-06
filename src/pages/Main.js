@@ -5,14 +5,15 @@ import Menuderoule from "../components/Menuderoule";
 import Fenetre from "../components/Fenetre";
 import Taskbar from "../components/Taskbar";
 import Clock from "react-digital-clock";
-import Trash from "../components/Trash";
+
 import trashlogo from "../assets/trash.png";
 import paintapp from "../assets/paint.png";
-import CanvasDraw from "react-canvas-draw";
+
 import Draggable from "react-draggable";
 import postetravail from "../assets/5131-tOo-Postedetravail.png";
 import ContentPdt from "../components/ContentPdt.js";
 import ContentTrash from "../components/ContentTrash";
+import WindowsArea from "../components/WindowsArea";
 
 function Main() {
   const [menuderoule, setMenuderoule] = useState(false);
@@ -21,25 +22,9 @@ function Main() {
   const [taskbarTrash, setTaskbartrash] = useState(false);
   const [taskbarPaint, setTaskbarPaint] = useState(false);
   const [trash, setTrash] = useState(false);
-  const [paint, setPaint] = useState(false);
+
   const [trashselect, setTrashselect] = useState(false);
   const [index, setZindex] = useState(3);
-
-  function showPaint() {
-    setPaint(true);
-    setMenuderoule(false);
-    setTaskbarPaint(true);
-  }
-
-  function closePaint() {
-    setPaint(false);
-    setTaskbarPaint(false);
-  }
-
-  function hidePaint() {
-    setPaint(!paint);
-    setMenuderoule(false);
-  }
 
   function setmenu() {
     setMenuderoule(!menuderoule);
@@ -57,12 +42,16 @@ function Main() {
     setPostetravail(true);
     setMenuderoule(false);
     setTaskbarpdt(true);
-    setZindex(index + 1);
   }
 
   function closePdt() {
     setPostetravail(false);
     setTaskbarpdt(false);
+  }
+
+  function closeTrash() {
+    setTrash(false);
+    setTaskbartrash(false);
   }
 
   function hidePdt() {
@@ -78,11 +67,6 @@ function Main() {
     setTaskbartrash(true);
   }
 
-  function closeTrash() {
-    setTrash(false);
-    setTaskbartrash(false);
-  }
-
   function trashselection() {
     setTrashselect(!trashselect);
   }
@@ -96,45 +80,20 @@ function Main() {
         flexDirection: "column",
       }}
     >
-      <div onClick={() => closemenu()} className="windows_all">
-        <Trash
-          showtrash={showTrash}
-          trashselect={trashselection}
-          trashboolean={trashselect}
-        />
-
-        {paint && <img className="window" src={paintapp}></img>}
-
-        {paint && (
-          <div className="canvas">
-            <CanvasDraw
-              brushRadius={2}
-              hideGrid={true}
-              style={{
-                height: "314px",
-                width: "600px",
-              }}
-            />
-          </div>
-        )}
-        <p
-          style={{ cursor: "default" }}
-          onClick={() => closePaint()}
-          className="cross"
-        >
-          XXX
-        </p>
-
-        {paint && (
-          <p
-            style={{ cursor: "default" }}
-            onClick={() => hidePaint()}
-            className="reduire"
-          >
-            XXX
-          </p>
-        )}
-      </div>
+      <WindowsArea
+        closemenu={closemenu}
+        showTrash={showTrash}
+        trashselection={trashselection}
+        trashselect={trashselect}
+        posteTravail={posteTravail}
+        closePdt={closePdt}
+        postetravail={postetravail}
+        hidePdt={hidePdt}
+        closeTrash={closeTrash}
+        trashlogo={trashlogo}
+        trash={trash}
+        hideTrash={hideTrash}
+      />
       <div style={{ display: "flex" }}>
         <div>
           <Demarrer setmenu={setmenu} />
@@ -154,15 +113,6 @@ function Main() {
               image={postetravail}
             />
           )}
-          {taskbarPaint && (
-            <Taskbar
-              appname={"Paint"}
-              hidewindow={hidePaint}
-              image={
-                "https://i1.sndcdn.com/artworks-000078425043-oloazo-t500x500.jpg"
-              }
-            />
-          )}
         </div>
         ;
         <div className="horloge">
@@ -170,36 +120,8 @@ function Main() {
         </div>
       </div>
 
-      {posteTravail && (
-        <Fenetre
-          closemenu={closemenu}
-          closePdt={closePdt}
-          width={"550px"}
-          text={"Poste de travail"}
-          logo={postetravail}
-          hidewindow={hidePdt}
-          index={index}
-          content={<ContentPdt />}
-        />
-      )}
-
-      {trash && (
-        <Fenetre
-          closemenu={closemenu}
-          content={<ContentTrash />}
-          width={"500px"}
-          closePdt={closeTrash}
-          text={"Corbeille"}
-          logo={trashlogo}
-          hidewindow={hideTrash}
-          index={index}
-        />
-      )}
-
       <div className="menuderoule_container">
-        {menuderoule && (
-          <Menuderoule setPostetravail={showPdt} setPaint={showPaint} />
-        )}
+        {menuderoule && <Menuderoule setPostetravail={showPdt} />}
       </div>
     </div>
   );
