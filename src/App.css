@@ -117,19 +117,31 @@
   box-sizing: border-box;
 }
 
-.window {
+/* .window {
   height: 495px;
   width: 716px;
   position: absolute;
   align-self: center;
   justify-self: center;
-}
+} */
 
+.testestest {
+  position: absolute;
+  align-self: center;
+  justify-self: center;
+}
 .canvas {
   z-index: 1;
   position: absolute;
   margin-top: -49px;
   margin-left: 55px;
+}
+
+.corbeille_container {
+  position: absolute;
+  margin-left: 299px;
+  margin-top: 241px;
+  cursor: default;
 }
 
 .cross {
@@ -233,13 +245,95 @@
   user-select: none;
 }
 
+.fenetre_topbar {
+  font-family: Trebuchet MS;
+  background: linear-gradient(
+    180deg,
+    #0997ff,
+    #0053ee 8%,
+    #0050ee 40%,
+    #06f 88%,
+    #06f 93%,
+    #005bff 95%,
+    #003dd7 96%,
+    #003dd7
+  );
+  padding: 3px 5px 3px 3px;
+  border-top: 1px solid #0831d9;
+  border-left: 1px solid #0831d9;
+  border-right: 1px solid #001ea0;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 7px;
+  font-size: 13px;
+  text-shadow: 1px 1px #0f1089;
+  height: 21px;
+}
+
+.fenetre_topbar_left {
+  margin-left: 9px;
+  font-weight: 500;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 95px;
+}
+
+.fenetre_topbar_image {
+  height: 17px;
+}
+
+.title-bar-text {
+  padding-left: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 81px;
+}
+
+.fenetre_content {
+  background-color: white;
+  height: 100%;
+  border: 3px solid #0056ea;
+  border-top: none;
+}
+
+.fenetre_topbar_but {
+  height: 22px;
+  width: 22px;
+  border: 2px solid white;
+  border-radius: 4px;
+  background: linear-gradient(
+      to bottom,
+      #245edb 0%,
+      #3f8cf3 9%,
+      #5f80c7 18%,
+      #245edb 92%,
+      #333 100%
+    )
+    center/cover no-repeat;
+}
+
+.fenetre_topbar_buttons {
+  margin-right: 6px;
+  display: flex;
+  width: 88px;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .fenetre {
   background-color: white;
-  height: 250px;
-  width: 250px;
+  height: 350px;
+  width: 560px;
   position: absolute;
   top: 304px;
-  left: 800px;
+  left: 621px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .taskbarlogo {
@@ -250,7 +344,7 @@
 .classbar {
   background: white;
   cursor: default;
-  width: 120px;
+  min-width: 155px;
   font-family: Tahoma;
   margin: 1px;
   left: 517px;

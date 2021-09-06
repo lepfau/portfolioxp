@@ -10,6 +10,7 @@ import trashlogo from "../assets/trash.png";
 import paintapp from "../assets/paint.png";
 import CanvasDraw from "react-canvas-draw";
 import Draggable from "react-draggable";
+import postetravail from "../assets/5131-tOo-Postedetravail.png";
 
 function Main() {
   const [menuderoule, setMenuderoule] = useState(false);
@@ -141,7 +142,11 @@ function Main() {
             />
           )}
           {taskbarPdt && (
-            <Taskbar appname={"Poste de travail"} hidewindow={hidePdt} />
+            <Taskbar
+              appname={"Poste de travail"}
+              hidewindow={hidePdt}
+              image={postetravail}
+            />
           )}
           {taskbarPaint && (
             <Taskbar
@@ -159,12 +164,20 @@ function Main() {
         </div>
       </div>
 
-      {posteTravail && (
-        <Fenetre closePdt={closePdt} text={"Poste de travail"} />
-      )}
+      <div className="corbeille_container">
+        {posteTravail && (
+          <Fenetre
+            closePdt={closePdt}
+            text={"Poste de travail"}
+            logo={postetravail}
+          />
+        )}
+      </div>
 
-      <div className="trash_container">
-        {trash && <Fenetre closePdt={closeTrash} text={"Corbeille"} />}
+      <div className="corbeille_container">
+        {trash && (
+          <Fenetre closePdt={closeTrash} text={"Corbeille"} logo={trashlogo} />
+        )}
       </div>
 
       <div className="menuderoule_container">

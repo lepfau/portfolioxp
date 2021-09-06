@@ -2,7 +2,10 @@ import React from "react";
 
 function RightTopMenu(props) {
   return (
-    <div className="menuderoule_items_topright" onClick={() => props.todo()}>
+    <div
+      className="menuderoule_items_topright"
+      onClick={() => props.setPostetravail()}
+    >
       <div className="piccontainermenu">
         <img className="menuderoule_items_picsmall" src={props.picture}></img>
       </div>

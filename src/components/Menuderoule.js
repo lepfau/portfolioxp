@@ -85,7 +85,11 @@ function Menuderoule(props) {
             text={"Ma Musique"}
           />
 
-          <RightTopMenu picture={postetravail} text={"Poste de travail"} />
+          <RightTopMenu
+            picture={postetravail}
+            text={"Poste de travail"}
+            setPostetravail={props.setPostetravail}
+          />
           <div class="fade_rule2"></div>
         </div>
       </div>
