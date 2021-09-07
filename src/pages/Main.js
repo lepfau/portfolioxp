@@ -9,17 +9,33 @@ import WindowsArea from "../components/WindowsArea";
 
 function Main() {
   const [menuderoule, setMenuderoule] = useState(false);
-  const [posteTravail, setPostetravail] = useState(false);
+  const [posteTravail, setPostetravail] = useState(true);
   const [taskbarPdt, setTaskbarpdt] = useState(false);
   const [taskbarTrash, setTaskbartrash] = useState(false);
   const [trash, setTrash] = useState(false);
   const [trashselect, setTrashselect] = useState(false);
   const [windowsArray, setWindowsarray] = useState([]);
-  const [index1, setIndex1] = useState(2);
-  const [index2, setIndex2] = useState(2);
+  const [fenetreArray, setFenetrearray] = useState([]);
 
   function setmenu() {
     setMenuderoule(!menuderoule);
+  }
+
+  function hideTrash(window) {
+    if (window === "Poste de travail") {
+      setPostetravail(!posteTravail);
+      console.log("yoyoyo");
+    }
+    if (window === "Corbeille") {
+      setTrash(!trash);
+      console.log("yoyoyo");
+    }
+  }
+
+  function putOnTop(windowSelected) {
+    let arr = windowsArray;
+    arr.filter((window) => window !== windowSelected);
+    setWindowsarray(arr);
   }
 
   function closemenu(windowselected) {
@@ -27,9 +43,6 @@ function Main() {
       setTrashselect(false);
     }
     setMenuderoule(false);
-
-    if (windowselected === "Poste de travail") setIndex1(index1 + 1);
-    if (windowselected === "Corbeille") setIndex2(index2 + 1);
   }
 
   function showPdt() {
@@ -40,10 +53,7 @@ function Main() {
     if (newArray.includes("Poste de travail") === false) {
       newArray.push("Poste de travail");
     }
-    setIndex1(index1 + 1);
-    setIndex2(index2 - 1);
 
-    setWindowsarray(newArray);
     console.log(windowsArray);
   }
 
@@ -57,34 +67,26 @@ function Main() {
     }
     setWindowsarray(newArray);
     console.log(windowsArray);
-    setIndex2(index2 + 1);
-    setIndex1(index1 - 1);
   }
 
   function closePdt() {
     setPostetravail(false);
     setTaskbarpdt(false);
-    setWindowsarray(
-      windowsArray.filter((window) => window !== "Poste de travail")
-    );
+    let arr = windowsArray;
+    arr.splice(arr.indexOf("Poste de travail"), 1);
+    setWindowsarray(arr);
   }
 
   function closeTrash() {
     setTrash(false);
     setTaskbartrash(false);
-    setWindowsarray(windowsArray.filter((window) => window !== "Corbeille"));
+    let arr = windowsArray;
+    arr.splice(arr.indexOf("Corbeille"), 1);
+    setWindowsarray(arr);
   }
 
   function hidePdt() {
     setPostetravail(!posteTravail);
-  }
-
-  function hideTrash(window) {
-    if (window === "Poste de travail") {
-      setPostetravail(!posteTravail);
-    } else if (window === "Corbeille") {
-      setTrash(!trash);
-    }
   }
 
   function trashselection() {
@@ -111,8 +113,8 @@ function Main() {
         trashlogo={trashlogo}
         trash={trash}
         hideTrash={hideTrash}
-        index1={index1}
-        index2={index2}
+        windowArray={windowsArray}
+        putOnTop={putOnTop}
       />
       <div style={{ display: "flex" }}>
         <div>

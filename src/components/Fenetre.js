@@ -10,7 +10,7 @@ function Fenetre(props) {
       <div
         className="window"
         style={{ width: widthh, zIndex: index }}
-        onClick={() => props.closemenu(props.text)}
+        onClick={() => props.putOnTop(props.text)}
       >
         <div className="title-bar">
           <div className="title-bar-text">
