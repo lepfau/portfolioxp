@@ -133,6 +133,7 @@
   position: absolute;
   margin-left: 299px;
   margin-top: 241px;
+  z-index: 1;
 }
 
 .testestest {
@@ -475,7 +476,7 @@
   align-self: flex-end;
   justify-self: flex-end;
   box-shadow: 1px 1px 2px black;
-  z-index: 2;
+  z-index: 50;
 }
 
 .menuderoule_container {

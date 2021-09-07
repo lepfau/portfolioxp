@@ -15,17 +15,21 @@ function Main() {
   const [trash, setTrash] = useState(false);
   const [trashselect, setTrashselect] = useState(false);
   const [windowsArray, setWindowsarray] = useState([]);
+  const [index1, setIndex1] = useState(2);
+  const [index2, setIndex2] = useState(2);
 
   function setmenu() {
     setMenuderoule(!menuderoule);
   }
 
-  function closemenu() {
+  function closemenu(windowselected) {
     if (trashselect) {
       setTrashselect(false);
     }
-
     setMenuderoule(false);
+
+    if (windowselected === "Poste de travail") setIndex1(index1 + 1);
+    if (windowselected === "Corbeille") setIndex2(index2 + 1);
   }
 
   function showPdt() {
@@ -33,7 +37,12 @@ function Main() {
     setMenuderoule(false);
     setTaskbarpdt(true);
     let newArray = windowsArray;
-    newArray.push("Poste de travail");
+    if (newArray.includes("Poste de travail") === false) {
+      newArray.push("Poste de travail");
+    }
+    setIndex1(index1 + 1);
+    setIndex2(index2 - 1);
+
     setWindowsarray(newArray);
     console.log(windowsArray);
   }
@@ -43,9 +52,13 @@ function Main() {
     setMenuderoule(false);
     setTaskbartrash(true);
     let newArray = windowsArray;
-    newArray.push("Corbeille");
+    if (newArray.includes("Corbeille") === false) {
+      newArray.push("Corbeille");
+    }
     setWindowsarray(newArray);
     console.log(windowsArray);
+    setIndex2(index2 + 1);
+    setIndex1(index1 - 1);
   }
 
   function closePdt() {
@@ -78,8 +91,6 @@ function Main() {
     setTrashselect(!trashselect);
   }
 
-  function changeZindex() {}
-
   return (
     <div
       style={{
@@ -100,6 +111,8 @@ function Main() {
         trashlogo={trashlogo}
         trash={trash}
         hideTrash={hideTrash}
+        index1={index1}
+        index2={index2}
       />
       <div style={{ display: "flex" }}>
         <div>
@@ -112,7 +125,8 @@ function Main() {
                 key={window.length}
                 appname={window}
                 hidewindow={hideTrash}
-                image={trashlogo}
+                trashlogo={trashlogo}
+                pdtlogo={postetravail}
                 window={window}
               />
             );
