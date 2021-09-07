@@ -21,17 +21,6 @@ function Main() {
     setMenuderoule(!menuderoule);
   }
 
-  function hideTrash(window) {
-    if (window === "Poste de travail") {
-      setPostetravail(!posteTravail);
-      console.log("yoyoyo");
-    }
-    if (window === "Corbeille") {
-      setTrash(!trash);
-      console.log("yoyoyo");
-    }
-  }
-
   function putOnTop(windowSelected) {
     let arr = windowsArray;
     arr.filter((window) => window !== windowSelected);
@@ -89,8 +78,13 @@ function Main() {
     setPostetravail(!posteTravail);
   }
 
+  function hideTrash(window) {
+    setTrash(!trash);
+  }
+
   function trashselection() {
     setTrashselect(!trashselect);
+    console.log("trash clicked");
   }
 
   return (
@@ -109,10 +103,10 @@ function Main() {
         closePdt={closePdt}
         postetravail={postetravail}
         hidePdt={hidePdt}
+        hideTrash={hideTrash}
         closeTrash={closeTrash}
         trashlogo={trashlogo}
         trash={trash}
-        hideTrash={hideTrash}
         windowArray={windowsArray}
         putOnTop={putOnTop}
       />

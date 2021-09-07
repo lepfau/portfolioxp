@@ -6,13 +6,16 @@ function Fenetre(props) {
   let index = props.index;
 
   return (
-    <Draggable>
+    <Draggable
+      handle="#imhandle"
+      // bounds={{ top: -100, left: -400, right: 100, bottom: 10 }}
+    >
       <div
         className="window"
         style={{ width: widthh, zIndex: index }}
         onClick={() => props.putOnTop(props.text)}
       >
-        <div className="title-bar">
+        <div className="title-bar" id="imhandle">
           <div className="title-bar-text">
             <img
               className="fenetre_topbar_image"

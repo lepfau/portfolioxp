@@ -45,8 +45,7 @@ function WindowsArea(props) {
         <Trash
           showtrash={props.showTrash}
           trashselect={props.trashselection}
-          trashboole
-          an={props.trashselect}
+          boolean={props.trashselect}
         />
       </div>
     </div>

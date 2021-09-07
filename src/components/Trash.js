@@ -10,7 +10,7 @@ function Trash(props) {
         onDoubleClick={() => props.showtrash()}
         onClick={() => props.trashselect()}
       >
-        {props.trashboolean ? (
+        {props.boolean ? (
           <div
             className="trashhh"
             style={{
