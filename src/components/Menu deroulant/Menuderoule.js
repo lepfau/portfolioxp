@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import Fenetre from "./Fenetre";
-import photoed from "../assets/photoed.PNG";
-import logointernet from "../assets/internetlogo.png";
-import TopMenuItem from "./TopMenuItem";
-import MiddleMenuItem from "./MiddleMenuItem";
-import RightTopMenu from "./RightTopMenu";
-import postetravail from "../assets/5131-tOo-Postedetravail.png";
+import Fenetre from "../Fenetres/Fenetre";
+import photoed from "../../assets/photoed.PNG";
+import logointernet from "../../assets/internetlogo.png";
+import TopMenuItem from "../Menu deroulant/TopMenuItem";
+import MiddleMenuItem from "../Menu deroulant/MiddleMenuItem";
+import RightTopMenu from "../Menu deroulant/RightTopMenu";
+import postetravail from "../../assets/5131-tOo-Postedetravail.png";
 
 function Menuderoule(props) {
   return (

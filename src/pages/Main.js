@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import Demarrer from "../components/Demarrer";
-import Menuderoule from "../components/Menuderoule";
-import Taskbar from "../components/Taskbar";
+import Demarrer from "../components/Bureau/Demarrer";
+import Menuderoule from "../components/Menu deroulant/Menuderoule";
+import Taskbar from "../components/Taskbar/Taskbar";
 import Clock from "react-digital-clock";
-import trashlogo from "../assets/trash.png";
-import postetravail from "../assets/5131-tOo-Postedetravail.png";
+
 import WindowsArea from "../components/WindowsArea";
 
 function Main() {
   const [menuderoule, setMenuderoule] = useState(false);
   const [windowsArray, setWindowsarray] = useState([]);
+  //FENETRES SUR LE BUREAU
   const [posteTravail, setPostetravail] = useState(true);
   const [trash, setTrash] = useState(false);
   const [cv, setCv] = useState(false);
@@ -41,6 +41,7 @@ function Main() {
     else if (win === "Mon Cv.pdf") setCv(false);
     let arr = windowsArray;
     arr.splice(arr.indexOf(win), 1);
+    //enlever la fenetre fermee de l'array
     setWindowsarray(arr);
   }
 
@@ -81,8 +82,6 @@ function Main() {
                 key={window.length}
                 appname={window}
                 hideWindow={hideWindow}
-                trashlogo={trashlogo}
-                pdtlogo={postetravail}
                 window={window}
               />
             );

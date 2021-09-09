@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import trashlogo from "../assets/trash.png";
+import trashlogo from "../../assets/trash.png";
 import Draggable from "react-draggable";
 
 function Trash(props) {

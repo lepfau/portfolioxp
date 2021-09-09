@@ -1,6 +1,6 @@
 import React from "react";
 import { Document, Page, pdfjs } from "react-pdf";
-import moncv from "../assets/CV E.PFAUWADEL.pdf";
+import moncv from "../../assets/CV E.PFAUWADEL.pdf";
 
 function ContentCv() {
   pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;

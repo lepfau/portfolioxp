@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logoxp from "../assets/logoxp.png";
+import logoxp from "../../assets/logoxp.png";
 
 function Demarrer(props) {
   return (

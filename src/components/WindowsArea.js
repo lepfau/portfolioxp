@@ -1,12 +1,12 @@
 import React from "react";
-import Trash from "../components/Trash";
-import Fenetre from "../components/Fenetre";
-import ContentPdt from "../components/ContentPdt.js";
-import ContentTrash from "../components/ContentTrash";
-import ContentCv from "./ContentCv";
+import Trash from "./Icones/Trash";
+import Fenetre from "./Fenetres/Fenetre";
+import ContentPdt from "../components/Fenetres/ContentPdt";
+import ContentTrash from "../components/Fenetres/ContentTrash";
+import ContentCv from "../components/Fenetres/ContentCv";
 import postetravail from "../assets/5131-tOo-Postedetravail.png";
 
-import Icone from "./Icone";
+import Icone from "./Icones/Icone";
 import trashlogo from "../assets/trash.png";
 
 function WindowsArea(props) {
