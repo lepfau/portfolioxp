@@ -1,13 +1,12 @@
 import React from "react";
-import trashlogo from "../assets/trash.png";
 import Draggable from "react-draggable";
 
-function Trash(props) {
+function Cvpdf(props) {
   return (
     <Draggable scale={1}>
       <div
         className="trashcontainer noselect"
-        onDoubleClick={() => props.showWindow("Corbeille")}
+        onDoubleClick={() => props.showtrash()}
         onClick={() => props.trashselect()}
       >
         {props.boolean ? (
@@ -17,11 +16,18 @@ function Trash(props) {
               display: "flex",
               alignItems: "center",
               flexDirection: "column",
+              width: "82px",
             }}
           >
-            <img className="icone" src={trashlogo} alt="corbeille" />
+            <img
+              className="icone"
+              src={
+                "https://seeklogo.com/images/A/adobe-pdf-logo-1480D328A9-seeklogo.com.png"
+              }
+              alt="pdffilelogo"
+            />
             <p style={{ color: "white", fontSize: "13px", margin: "6px" }}>
-              Corbeille
+              Mon CV.pdf
             </p>
           </div>
         ) : (
@@ -31,11 +37,18 @@ function Trash(props) {
               display: "flex",
               alignItems: "center",
               flexDirection: "column",
+              width: "82px",
             }}
           >
-            <img className="icone" src={trashlogo} alt="corbeille" />
+            <img
+              className="icone"
+              src={
+                "https://seeklogo.com/images/A/adobe-pdf-logo-1480D328A9-seeklogo.com.png"
+              }
+              alt="corbeille"
+            />
             <p style={{ color: "white", fontSize: "13px", margin: "6px" }}>
-              Corbeille
+              Mon CV.pdf
             </p>
           </div>
         )}
@@ -44,4 +57,4 @@ function Trash(props) {
   );
 }
 
-export default Trash;
+export default Cvpdf;

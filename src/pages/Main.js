@@ -10,21 +10,14 @@ import WindowsArea from "../components/WindowsArea";
 function Main() {
   const [menuderoule, setMenuderoule] = useState(false);
   const [posteTravail, setPostetravail] = useState(true);
-  const [taskbarPdt, setTaskbarpdt] = useState(false);
-  const [taskbarTrash, setTaskbartrash] = useState(false);
   const [trash, setTrash] = useState(false);
   const [trashselect, setTrashselect] = useState(false);
+  const [cvselect, setCvselect] = useState(false);
   const [windowsArray, setWindowsarray] = useState([]);
-  const [fenetreArray, setFenetrearray] = useState([]);
+  const [cv, setCv] = useState(false);
 
   function setmenu() {
     setMenuderoule(!menuderoule);
-  }
-
-  function putOnTop(windowSelected) {
-    let arr = windowsArray;
-    arr.filter((window) => window !== windowSelected);
-    setWindowsarray(arr);
   }
 
   function closemenu(windowselected) {
@@ -34,52 +27,31 @@ function Main() {
     setMenuderoule(false);
   }
 
-  function showPdt() {
-    setPostetravail(true);
+  function showWindow(win) {
     setMenuderoule(false);
-    setTaskbarpdt(true);
+    if (win === "Poste de travail") setPostetravail(true);
+    else if (win === "Corbeille") setTrash(true);
+    else if (win === "Mon Cv.pdf") setCv(true);
     let newArray = windowsArray;
-    if (newArray.includes("Poste de travail") === false) {
-      newArray.push("Poste de travail");
+    if (newArray.includes(win) === false) {
+      newArray.push(win);
     }
 
     console.log(windowsArray);
   }
 
-  function showTrash() {
-    setTrash(true);
-    setMenuderoule(false);
-    setTaskbartrash(true);
-    let newArray = windowsArray;
-    if (newArray.includes("Corbeille") === false) {
-      newArray.push("Corbeille");
-    }
-    setWindowsarray(newArray);
-    console.log(windowsArray);
-  }
-
-  function closePdt() {
-    setPostetravail(false);
-    setTaskbarpdt(false);
+  function closeWindow(win) {
+    if (win === "Poste de travail") setPostetravail(false);
+    else if (win === "Corbeille") setTrash(false);
     let arr = windowsArray;
-    arr.splice(arr.indexOf("Poste de travail"), 1);
+    arr.splice(arr.indexOf(win), 1);
     setWindowsarray(arr);
   }
 
-  function closeTrash() {
-    setTrash(false);
-    setTaskbartrash(false);
-    let arr = windowsArray;
-    arr.splice(arr.indexOf("Corbeille"), 1);
-    setWindowsarray(arr);
-  }
-
-  function hidePdt() {
-    setPostetravail(!posteTravail);
-  }
-
-  function hideTrash(window) {
-    setTrash(!trash);
+  function hideWindow(win) {
+    if (win === "Corbeille") setTrash(!trash);
+    else if (win === "Poste de travail") setPostetravail(!posteTravail);
+    closemenu();
   }
 
   function trashselection() {
@@ -87,28 +59,33 @@ function Main() {
     console.log("trash clicked");
   }
 
+  function cvselection() {
+    setCvselect(!cvselect);
+    console.log("cv clicked");
+  }
+
   return (
     <div
       style={{
         display: "flex",
         flexDirection: "column",
+        height: "100%",
+        width: "100%",
       }}
     >
       <WindowsArea
         closemenu={closemenu}
-        showTrash={showTrash}
+        showWindow={showWindow}
+        closeWindow={closeWindow}
+        hideWindow={hideWindow}
         trashselection={trashselection}
         trashselect={trashselect}
+        cvselection={cvselection}
+        cvselect={cvselect}
         posteTravail={posteTravail}
-        closePdt={closePdt}
-        postetravail={postetravail}
-        hidePdt={hidePdt}
-        hideTrash={hideTrash}
-        closeTrash={closeTrash}
-        trashlogo={trashlogo}
         trash={trash}
+        cv={cv}
         windowArray={windowsArray}
-        putOnTop={putOnTop}
       />
       <div style={{ display: "flex" }}>
         <div>
@@ -120,7 +97,7 @@ function Main() {
               <Taskbar
                 key={window.length}
                 appname={window}
-                hidewindow={hideTrash}
+                hideWindow={hideWindow}
                 trashlogo={trashlogo}
                 pdtlogo={postetravail}
                 window={window}
@@ -135,7 +112,7 @@ function Main() {
       </div>
 
       <div className="menuderoule_container">
-        {menuderoule && <Menuderoule setPostetravail={showPdt} />}
+        {menuderoule && <Menuderoule showWindow={showWindow} />}
       </div>
     </div>
   );
