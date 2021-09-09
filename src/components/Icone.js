@@ -7,6 +7,12 @@ function Icone(props) {
   return (
     <Draggable scale={1}>
       <div
+        style={{
+          bottom: props.bottom,
+          right: props.right,
+          top: props.top,
+          left: props.left,
+        }}
         className="trashcontainer noselect"
         onClick={() => setSelected(!selected)}
         onDoubleClick={() => props.showWindow(props.name)}

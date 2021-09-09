@@ -38,6 +38,7 @@ function Main() {
   function closeWindow(win) {
     if (win === "Poste de travail") setPostetravail(false);
     else if (win === "Corbeille") setTrash(false);
+    else if (win === "Mon Cv.pdf") setCv(false);
     let arr = windowsArray;
     arr.splice(arr.indexOf(win), 1);
     setWindowsarray(arr);
@@ -46,6 +47,7 @@ function Main() {
   function hideWindow(win) {
     if (win === "Corbeille") setTrash(!trash);
     else if (win === "Poste de travail") setPostetravail(!posteTravail);
+    else if (win === "Mon Cv.pdf") setCv(!cv);
     closemenu();
   }
 
@@ -65,6 +67,7 @@ function Main() {
         hideWindow={hideWindow}
         posteTravail={posteTravail}
         trash={trash}
+        cv={cv}
         windowArray={windowsArray}
       />
       <div style={{ display: "flex" }}>

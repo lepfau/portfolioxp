@@ -3,8 +3,8 @@ import Draggable from "react-draggable";
 
 function Fenetre(props) {
   const [defaultStyle, setDefaultstyle] = useState({
-    width: "700px",
-    height: "500px",
+    width: props.width || "700px",
+    height: props.height || "500px",
     transform: "translate(0px, 0px)",
   });
 

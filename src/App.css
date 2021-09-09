@@ -324,18 +324,24 @@
   font-size: 13px;
 }
 
+.scrollcv {
+  height: 650px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
 .icone {
   height: 50px;
   display: flex;
   align-items: center;
   flex-direction: column;
-
+  width: 62px;
   padding: 4px;
   /* margin-bottom: 4px; */
 }
 
 .icone_logo {
-  height: 50px;
+  height: 40px;
 }
 
 .icone_selected {
@@ -345,24 +351,21 @@
   background-color: #708bce;
   opacity: 0.8;
   padding: 4px;
+  width: 62px;
   /* margin-bottom: 4px; */
   border: dotted 1px white;
 }
 
 .trashcontainer {
   display: flex;
-  /* justify-content: center; */
-  /* align-items: flex-end; */
   flex-direction: column;
   position: absolute;
-  align-self: flex-end;
-  justify-self: flex-end;
+  align-self: center;
+  justify-self: center;
   width: 65px;
   z-index: 0;
   height: 77px;
-  /* margin-right: 99px; */
-  margin-bottom: 20px;
-  margin-left: 480px;
+
   color: white;
 }
 
