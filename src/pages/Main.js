@@ -9,35 +9,30 @@ import WindowsArea from "../components/WindowsArea";
 
 function Main() {
   const [menuderoule, setMenuderoule] = useState(false);
+  const [windowsArray, setWindowsarray] = useState([]);
   const [posteTravail, setPostetravail] = useState(true);
   const [trash, setTrash] = useState(false);
-  const [trashselect, setTrashselect] = useState(false);
-  const [cvselect, setCvselect] = useState(false);
-  const [windowsArray, setWindowsarray] = useState([]);
   const [cv, setCv] = useState(false);
 
   function setmenu() {
     setMenuderoule(!menuderoule);
   }
 
-  function closemenu(windowselected) {
-    if (trashselect) {
-      setTrashselect(false);
-    }
+  function closemenu() {
     setMenuderoule(false);
   }
 
   function showWindow(win) {
+    console.log("here");
     setMenuderoule(false);
     if (win === "Poste de travail") setPostetravail(true);
-    else if (win === "Corbeille") setTrash(true);
-    else if (win === "Mon Cv.pdf") setCv(true);
+    if (win === "Corbeille") setTrash(true);
+    console.log("trash");
+    if (win === "Mon Cv.pdf") setCv(true);
     let newArray = windowsArray;
     if (newArray.includes(win) === false) {
       newArray.push(win);
     }
-
-    console.log(windowsArray);
   }
 
   function closeWindow(win) {
@@ -54,16 +49,6 @@ function Main() {
     closemenu();
   }
 
-  function trashselection() {
-    setTrashselect(!trashselect);
-    console.log("trash clicked");
-  }
-
-  function cvselection() {
-    setCvselect(!cvselect);
-    console.log("cv clicked");
-  }
-
   return (
     <div
       style={{
@@ -78,13 +63,8 @@ function Main() {
         showWindow={showWindow}
         closeWindow={closeWindow}
         hideWindow={hideWindow}
-        trashselection={trashselection}
-        trashselect={trashselect}
-        cvselection={cvselection}
-        cvselect={cvselect}
         posteTravail={posteTravail}
         trash={trash}
-        cv={cv}
         windowArray={windowsArray}
       />
       <div style={{ display: "flex" }}>

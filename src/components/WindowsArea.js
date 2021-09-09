@@ -7,6 +7,8 @@ import postetravail from "../assets/5131-tOo-Postedetravail.png";
 import { Document, Page, pdfjs } from "react-pdf";
 import moncv from "../assets/CV E.PFAUWADEL.pdf";
 import Cvpdf from "./Cvpdf";
+import Icone from "./Icone";
+import trashlogo from "../assets/trash.png";
 
 function WindowsArea(props) {
   pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
@@ -19,13 +21,11 @@ function WindowsArea(props) {
             <Fenetre
               putOnTop={props.putOnTop}
               key={window}
-              closemenu={props.closemenu}
               closeWindow={props.closeWindow}
+              hideWindow={props.hideWindow}
               width={"700px"}
               text={"Poste de travail"}
               logo={postetravail}
-              hideWindow={props.hideWindow}
-              index={props.index1}
               content={<ContentPdt />}
             />
           );
@@ -34,14 +34,12 @@ function WindowsArea(props) {
             <Fenetre
               putOnTop={props.putOnTop}
               key={window}
-              closemenu={props.closemenu}
               content={<ContentTrash />}
               width={"550px"}
               closeWindow={props.closeWindow}
               text={"Corbeille"}
               logo={props.trashlogo}
               hideWindow={props.hideWindow}
-              index={props.index2}
             />
           );
         else if (window === "Mon Cv.pdf" && props.cv === true)
@@ -49,7 +47,6 @@ function WindowsArea(props) {
             <Fenetre
               putOnTop={props.putOnTop}
               key={window}
-              closemenu={props.closemenu}
               content={<ContentTrash />}
               width={"550px"}
               closePdt={props.closeTrash}
@@ -58,36 +55,17 @@ function WindowsArea(props) {
                 "https://seeklogo.com/images/A/adobe-pdf-logo-1480D328A9-seeklogo.com.png"
               }
               hidewindow={props.hideTrash}
-              index={props.index2}
             />
           );
       })}
 
       <div className="icones">
-        <Trash
+        <Icone
           showWindow={props.showWindow}
-          trashselect={props.trashselection}
-          boolean={props.trashselect}
-        />
-        <Cvpdf
-          showtrash={props.showCv}
-          trashselect={props.cvselection}
-          boolean={props.cvselect}
+          name="Corbeille"
+          logo={trashlogo}
         />
       </div>
-
-      {/* <div className="icone">
-        <div>
-          <img
-            src="https://seeklogo.com/images/A/adobe-pdf-logo-1480D328A9-seeklogo.com.png"
-            alt="pdflogo"
-            className="icone"
-          ></img>
-        </div>
-        <div>
-          <p>CV.pdf</p>
-        </div>
-      </div> */}
 
       {/* <div className="scrollcv">
         <Document file={moncv}>

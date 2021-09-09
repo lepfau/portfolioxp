@@ -325,12 +325,28 @@
 }
 
 .icone {
-  height: 40px;
-  color: white;
+  height: 50px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  flex-direction: column;
+
+  padding: 4px;
+  /* margin-bottom: 4px; */
+}
+
+.icone_logo {
+  height: 50px;
+}
+
+.icone_selected {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #708bce;
+  opacity: 0.8;
+  padding: 4px;
+  /* margin-bottom: 4px; */
+  border: dotted 1px white;
 }
 
 .trashcontainer {
@@ -338,15 +354,16 @@
   /* justify-content: center; */
   /* align-items: flex-end; */
   flex-direction: column;
-  position: relative;
+  position: absolute;
   align-self: flex-end;
   justify-self: flex-end;
-  width: 7%;
+  width: 65px;
   z-index: 0;
   height: 77px;
   /* margin-right: 99px; */
   margin-bottom: 20px;
-  margin-left: 900px;
+  margin-left: 480px;
+  color: white;
 }
 
 .menuderoule_header {

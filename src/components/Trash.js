@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import trashlogo from "../assets/trash.png";
 import Draggable from "react-draggable";
 
 function Trash(props) {
+  const [style, setStyle] = useState("trashh");
+
   return (
     <Draggable scale={1}>
       <div

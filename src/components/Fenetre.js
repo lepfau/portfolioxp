@@ -2,11 +2,6 @@ import React, { useState } from "react";
 import Draggable from "react-draggable";
 
 function Fenetre(props) {
-  let widthh = props.width;
-  let index = props.index;
-
-  const [width, setWidth] = useState("700px");
-  const [height, setHeight] = useState("500px");
   const [defaultStyle, setDefaultstyle] = useState({
     width: "700px",
     height: "500px",
@@ -14,13 +9,6 @@ function Fenetre(props) {
   });
 
   const fullScreen = () => {
-    // if (height !== "730px" && width !== "1030px") {
-    //   setWidth("1030px");
-    //   setHeight("730px");
-    // } else {
-    //   setWidth("700px");
-    //   setHeight("500px");
-    // }
     setDefaultstyle({
       width: "1030px",
       height: "730px",
