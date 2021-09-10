@@ -49,6 +49,11 @@
   margin-left: 55px;
 }
 
+.basicwindow {
+  margin-bottom: 700px;
+  margin-right: 600px;
+}
+
 .trash_picture {
   padding: 12px;
   height: 55px;
@@ -216,6 +221,11 @@
 
 .fenetre_topbar_image {
   height: 17px;
+}
+
+.fullscreenwindow {
+  height: 100%;
+  width: 100%;
 }
 
 .title-bar-text {

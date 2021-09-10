@@ -1,13 +1,13 @@
 import React from "react";
-import Trash from "./Icones/Trash";
-import Fenetre from "./Fenetres/Fenetre";
-import ContentPdt from "../components/Fenetres/ContentPdt";
-import ContentTrash from "../components/Fenetres/ContentTrash";
-import ContentCv from "../components/Fenetres/ContentCv";
-import postetravail from "../assets/5131-tOo-Postedetravail.png";
+import Trash from "../Icones/Trash";
+import Fenetre from "../Fenetres/Fenetre";
+import ContentPdt from "../Fenetres/ContentPdt";
+import ContentTrash from "../Fenetres/ContentTrash";
+import ContentCv from "../Fenetres/ContentCv";
+import postetravail from "../../assets/5131-tOo-Postedetravail.png";
 
-import Icone from "./Icones/Icone";
-import trashlogo from "../assets/trash.png";
+import Icone from "../Icones/Icone";
+import trashlogo from "../../assets/trash.png";
 
 function WindowsArea(props) {
   return (

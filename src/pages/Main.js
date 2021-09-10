@@ -4,13 +4,13 @@ import Menuderoule from "../components/Menu deroulant/Menuderoule";
 import Taskbar from "../components/Taskbar/Taskbar";
 import Clock from "react-digital-clock";
 
-import WindowsArea from "../components/WindowsArea";
+import WindowsArea from "../components/Bureau/WindowsArea";
 
 function Main() {
   const [menuderoule, setMenuderoule] = useState(false);
   const [windowsArray, setWindowsarray] = useState([]);
   //FENETRES SUR LE BUREAU
-  const [posteTravail, setPostetravail] = useState(true);
+  const [posteTravail, setPostetravail] = useState(false);
   const [trash, setTrash] = useState(false);
   const [cv, setCv] = useState(false);
 
