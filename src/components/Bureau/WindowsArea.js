@@ -5,6 +5,7 @@ import ContentPdt from "../Fenetres/ContentPdt";
 import ContentTrash from "../Fenetres/ContentTrash";
 import ContentCv from "../Fenetres/ContentCv";
 import ContentProjets from "../Fenetres/ContentProjets";
+import Form from "../Form";
 import postetravail from "../../assets/5131-tOo-Postedetravail.png";
 
 import Icone from "../Icones/Icone";
@@ -25,6 +26,22 @@ function WindowsArea(props) {
               text={"Poste de travail"}
               logo={postetravail}
               content={<ContentPdt />}
+            />
+          );
+        else if (window === "Me contacter" && props.mail === true)
+          return (
+            <Fenetre
+              putOnTop={props.putOnTop}
+              key={window}
+              content={<Form />}
+              width={"550px"}
+              height={"350px"}
+              closeWindow={props.closeWindow}
+              text={"Me contacter"}
+              logo={
+                "https://upload.wikimedia.org/wikipedia/fr/5/53/Outlook_express_logo-200-200.jpg"
+              }
+              hideWindow={props.hideWindow}
             />
           );
         else if (window === "Mes Projets" && props.mesprojets === true)

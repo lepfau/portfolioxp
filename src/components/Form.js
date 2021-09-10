@@ -5,9 +5,8 @@ import { send } from "emailjs-com";
 function Form() {
   const [toSend, setToSend] = useState({
     from_name: "",
-    to_name: "",
+    from_email: "",
     message: "",
-    reply_to: "",
   });
 
   const onSubmit = (e) => {
@@ -20,6 +19,8 @@ function Form() {
     )
       .then((response) => {
         console.log("SUCCESS!", response.status, response.text);
+        alert("Envoyé avec succès");
+        setToSend({ from_name: "", from_email: "", message: "" });
       })
       .catch((err) => {
         console.log("FAILED...", err);
@@ -34,35 +35,64 @@ function Form() {
     <div>
       <form onSubmit={onSubmit}>
         <input
+          style={{
+            fontSize: "13px",
+            fontFamily: "Tahoma",
+            margin: "10px",
+            border: "1px solid black",
+            height: "30px",
+          }}
+          className="forminput"
           type="text"
           name="from_name"
-          placeholder="from name"
+          placeholder="Nom"
           value={toSend.from_name}
           onChange={handleChange}
         />
         <input
+          style={{
+            fontSize: "13px",
+            fontFamily: "Tahoma",
+            margin: "10px",
+            border: "1px solid black",
+            height: "30px",
+          }}
+          className="forminput"
           type="text"
-          name="to_name"
-          placeholder="to name"
-          value={toSend.to_name}
+          name="from_email"
+          placeholder="email"
+          value={toSend.from_email}
           onChange={handleChange}
         />
         <input
-          type="text"
+          style={{ fontSize: "15px", fontFamily: "Tahoma", margin: "10px" }}
+          className="forminput"
+          style={{ height: "80px" }}
+          type="textarea"
           name="message"
-          placeholder="Your message"
+          placeholder="Votre message"
           value={toSend.message}
           onChange={handleChange}
         />
-        <input
-          type="text"
-          name="reply_to"
-          placeholder="Your email"
-          value={toSend.reply_to}
-          onChange={handleChange}
-        />
 
-        <button type="submit">Submit</button>
+        <button
+          style={{
+            fontSize: "13px",
+            fontFamily: "Tahoma",
+            width: "90px",
+            height: "60px",
+            alignSelf: "center",
+            margin: "20px",
+          }}
+          type="submit"
+        >
+          {" "}
+          <img
+            style={{ height: "20px" }}
+            src="https://cdn-icons-png.flaticon.com/512/176/176674.png"
+          />
+          Envoyez !
+        </button>
       </form>
     </div>
   );

@@ -12,6 +12,9 @@ function Taskbar(props) {
   if (props.appname === "Mes Projets")
     logo =
       "https://icons.iconarchive.com/icons/dtafalonso/modern-xp/512/ModernXP-38-Folder-Music-icon.png";
+  if (props.appname === "Me contacter")
+    logo =
+      "https://upload.wikimedia.org/wikipedia/fr/5/53/Outlook_express_logo-200-200.jpg";
 
   return (
     <div onClick={() => props.hideWindow(props.window)} className="classbar">

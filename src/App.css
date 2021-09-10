@@ -21,6 +21,14 @@
   box-sizing: border-box;
 }
 
+form {
+  flex-direction: column;
+  display: flex;
+  background-color: #ecead9;
+  padding: 6px;
+  margin: -4px;
+}
+
 /* .window {
   height: 495px;
   width: 716px;
@@ -28,6 +36,10 @@
   align-self: center;
   justify-self: center;
 } */
+
+.forminput {
+  border: 1px solid black;
+}
 
 .msnnotif {
   width: 325px;

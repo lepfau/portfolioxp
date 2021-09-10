@@ -28,6 +28,7 @@ function Menuderoule(props) {
             }
             firsttext={"E-mail"}
             secondtext={"Me contacter"}
+            showWindow={props.showWindow}
           />
           <div class="fade_rule"></div>
           <MiddleMenuItem

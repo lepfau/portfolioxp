@@ -8,7 +8,6 @@ import useSound from "use-sound";
 import msnsound from "../assets/msn.mp3";
 import msnlogo from "../assets/msn_messenger.png";
 import WindowsArea from "../components/Bureau/WindowsArea";
-import Form from "../Form";
 
 function Main() {
   const [menuderoule, setMenuderoule] = useState(false);
@@ -18,6 +17,7 @@ function Main() {
   const [trash, setTrash] = useState(false);
   const [cv, setCv] = useState(false);
   const [mesprojets, setMesprojets] = useState(false);
+  const [mail, setMail] = useState(false);
 
   function setmenu() {
     setMenuderoule(!menuderoule);
@@ -34,6 +34,7 @@ function Main() {
     if (win === "Corbeille") setTrash(true);
     if (win === "Mon Cv.pdf") setCv(true);
     if (win === "Mes Projets") setMesprojets(true);
+    if (win === "Me contacter") setMail(true);
     let newArray = windowsArray;
     if (newArray.includes(win) === false) {
       newArray.push(win);
@@ -45,6 +46,7 @@ function Main() {
     else if (win === "Corbeille") setTrash(false);
     else if (win === "Mon Cv.pdf") setCv(false);
     else if (win === "Mes Projets") setMesprojets(false);
+    else if (win === "Me contacter") setMail(false);
     let arr = windowsArray;
     arr.splice(arr.indexOf(win), 1);
     //enlever la fenetre fermee de l'array
@@ -56,6 +58,7 @@ function Main() {
     else if (win === "Poste de travail") setPostetravail(!posteTravail);
     else if (win === "Mon Cv.pdf") setCv(!cv);
     else if (win === "Mes Projets") setMesprojets(!mesprojets);
+    else if (win === "Me contacter") setMail(!mail);
     closemenu();
   }
 
@@ -78,6 +81,7 @@ function Main() {
         posteTravail={posteTravail}
         trash={trash}
         cv={cv}
+        mail={mail}
         mesprojets={mesprojets}
         windowArray={windowsArray}
       />
