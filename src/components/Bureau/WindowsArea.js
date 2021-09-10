@@ -4,6 +4,7 @@ import Fenetre from "../Fenetres/Fenetre";
 import ContentPdt from "../Fenetres/ContentPdt";
 import ContentTrash from "../Fenetres/ContentTrash";
 import ContentCv from "../Fenetres/ContentCv";
+import ContentProjets from "../Fenetres/ContentProjets";
 import postetravail from "../../assets/5131-tOo-Postedetravail.png";
 
 import Icone from "../Icones/Icone";
@@ -24,6 +25,21 @@ function WindowsArea(props) {
               text={"Poste de travail"}
               logo={postetravail}
               content={<ContentPdt />}
+            />
+          );
+        else if (window === "Mes Projets" && props.mesprojets === true)
+          return (
+            <Fenetre
+              putOnTop={props.putOnTop}
+              key={window}
+              content={<ContentProjets />}
+              width={"550px"}
+              closeWindow={props.closeWindow}
+              text={"Mes Projets"}
+              logo={
+                "https://icons.iconarchive.com/icons/dtafalonso/modern-xp/512/ModernXP-38-Folder-Music-icon.png"
+              }
+              hideWindow={props.hideWindow}
             />
           );
         else if (window === "Corbeille" && props.trash === true)

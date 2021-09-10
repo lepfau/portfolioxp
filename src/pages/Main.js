@@ -3,7 +3,10 @@ import Demarrer from "../components/Bureau/Demarrer";
 import Menuderoule from "../components/Menu deroulant/Menuderoule";
 import Taskbar from "../components/Taskbar/Taskbar";
 import Clock from "react-digital-clock";
-
+import photoed from "../assets/photoed.PNG";
+import useSound from "use-sound";
+import msnsound from "../assets/msn.mp3";
+import msnlogo from "../assets/msn_messenger.png";
 import WindowsArea from "../components/Bureau/WindowsArea";
 
 function Main() {
@@ -13,6 +16,7 @@ function Main() {
   const [posteTravail, setPostetravail] = useState(false);
   const [trash, setTrash] = useState(false);
   const [cv, setCv] = useState(false);
+  const [mesprojets, setMesprojets] = useState(false);
 
   function setmenu() {
     setMenuderoule(!menuderoule);
@@ -27,8 +31,8 @@ function Main() {
     setMenuderoule(false);
     if (win === "Poste de travail") setPostetravail(true);
     if (win === "Corbeille") setTrash(true);
-    console.log("trash");
     if (win === "Mon Cv.pdf") setCv(true);
+    if (win === "Mes Projets") setMesprojets(true);
     let newArray = windowsArray;
     if (newArray.includes(win) === false) {
       newArray.push(win);
@@ -39,6 +43,7 @@ function Main() {
     if (win === "Poste de travail") setPostetravail(false);
     else if (win === "Corbeille") setTrash(false);
     else if (win === "Mon Cv.pdf") setCv(false);
+    else if (win === "Mes Projets") setMesprojets(false);
     let arr = windowsArray;
     arr.splice(arr.indexOf(win), 1);
     //enlever la fenetre fermee de l'array
@@ -49,8 +54,11 @@ function Main() {
     if (win === "Corbeille") setTrash(!trash);
     else if (win === "Poste de travail") setPostetravail(!posteTravail);
     else if (win === "Mon Cv.pdf") setCv(!cv);
+    else if (win === "Mes Projets") setMesprojets(!mesprojets);
     closemenu();
   }
+
+  const [play] = useSound(msnsound);
 
   return (
     <div
@@ -69,6 +77,7 @@ function Main() {
         posteTravail={posteTravail}
         trash={trash}
         cv={cv}
+        mesprojets={mesprojets}
         windowArray={windowsArray}
       />
       <div style={{ display: "flex" }}>
@@ -89,12 +98,41 @@ function Main() {
         </div>
         ;
         <div className="horloge">
+          <img style={{ height: "15px", marginRight: "10px" }} src={msnlogo} />
+          <img
+            style={{ height: "15px", marginRight: "10px" }}
+            src="https://icon-library.com/images/volume-icon/volume-icon-17.jpg"
+          />
           <Clock format={"hh-mm"} hour12={false} />
         </div>
       </div>
 
       <div className="menuderoule_container">
         {menuderoule && <Menuderoule showWindow={showWindow} />}
+      </div>
+      <div className="msncontainer">
+        <div className="msnnotif">
+          <div className="msnheader">
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <img
+                alt="msn"
+                style={{ height: "20px" }}
+                src="https://iconape.com/wp-content/files/fb/353373/png/353373.png"
+              />
+              <p>Msn Messenger</p>
+            </div>
+            <p style={{ marginRight: "10px" }}>X</p>
+          </div>
+
+          <div className="msncontent">
+            <img
+              className="menuderoule_items_pic"
+              src={photoed}
+              alt="moi"
+            ></img>
+            <p style={{ marginLeft: "10px" }}>Merci de votre visite</p>
+          </div>
+        </div>
       </div>
     </div>
   );

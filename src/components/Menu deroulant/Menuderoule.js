@@ -27,7 +27,7 @@ function Menuderoule(props) {
               "https://upload.wikimedia.org/wikipedia/fr/5/53/Outlook_express_logo-200-200.jpg"
             }
             firsttext={"E-mail"}
-            secondtext={"Outlook Express"}
+            secondtext={"Me contacter"}
           />
           <div class="fade_rule"></div>
           <MiddleMenuItem
@@ -70,19 +70,20 @@ function Menuderoule(props) {
             picture={
               "https://iconarchive.com/download/i95231/dtafalonso/modern-xp/ModernXP-16-Folder-Documents.ico"
             }
-            text={"Mes Documents"}
+            text={"Mes Compétences"}
           />
           <RightTopMenu
             picture={
               "https://icons.iconarchive.com/icons/dtafalonso/modern-xp/256/ModernXP-62-Folder-Images-icon.png"
             }
-            text={"Mes Images"}
+            text={"Mes Formations"}
           />
           <RightTopMenu
             picture={
               "https://icons.iconarchive.com/icons/dtafalonso/modern-xp/512/ModernXP-38-Folder-Music-icon.png"
             }
-            text={"Ma Musique"}
+            text={"Mes Projets"}
+            showWindow={props.showWindow}
           />
 
           <RightTopMenu

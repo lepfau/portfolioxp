@@ -9,6 +9,9 @@ function Taskbar(props) {
   if (props.appname === "Mon Cv.pdf")
     logo =
       "https://seeklogo.com/images/A/adobe-pdf-logo-1480D328A9-seeklogo.com.png";
+  if (props.appname === "Mes Projets")
+    logo =
+      "https://icons.iconarchive.com/icons/dtafalonso/modern-xp/512/ModernXP-38-Folder-Music-icon.png";
 
   return (
     <div onClick={() => props.hideWindow(props.window)} className="classbar">
