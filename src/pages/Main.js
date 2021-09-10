@@ -8,6 +8,7 @@ import useSound from "use-sound";
 import msnsound from "../assets/msn.mp3";
 import msnlogo from "../assets/msn_messenger.png";
 import WindowsArea from "../components/Bureau/WindowsArea";
+import Form from "../Form";
 
 function Main() {
   const [menuderoule, setMenuderoule] = useState(false);
