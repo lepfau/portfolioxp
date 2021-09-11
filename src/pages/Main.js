@@ -103,10 +103,15 @@ function Main() {
         </div>
         ;
         <div className="horloge">
-          <img style={{ height: "15px", marginRight: "10px" }} src={msnlogo} />
+          <img
+            style={{ height: "15px", marginRight: "10px" }}
+            src={msnlogo}
+            alt="msnlogo"
+          />
           <img
             style={{ height: "15px", marginRight: "10px" }}
             src="https://icon-library.com/images/volume-icon/volume-icon-17.jpg"
+            alt="volum icon"
           />
           <Clock format={"hh-mm"} hour12={false} />
         </div>
