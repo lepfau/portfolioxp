@@ -12,6 +12,8 @@ import WindowsArea from "../components/Bureau/WindowsArea";
 function Main() {
   const [menuderoule, setMenuderoule] = useState(false);
   const [windowsArray, setWindowsarray] = useState([]);
+  const [msn, setMsn] = useState(false)
+  const [play] = useSound(msnsound);
   //FENETRES SUR LE BUREAU
   const [posteTravail, setPostetravail] = useState(false);
   const [trash, setTrash] = useState(false);
@@ -21,6 +23,19 @@ function Main() {
 
   function setmenu() {
     setMenuderoule(!menuderoule);
+  }
+
+  
+
+  function showMsn() {
+    setMsn(true);
+    setTimeout(() => {
+      play()
+    }, 1000);
+  
+    setTimeout(() => {
+      setMsn(false)
+    }, (8000));
   }
 
   function closemenu() {
@@ -62,7 +77,7 @@ function Main() {
     closemenu();
   }
 
-  const [play] = useSound(msnsound);
+
 
   return (
     <div
@@ -104,6 +119,7 @@ function Main() {
         ;
         <div className="horloge">
           <img
+          onClick={() => showMsn()}
             style={{ height: "15px", marginRight: "10px" }}
             src={msnlogo}
             alt="msnlogo"
@@ -120,7 +136,8 @@ function Main() {
       <div className="menuderoule_container">
         {menuderoule && <Menuderoule showWindow={showWindow} />}
       </div>
-      <div className="msncontainer">
+
+      {msn &&       <div className="msncontainer">
         <div className="msnnotif">
           <div className="msnheader">
             <div style={{ display: "flex", alignItems: "center" }}>
@@ -136,14 +153,18 @@ function Main() {
 
           <div className="msncontent">
             <img
-              className="menuderoule_items_pic"
+              className="msncontent_pic"
               src={photoed}
               alt="moi"
             ></img>
-            <p style={{ marginLeft: "10px" }}>Merci de votre visite</p>
+            <div className="msncontent_text">
+              <p style={{ marginBottom: "10px", }}>Edouard dit:</p>
+            <p style={{ margin:"0px" }}>Merci de votre visite</p>
+            </div>
           </div>
         </div>
-      </div>
+      </div> }
+
     </div>
   );
 }
