@@ -12,7 +12,8 @@ import WindowsArea from "../components/Bureau/WindowsArea";
 function Main() {
   const [menuderoule, setMenuderoule] = useState(false);
   const [windowsArray, setWindowsarray] = useState([]);
-  const [msn, setMsn] = useState(false)
+  const [taskbarArray, setTaskbararray] = useState([]);
+  const [msn, setMsn] = useState(false);
   const [play] = useSound(msnsound);
   //FENETRES SUR LE BUREAU
   const [posteTravail, setPostetravail] = useState(false);
@@ -20,8 +21,8 @@ function Main() {
   const [cv, setCv] = useState(false);
   const [mesprojets, setMesprojets] = useState(false);
   const [mail, setMail] = useState(false);
-  const [internet, setInternet] = useState(false)
-  const [popup, setPopup] = useState(false)
+  const [internet, setInternet] = useState(false);
+  const [popup, setPopup] = useState(false);
 
 
   function setmenu() {
@@ -59,6 +60,7 @@ function Main() {
 
   function showWindow(win) {
     let newArray = windowsArray;
+    let newTaskbar = taskbarArray
     setMenuderoule(false);
     if (win === "Poste de travail") setPostetravail(true);
     if (win === "Corbeille") setTrash(true);
@@ -71,7 +73,14 @@ function Main() {
       newArray.push(win);
     }
     if (newArray.includes("Internet Explorer") && !newArray.includes("Popup")) newArray.push("Popup")
+
+  
+  if (newTaskbar.includes(win) === false) {
+    newTaskbar.push(win);
   }
+  if (newTaskbar.includes("Internet Explorer") && !newTaskbar.includes("Popup")) newTaskbar.push("Popup")
+}
+
 
   function closeWindow(win) {
     if (win === "Poste de travail") setPostetravail(false);
@@ -82,9 +91,12 @@ function Main() {
     else if (win === "Internet Explorer") setInternet(false)
     else if (win === "Popup") setPopup(false)
     let arr = windowsArray;
+    let arr2 = taskbarArray;
     arr.splice(arr.indexOf(win), 1);
+    arr2.splice(arr2.indexOf(win), 1);
     //enlever la fenetre fermee de l'array
     setWindowsarray(arr);
+    setTaskbararray(arr2)
   }
 
   function hideWindow(win) {
@@ -129,7 +141,7 @@ function Main() {
           <Demarrer setmenu={setmenu} />
         </div>
         <div className="barremenu">
-          {windowsArray.map((window) => {
+          {taskbarArray.map((window) => {
             return (
               <Taskbar
                 key={window.length}

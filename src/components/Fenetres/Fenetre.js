@@ -86,7 +86,7 @@ function Fenetre(props) {
                 ></button>
               </div>
             </div>
-            <div className="window-body"  >{props.content}</div>
+            <div className="window-body" onClick={() => props.moveItem(props.array, props.text)}  >{props.content}</div>
           </div>
         </Draggable>
       )}
