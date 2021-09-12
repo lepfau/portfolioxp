@@ -11,18 +11,19 @@ import Form from "../Form";
 import postetravail from "../../assets/5131-tOo-Postedetravail.png";
 import logointernet from "../../assets/internetlogo.png";
 
-
 import Icone from "../Icones/Icone";
 import trashlogo from "../../assets/trash.png";
 
 
 function WindowsArea(props) {
+
   return (
     <div className="windows_all" onClick={() => props.closemenu()}>
-      {props.windowArray.map((window) => {
+      {props.windowArray.map((window, index) => {
         if (window === "Poste de travail" && props.posteTravail === true)
           return (
             <Fenetre
+              index={index}
               putOnTop={props.putOnTop}
               key={window}
               closeWindow={props.closeWindow}
@@ -31,11 +32,14 @@ function WindowsArea(props) {
               text={"Poste de travail"}
               logo={postetravail}
               content={<ContentPdt />}
+              array={props.windowArray}
+              moveItem={props.moveItem}
             />
           );
-          else if (window === "Popup" && props.popup === true)
+        else if (window === "Popup" && props.popup === true)
           return (
             <Fenetre
+              index={index}
               putOnTop={props.putOnTop}
               key={window}
               content={<ContentPopup />}
@@ -45,13 +49,17 @@ function WindowsArea(props) {
               text={"Popup"}
               logo={
                 logointernet
+
               }
               hideWindow={props.hideWindow}
+              array={props.windowArray}
+              moveItem={props.moveItem}
             />
           );
-          else if (window === "Internet Explorer" && props.internet === true)
+        else if (window === "Internet Explorer" && props.internet === true)
           return (
             <Fenetre
+              index={index}
               putOnTop={props.putOnTop}
               key={window}
               content={<ContentInternet />}
@@ -63,12 +71,16 @@ function WindowsArea(props) {
                 logointernet
               }
               hideWindow={props.hideWindow}
+              array={props.windowArray}
+              moveItem={props.moveItem}
             />
           );
-          
+
         else if (window === "Me contacter" && props.mail === true)
           return (
+
             <Fenetre
+              index={index}
               putOnTop={props.putOnTop}
               key={window}
               content={<Form />}
@@ -80,11 +92,14 @@ function WindowsArea(props) {
                 "https://upload.wikimedia.org/wikipedia/fr/5/53/Outlook_express_logo-200-200.jpg"
               }
               hideWindow={props.hideWindow}
+              array={props.windowArray}
+              moveItem={props.moveItem}
             />
           );
         else if (window === "Mes Projets" && props.mesprojets === true)
           return (
             <Fenetre
+              index={index}
               putOnTop={props.putOnTop}
               key={window}
               content={<ContentProjets />}
@@ -95,11 +110,14 @@ function WindowsArea(props) {
                 "https://icons.iconarchive.com/icons/dtafalonso/modern-xp/512/ModernXP-38-Folder-Music-icon.png"
               }
               hideWindow={props.hideWindow}
+              array={props.windowArray}
+              moveItem={props.moveItem}
             />
           );
         else if (window === "Corbeille" && props.trash === true)
           return (
             <Fenetre
+            index={index}
               putOnTop={props.putOnTop}
               key={window}
               content={<ContentTrash />}
@@ -108,11 +126,14 @@ function WindowsArea(props) {
               text={"Corbeille"}
               logo={trashlogo}
               hideWindow={props.hideWindow}
+              array={props.windowArray}
+              moveItem={props.moveItem}
             />
           );
         else if (window === "Mon Cv.pdf" && props.cv === true)
           return (
             <Fenetre
+            index={index}
               putOnTop={props.putOnTop}
               key={window}
               content={<ContentCv />}
@@ -124,6 +145,8 @@ function WindowsArea(props) {
                 "https://seeklogo.com/images/A/adobe-pdf-logo-1480D328A9-seeklogo.com.png"
               }
               hideWindow={props.hideWindow}
+              array={props.windowArray}
+              moveItem={props.moveItem}
             />
           );
       })}

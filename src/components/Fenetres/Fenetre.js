@@ -7,12 +7,15 @@ function Fenetre(props) {
     height: props.height || "500px",
     transform: "translate(-369px, -203px)",
     position: "absolute",
+    zIndex: 1
   });
 
   const fullScreenStyle = {
     width: "100%",
     height: "100%",
   };
+
+  
 
   const [fullScreen, setFullscreen] = useState(false);
 
@@ -59,7 +62,7 @@ function Fenetre(props) {
       ) : (
         <Draggable handle="#imhandle">
           <div className="window" style={defaultStyle}>
-            <div className="title-bar" id="imhandle">
+            <div className="title-bar" id="imhandle"  onClick={() => props.moveItem(props.array, props.text)}>
               <div className="title-bar-text">
                 <img
                   className="fenetre_topbar_image"
@@ -83,7 +86,7 @@ function Fenetre(props) {
                 ></button>
               </div>
             </div>
-            <div className="window-body">{props.content}</div>
+            <div className="window-body"  >{props.content}</div>
           </div>
         </Draggable>
       )}

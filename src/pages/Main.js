@@ -22,7 +22,7 @@ function Main() {
   const [mail, setMail] = useState(false);
   const [internet, setInternet] = useState(false)
   const [popup, setPopup] = useState(false)
-  
+
 
   function setmenu() {
     setMenuderoule(!menuderoule);
@@ -33,7 +33,7 @@ function Main() {
     setTimeout(() => {
       play()
     }, 1000);
-  
+
     setTimeout(() => {
       setMsn(false)
     }, (6000));
@@ -46,8 +46,16 @@ function Main() {
   function showPopup() {
     setPopup(true)
 
-   
-      }
+  }
+
+  //fonction pour mettre fenetre cliquée au premier plan
+  function moveItem(arr, element) {
+    let newArray = arr.filter((el) => el !== element);
+    newArray.push(element);
+    setWindowsarray(newArray)
+  };
+
+
 
   function showWindow(win) {
     let newArray = windowsArray;
@@ -57,15 +65,13 @@ function Main() {
     if (win === "Mon Cv.pdf") setCv(true);
     if (win === "Mes Projets") setMesprojets(true);
     if (win === "Me contacter") setMail(true);
-    if (win === "Internet Explorer") {setInternet(true); setPopup(true);}
-    if (win === "Popup") {setPopup(true)}
+    if (win === "Internet Explorer") { setInternet(true); setPopup(true); }
+    if (win === "Popup") { setPopup(true) }
     if (newArray.includes(win) === false) {
       newArray.push(win);
     }
-    if (newArray.includes("Internet Explorer")) newArray.push("Popup")
+    if (newArray.includes("Internet Explorer") && !newArray.includes("Popup")) newArray.push("Popup")
   }
-
-
 
   function closeWindow(win) {
     if (win === "Poste de travail") setPostetravail(false);
@@ -116,6 +122,7 @@ function Main() {
         internet={internet}
         popup={popup}
         windowArray={windowsArray}
+        moveItem={moveItem}
       />
       <div style={{ display: "flex" }}>
         <div>
@@ -136,7 +143,7 @@ function Main() {
         ;
         <div className="horloge">
           <img
-          onClick={() => showMsn()}
+            onClick={() => showMsn()}
             style={{ height: "15px", marginRight: "10px" }}
             src={msnlogo}
             alt="msnlogo"
@@ -154,7 +161,7 @@ function Main() {
         {menuderoule && <Menuderoule showWindow={showWindow} />}
       </div>
 
-      {msn &&       <div className="msncontainer">
+      {msn && <div className="msncontainer">
         <div className="msnnotif">
           <div className="msnheader">
             <div style={{ display: "flex", alignItems: "center" }}>
@@ -176,11 +183,11 @@ function Main() {
             ></img>
             <div className="msncontent_text">
               <p style={{ marginBottom: "10px", }}>Edouard dit:</p>
-            <p style={{ margin:"0px" }}>Merci de votre visite</p>
+              <p style={{ margin: "0px" }}>Merci de votre visite</p>
             </div>
           </div>
         </div>
-      </div> }
+      </div>}
 
     </div>
   );
