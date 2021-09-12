@@ -20,12 +20,13 @@ function Main() {
   const [cv, setCv] = useState(false);
   const [mesprojets, setMesprojets] = useState(false);
   const [mail, setMail] = useState(false);
+  const [internet, setInternet] = useState(false)
+  
 
   function setmenu() {
     setMenuderoule(!menuderoule);
   }
 
-  
 
   function showMsn() {
     setMsn(true);
@@ -35,7 +36,7 @@ function Main() {
   
     setTimeout(() => {
       setMsn(false)
-    }, (8000));
+    }, (6000));
   }
 
   function closemenu() {
@@ -50,6 +51,7 @@ function Main() {
     if (win === "Mon Cv.pdf") setCv(true);
     if (win === "Mes Projets") setMesprojets(true);
     if (win === "Me contacter") setMail(true);
+    if (win === "Internet Explorer") setInternet(true)
     let newArray = windowsArray;
     if (newArray.includes(win) === false) {
       newArray.push(win);
@@ -62,6 +64,7 @@ function Main() {
     else if (win === "Mon Cv.pdf") setCv(false);
     else if (win === "Mes Projets") setMesprojets(false);
     else if (win === "Me contacter") setMail(false);
+    else if (win === "Internet Explorer") setInternet(false)
     let arr = windowsArray;
     arr.splice(arr.indexOf(win), 1);
     //enlever la fenetre fermee de l'array
@@ -74,6 +77,7 @@ function Main() {
     else if (win === "Mon Cv.pdf") setCv(!cv);
     else if (win === "Mes Projets") setMesprojets(!mesprojets);
     else if (win === "Me contacter") setMail(!mail);
+    else if (win === "Internet Explorer") setInternet(!internet)
     closemenu();
   }
 
@@ -98,6 +102,7 @@ function Main() {
         cv={cv}
         mail={mail}
         mesprojets={mesprojets}
+        internet={internet}
         windowArray={windowsArray}
       />
       <div style={{ display: "flex" }}>

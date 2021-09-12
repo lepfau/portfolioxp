@@ -1,6 +1,7 @@
 import React from "react";
 import pdtlogo from "../../assets/5131-tOo-Postedetravail.png";
 import trashlogo from "../../assets/trash.png";
+import logointernet from "../../assets/internetlogo.png"; 
 
 function Taskbar(props) {
   let logo = "";
@@ -15,7 +16,8 @@ function Taskbar(props) {
   if (props.appname === "Me contacter")
     logo =
       "https://upload.wikimedia.org/wikipedia/fr/5/53/Outlook_express_logo-200-200.jpg";
-
+if (props.appname === "Internet Explorer")
+logo = logointernet
   return (
     <div onClick={() => props.hideWindow(props.window)} className="classbar">
       <img className="taskbarlogo" src={logo} alt="logotaskbar"></img>

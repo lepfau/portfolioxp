@@ -5,8 +5,11 @@ import ContentPdt from "../Fenetres/ContentPdt";
 import ContentTrash from "../Fenetres/ContentTrash";
 import ContentCv from "../Fenetres/ContentCv";
 import ContentProjets from "../Fenetres/ContentProjets";
+import ContentInternet from "../Fenetres/ContentInternet"
 import Form from "../Form";
 import postetravail from "../../assets/5131-tOo-Postedetravail.png";
+import logointernet from "../../assets/internetlogo.png";
+
 
 import Icone from "../Icones/Icone";
 import trashlogo from "../../assets/trash.png";
@@ -26,6 +29,22 @@ function WindowsArea(props) {
               text={"Poste de travail"}
               logo={postetravail}
               content={<ContentPdt />}
+            />
+          );
+          else if (window === "Internet Explorer" && props.internet === true)
+          return (
+            <Fenetre
+              putOnTop={props.putOnTop}
+              key={window}
+              content={<ContentInternet />}
+              width={"800px"}
+              height={"600px"}
+              closeWindow={props.closeWindow}
+              text={"Internet Explorer"}
+              logo={
+                logointernet
+              }
+              hideWindow={props.hideWindow}
             />
           );
         else if (window === "Me contacter" && props.mail === true)

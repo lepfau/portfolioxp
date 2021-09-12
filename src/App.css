@@ -21,6 +21,49 @@
   box-sizing: border-box;
 }
 
+.popup {
+  height: 91%;
+  width: 94%;
+  background: linear-gradient(90deg, red 50%, transparent 50%), 
+              linear-gradient(90deg, red 50%, transparent 50%), 
+              linear-gradient(0deg, red 50%, transparent 50%), 
+              linear-gradient(0deg, red 50%, transparent 50%);
+  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+  background-size: 8px 4px, 8px 4px, 4px 8px, 4px 8px;
+  background-position: 0% 0%, 100% 100%, 0% 100%, 100% 0px;
+  border-radius: 5px;
+  padding: 14px;
+  animation: dash 5s linear infinite;
+  background-color: #d79beb;
+}
+
+.popupinside {
+  height: 93%;
+  width: 96%;
+  background: linear-gradient(90deg, red 50%, transparent 50%), 
+              linear-gradient(90deg, red 50%, transparent 50%), 
+              linear-gradient(0deg, red 50%, transparent 50%), 
+              linear-gradient(0deg, red 50%, transparent 50%);
+  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+  background-size: 8px 4px, 8px 4px, 4px 8px, 4px 8px;
+  background-position: 0% 0%, 100% 100%, 0% 100%, 100% 0px;
+  border-radius: 8px;
+  padding: 10px;
+  animation: dash2 10s linear infinite;
+}
+
+@keyframes dash {
+  to {
+      background-position: 100% 0%, 0% 100%, 0% 0%, 100% 100%;
+  }
+}
+
+@keyframes dash2 {
+  to {
+      background-position: 100% 0%, 0% 100%, 0% 0%, 100% 100%;
+  }
+}
+
 form {
   flex-direction: column;
   display: flex;
@@ -36,6 +79,14 @@ form {
   align-self: center;
   justify-self: center;
 } */
+.window-body {
+  margin: 0;
+  width: 100%;
+  height: 93%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .forminput {
   border: 1px solid black;
@@ -153,7 +204,8 @@ form {
 
 .pdt_content {
   display: flex;
-}
+    align-self: flex-start;
+    width: 100%;}
 
 .pdt_drive {
   height: 50px;

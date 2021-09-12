@@ -21,6 +21,7 @@ function Menuderoule(props) {
             picture={logointernet}
             firsttext={"Internet"}
             secondtext={"Internet Explorer"}
+            showWindow={props.showWindow}
           />
           <TopMenuItem
             picture={
