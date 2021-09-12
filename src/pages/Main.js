@@ -21,12 +21,12 @@ function Main() {
   const [mesprojets, setMesprojets] = useState(false);
   const [mail, setMail] = useState(false);
   const [internet, setInternet] = useState(false)
+  const [popup, setPopup] = useState(false)
   
 
   function setmenu() {
     setMenuderoule(!menuderoule);
   }
-
 
   function showMsn() {
     setMsn(true);
@@ -43,20 +43,29 @@ function Main() {
     setMenuderoule(false);
   }
 
+  function showPopup() {
+    setPopup(true)
+
+   
+      }
+
   function showWindow(win) {
-    console.log("here");
+    let newArray = windowsArray;
     setMenuderoule(false);
     if (win === "Poste de travail") setPostetravail(true);
     if (win === "Corbeille") setTrash(true);
     if (win === "Mon Cv.pdf") setCv(true);
     if (win === "Mes Projets") setMesprojets(true);
     if (win === "Me contacter") setMail(true);
-    if (win === "Internet Explorer") setInternet(true)
-    let newArray = windowsArray;
+    if (win === "Internet Explorer") {setInternet(true); setPopup(true);}
+    if (win === "Popup") {setPopup(true)}
     if (newArray.includes(win) === false) {
       newArray.push(win);
     }
+    if (newArray.includes("Internet Explorer")) newArray.push("Popup")
   }
+
+
 
   function closeWindow(win) {
     if (win === "Poste de travail") setPostetravail(false);
@@ -65,6 +74,7 @@ function Main() {
     else if (win === "Mes Projets") setMesprojets(false);
     else if (win === "Me contacter") setMail(false);
     else if (win === "Internet Explorer") setInternet(false)
+    else if (win === "Popup") setPopup(false)
     let arr = windowsArray;
     arr.splice(arr.indexOf(win), 1);
     //enlever la fenetre fermee de l'array
@@ -78,6 +88,7 @@ function Main() {
     else if (win === "Mes Projets") setMesprojets(!mesprojets);
     else if (win === "Me contacter") setMail(!mail);
     else if (win === "Internet Explorer") setInternet(!internet)
+    else if (win === "Popup") setPopup(!popup)
     closemenu();
   }
 
@@ -103,6 +114,7 @@ function Main() {
         mail={mail}
         mesprojets={mesprojets}
         internet={internet}
+        popup={popup}
         windowArray={windowsArray}
       />
       <div style={{ display: "flex" }}>

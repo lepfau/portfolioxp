@@ -6,6 +6,7 @@ import ContentTrash from "../Fenetres/ContentTrash";
 import ContentCv from "../Fenetres/ContentCv";
 import ContentProjets from "../Fenetres/ContentProjets";
 import ContentInternet from "../Fenetres/ContentInternet"
+import ContentPopup from "../Fenetres/ContentPopup";
 import Form from "../Form";
 import postetravail from "../../assets/5131-tOo-Postedetravail.png";
 import logointernet from "../../assets/internetlogo.png";
@@ -13,6 +14,7 @@ import logointernet from "../../assets/internetlogo.png";
 
 import Icone from "../Icones/Icone";
 import trashlogo from "../../assets/trash.png";
+
 
 function WindowsArea(props) {
   return (
@@ -31,6 +33,22 @@ function WindowsArea(props) {
               content={<ContentPdt />}
             />
           );
+          else if (window === "Popup" && props.popup === true)
+          return (
+            <Fenetre
+              putOnTop={props.putOnTop}
+              key={window}
+              content={<ContentPopup />}
+              width={"500px"}
+              height={"400px"}
+              closeWindow={props.closeWindow}
+              text={"Popup"}
+              logo={
+                logointernet
+              }
+              hideWindow={props.hideWindow}
+            />
+          );
           else if (window === "Internet Explorer" && props.internet === true)
           return (
             <Fenetre
@@ -47,6 +65,7 @@ function WindowsArea(props) {
               hideWindow={props.hideWindow}
             />
           );
+          
         else if (window === "Me contacter" && props.mail === true)
           return (
             <Fenetre

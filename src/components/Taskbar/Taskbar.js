@@ -18,6 +18,8 @@ function Taskbar(props) {
       "https://upload.wikimedia.org/wikipedia/fr/5/53/Outlook_express_logo-200-200.jpg";
 if (props.appname === "Internet Explorer")
 logo = logointernet
+if (props.appname === "Popup")
+logo = logointernet
   return (
     <div onClick={() => props.hideWindow(props.window)} className="classbar">
       <img className="taskbarlogo" src={logo} alt="logotaskbar"></img>
