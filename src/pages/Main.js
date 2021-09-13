@@ -51,12 +51,12 @@ function Main() {
 
   //fonction pour mettre fenetre cliquée au premier plan
   function moveItem(arr, element) {
-    let newArray = arr.filter((el) => el !== element);
-    newArray.push(element);
-    setWindowsarray(newArray)
+    if (arr.length > 0) {
+      let newArray = arr.filter((el) => el !== element);
+      newArray.push(element);
+      setWindowsarray(newArray)
+    }
   };
-
-
 
   function showWindow(win) {
     let newArray = windowsArray;
@@ -74,29 +74,33 @@ function Main() {
     }
     if (newArray.includes("Internet Explorer") && !newArray.includes("Popup")) newArray.push("Popup")
 
-  
-  if (newTaskbar.includes(win) === false) {
-    newTaskbar.push(win);
+
+    if (newTaskbar.includes(win) === false) {
+      newTaskbar.push(win);
+    }
+    if (newTaskbar.includes("Internet Explorer") && !newTaskbar.includes("Popup")) newTaskbar.push("Popup")
   }
-  if (newTaskbar.includes("Internet Explorer") && !newTaskbar.includes("Popup")) newTaskbar.push("Popup")
-}
 
 
   function closeWindow(win) {
+
+    let arr = windowsArray;
+    arr.splice(arr.indexOf(win), 1);
+    let arr2 = taskbarArray;
+    arr2.splice(arr2.indexOf(win), 1);
+
+    setTaskbararray(arr2)
+    setWindowsarray(arr);
+
     if (win === "Poste de travail") setPostetravail(false);
     else if (win === "Corbeille") setTrash(false);
     else if (win === "Mon Cv.pdf") setCv(false);
     else if (win === "Mes Projets") setMesprojets(false);
     else if (win === "Me contacter") setMail(false);
-    else if (win === "Internet Explorer") setInternet(false)
-    else if (win === "Popup") setPopup(false)
-    let arr = windowsArray;
-    let arr2 = taskbarArray;
-    arr.splice(arr.indexOf(win), 1);
-    arr2.splice(arr2.indexOf(win), 1);
-    //enlever la fenetre fermee de l'array
-    setWindowsarray(arr);
-    setTaskbararray(arr2)
+    else if (win === "Internet Explorer") setInternet(false);
+    else if (win === "Popup") setPopup(false);
+
+
   }
 
   function hideWindow(win) {
@@ -109,7 +113,6 @@ function Main() {
     else if (win === "Popup") setPopup(!popup)
     closemenu();
   }
-
 
 
   return (
@@ -133,7 +136,7 @@ function Main() {
         mesprojets={mesprojets}
         internet={internet}
         popup={popup}
-        windowArray={windowsArray}
+        windowsArray={windowsArray}
         moveItem={moveItem}
       />
       <div style={{ display: "flex" }}>

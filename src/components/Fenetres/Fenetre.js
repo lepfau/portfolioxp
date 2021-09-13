@@ -5,27 +5,11 @@ function Fenetre(props) {
   const [defaultStyle, setDefaultstyle] = useState({
     width: props.width || "700px",
     height: props.height || "500px",
-
     position: "absolute",
-    zIndex: 1
+
   });
 
-  const fullScreenStyle = {
-    width: "100%",
-    height: "100%",
-  };
-
-
-
   const [fullScreen, setFullscreen] = useState(false);
-
-  // const fullScreen = () => {
-  //   setDefaultstyle({
-  //     width: "1030px",
-  //     height: "730px",
-  //     transform: "translate(0px, 0px)",
-  //   });
-  // };
 
   return (
     <div className="window_elements">
@@ -67,7 +51,7 @@ function Fenetre(props) {
      <div className="window_container">
        <div className="window_basic">
          <div className="title-bar" id="imhandle">
-           <div className="title-bar-text">
+           <div className="title-bar-text" >
              <img
                className="fenetre_topbar_image"
                src={props.logo}
@@ -90,7 +74,7 @@ function Fenetre(props) {
              ></button>
            </div>
          </div>
-         <div className="window_content">
+         <div className="window_content"  onClick={() => props.moveItem(props.array, props.text)}>
            {props.content}
          </div>
        </div>
