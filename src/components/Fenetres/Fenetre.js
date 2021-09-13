@@ -17,7 +17,7 @@ function Fenetre(props) {
        <div style={{height:"96%", width:"100%"}}>
        <div className="window_container_fullscreen">
          <div className="window_basic">
-           <div className="title-bar" id="imhandle">
+           <div className="title-bar" id="imhandle" onDoubleClick={() => setFullscreen(!fullScreen)}>
              <div className="title-bar-text">
                <img
                  className="fenetre_topbar_image"
@@ -50,7 +50,7 @@ function Fenetre(props) {
      <Draggable handle="#imhandle">
      <div className="window_container">
        <div className="window_basic">
-         <div className="title-bar" id="imhandle">
+         <div className="title-bar" id="imhandle"  onDoubleClick={() => setFullscreen(!fullScreen)}>
            <div className="title-bar-text" >
              <img
                className="fenetre_topbar_image"
