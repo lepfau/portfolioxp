@@ -2,19 +2,17 @@ import React, { useState } from "react";
 import Draggable from "react-draggable";
 
 function Fenetre(props) {
-  const [defaultStyle, setDefaultstyle] = useState({
-    width: props.width || "700px",
-    height: props.height || "500px",
-    position: "absolute",
 
-  });
 
   const [fullScreen, setFullscreen] = useState(false);
+
+//   let test = '';
+// if (fullScreen) test = "disabled"
 
   return (
     <div className="window_elements">
       {fullScreen ? 
-       <div style={{height:"96%", width:"100%"}}>
+       <div style={{height:"100%", width:"100%"}}>
        <div className="window_container_fullscreen">
          <div className="window_basic">
            <div className="title-bar" id="imhandle" onDoubleClick={() => setFullscreen(!fullScreen)}>
@@ -48,7 +46,7 @@ function Fenetre(props) {
        </div>
      </div> :
      <Draggable handle="#imhandle">
-     <div className="window_container">
+     <div className="window_container" style={{width:props.width, height:props.height}}>
        <div className="window_basic">
          <div className="title-bar" id="imhandle"  onDoubleClick={() => setFullscreen(!fullScreen)}>
            <div className="title-bar-text" >

@@ -122,6 +122,7 @@ function Main() {
         flexDirection: "column",
         height: "100%",
         width: "100%",
+        justifyContent:"flex-end"
       }}
     >
       <WindowsArea
@@ -139,7 +140,7 @@ function Main() {
         windowsArray={windowsArray}
         moveItem={moveItem}
       />
-      <div style={{ display: "flex" }}>
+      <div className="full_bottom">
         <div>
           <Demarrer setmenu={setmenu} />
         </div>

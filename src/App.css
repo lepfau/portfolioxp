@@ -12,6 +12,14 @@ body {
 overflow: hidden;
 }
 
+.full_bottom {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  align-self: flex-end;
+  justify-content: flex-end;
+}
+
 .App {
   display: flex;
   align-items: center;
@@ -70,8 +78,7 @@ form {
   flex-direction: column;
   display: flex;
   background-color: #ecead9;
-  padding: 6px;
-  margin: -4px;
+
 }
 
 /* .window {
@@ -365,8 +372,8 @@ height: 450px;
 }
 
 .window_container {
-  height: 50%;
-  width: 50%;
+  height: 618px;
+  width: 864px;
   position: absolute;
   z-index: 1;
 }
@@ -398,7 +405,7 @@ height: 450px;
 .window_content {
   background-color: white;
   height: 100%;
-  width: 99.7%;
+ 
   border: 2px solid blue;
 }
 
