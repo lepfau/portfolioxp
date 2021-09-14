@@ -3,9 +3,6 @@ import Draggable from "react-draggable";
 
 function Fenetre(props) {
 
-
-  
-
 //   let test = '';
 // if (fullScreen) test = "disabled"
 
@@ -15,7 +12,7 @@ function Fenetre(props) {
        <div style={{height:"100%", width:"100%"}}>
        <div className="window_container_fullscreen">
          <div className="window_basic">
-           <div className="title-bar" id="imhandle" onDoubleClick={() => props.makefullScreen()}>
+           <div className="title-bar" id="imhandle" onDoubleClick={() => props.makefullScreen(props.text)}>
              <div className="title-bar-text">
                <img
                  className="fenetre_topbar_image"
@@ -31,7 +28,7 @@ function Fenetre(props) {
                ></button>
                <button
                  aria-label="Maximize"
-                 onClick={() => props.makefullScreen()}
+                 onClick={() => props.makefullScreen(props.text)}
                ></button>
                <button
                  aria-label="Close"
@@ -48,7 +45,7 @@ function Fenetre(props) {
      <Draggable handle="#imhandle">
      <div className="window_container" style={{width:props.width, height:props.height}}>
        <div className="window_basic">
-         <div className="title-bar" id="imhandle"  onDoubleClick={() => props.makefullScreen()}>
+         <div className="title-bar" id="imhandle"  onDoubleClick={() => props.makefullScreen(props.text)}>
            <div className="title-bar-text" >
              <img
                className="fenetre_topbar_image"
@@ -64,7 +61,7 @@ function Fenetre(props) {
              ></button>
              <button
                aria-label="Maximize"
-               onClick={() => props.makefullScreen()}
+               onClick={() => props.makefullScreen(props.text)}
              ></button>
              <button
                aria-label="Close"

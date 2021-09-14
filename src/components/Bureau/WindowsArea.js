@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Trash from "../Icones/Trash";
 import Fenetre from "../Fenetres/Fenetre";
 import ContentPdt from "../Fenetres/ContentPdt";
@@ -17,15 +17,32 @@ import trashlogo from "../../assets/trash.png";
 
 function WindowsArea(props) {
   const [fullScreen, setFullscreen] = useState(false);
+  const [fullScreenPdt, setFullscreenPdt] = useState(false);
+  const [fullScreenPopup, setFullscreenPopup] = useState(false);
+  const [fullScreenInternet, setFullScreenInternet] = useState(false);
+  const [fullScreenContact, setFullScreenContact] = useState(false);
+  const [fullScreenTrash, setFullScreenTrash] = useState(false);
+  const [fullScreenCv, setfullScreenCv] = useState(false);
+  const [fullScreenProjets, setfullScreenProjets] = useState(false);
+
+
   const [scale, setScale] = useState(1)
 
-  function setthatScale () {
-    fullScreen ? setScale(1) : setScale(2.2)
+  function setthatScale() {
+    fullScreenCv ? setScale(1) : setScale(2.2)
   }
 
-  function makefullScreen () {
-    setFullscreen(!fullScreen)
-    setthatScale()
+  function makefullScreen(win) {
+    if (win === "Poste de travail") setFullscreenPdt(!fullScreenPdt);
+    else if (win === "Popup") setFullscreenPopup(!fullScreenPopup);
+    else if (win === "Internet Explorer") setFullScreenInternet(!fullScreenInternet);
+    else if (win === "Me contacter") setFullScreenContact(!fullScreenContact);
+    else if (win === "Mes Projets") setfullScreenProjets(!fullScreenProjets);
+    else if (win === "Corbeille") setFullScreenTrash(!fullScreenTrash);
+    else if (win === "Mon Cv.pdf" && fullScreenCv === false) {setfullScreenCv(true); setthatScale()};
+    if(win === "Mon Cv.pdf" && fullScreenCv) {setfullScreenCv(false); setthatScale()}
+   
+  
   }
 
 
@@ -46,7 +63,7 @@ function WindowsArea(props) {
               array={props.windowsArray}
               moveItem={props.moveItem}
               makefullScreen={makefullScreen}
-              fullScreen={fullScreen}
+              fullScreen={fullScreenPdt}
             />
           );
         else if (window === "Popup" && props.popup === true)
@@ -67,7 +84,7 @@ function WindowsArea(props) {
               array={props.windowsArray}
               moveItem={props.moveItem}
               makefullScreen={makefullScreen}
-              fullScreen={fullScreen}
+              fullScreen={fullScreenPopup}
             />
           );
         else if (window === "Internet Explorer" && props.internet === true)
@@ -87,7 +104,7 @@ function WindowsArea(props) {
               array={props.windowsArray}
               moveItem={props.moveItem}
               makefullScreen={makefullScreen}
-              fullScreen={fullScreen}
+              fullScreen={fullScreenInternet}
             />
           );
 
@@ -109,7 +126,7 @@ function WindowsArea(props) {
               array={props.windowsArray}
               moveItem={props.moveItem}
               makefullScreen={makefullScreen}
-              fullScreen={fullScreen}
+              fullScreen={fullScreenContact}
 
             />
           );
@@ -129,7 +146,7 @@ function WindowsArea(props) {
               array={props.windowsArray}
               moveItem={props.moveItem}
               makefullScreen={makefullScreen}
-              fullScreen={fullScreen}
+              fullScreen={fullScreenProjets}
             />
           );
         else if (window === "Corbeille" && props.trash === true)
@@ -146,7 +163,7 @@ function WindowsArea(props) {
               array={props.windowsArray}
               moveItem={props.moveItem}
               makefullScreen={makefullScreen}
-              fullScreen={fullScreen}
+              fullScreen={fullScreenTrash}
             />
           );
         else if (window === "Mon Cv.pdf" && props.cv === true)
@@ -166,7 +183,7 @@ function WindowsArea(props) {
               array={props.windowsArray}
               moveItem={props.moveItem}
               makefullScreen={makefullScreen}
-              fullScreen={fullScreen}
+              fullScreen={fullScreenCv}
               scale={scale}
             />
           );
