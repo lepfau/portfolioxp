@@ -1,14 +1,13 @@
 import React from "react";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Main from "./pages/Main";
+import First from "./pages/First";
 
 function App() {
   return (
     <HashRouter basename='/'>
     <div className="App">
-    <Route exact path="/" component={Main} />
-   
+    <Route exact path="/" component={First} />
 
     </div>
     </HashRouter>

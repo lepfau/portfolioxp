@@ -26,9 +26,87 @@ overflow: hidden;
   justify-content: center;
   height: 100vh;
   min-height: 650px;
-  background-color: black;
+  background-color: white;
   margin: none;
   box-sizing: border-box;
+}
+
+.start-btn {
+  position: absolute;
+  /* right: 80px; */
+  margin-left: 69vh;
+  z-index: 999;
+  height: 8vh;
+  margin-top: 26vh;
+  opacity: 0;
+}
+.blink_me {
+  animation: blinker 0.5s ease infinite;
+  color: orange;
+  font-size: 5vh;
+  position: absolute;
+  /* right: 80px; */
+  margin-left: 68.79vh;
+  z-index: 999;
+  height: 8vh;
+  margin-top: 10.57vh;
+}
+
+.blink_me2 {
+  animation: blinker2 0.5s ease infinite;
+  color: greenyellow;
+  font-size: 5vh;
+  position: absolute;
+  /* right: 80px; */
+  margin-left: 68.79vh;
+  z-index: 999;
+  height: 8vh;
+  margin-top: 5.7vh;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes blinker2 {
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.photopc {
+  height: 100vh;
+  z-index: 2;
+}
+
+.bios {
+  position: absolute;
+ z-index: 1;
+  height: 36vh;
+  margin-top: -9vh;
+  width: 46vh;
+  margin-left: -10vh;
+}
+
+.eteint {
+  background-color: black;
+  position: absolute;
+  z-index: 1;
+  height: 36vh;
+  margin-top: -18vh;
+  width: 46vh;
+  margin-left: -20vh;
+}
+
+.xploading {
+  position: absolute;
+  z-index: 1;
+   height: 36vh;
+   margin-top: -9vh;
+   width: 46vh;
+   margin-left: -10vh;
 }
 
 .popup {
