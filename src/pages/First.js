@@ -34,6 +34,7 @@ function First() {
         }, 10000);
         setTimeout(() => {
             setHome(false)
+            setMain(true)
         }, 12000);
     }
 
