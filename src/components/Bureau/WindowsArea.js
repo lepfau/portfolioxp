@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Trash from "../Icones/Trash";
 import Fenetre from "../Fenetres/Fenetre";
 import ContentPdt from "../Fenetres/ContentPdt";
@@ -16,6 +16,20 @@ import trashlogo from "../../assets/trash.png";
 
 
 function WindowsArea(props) {
+  const [fullScreen, setFullscreen] = useState(false);
+  const [scale, setScale] = useState(1)
+
+  function setthatScale () {
+    fullScreen ? setScale(1) : setScale(2)
+  }
+
+  function makefullScreen () {
+    setFullscreen(!fullScreen)
+    setthatScale()
+  }
+
+
+
 
   return (
     <div className="windows_all" onClick={() => props.closemenu()}>
@@ -33,6 +47,8 @@ function WindowsArea(props) {
               content={<ContentPdt />}
               array={props.windowsArray}
               moveItem={props.moveItem}
+              makefullScreen={makefullScreen}
+              fullScreen={fullScreen}
             />
           );
         else if (window === "Popup" && props.popup === true)
@@ -52,6 +68,8 @@ function WindowsArea(props) {
               hideWindow={props.hideWindow}
               array={props.windowsArray}
               moveItem={props.moveItem}
+              makefullScreen={makefullScreen}
+              fullScreen={fullScreen}
             />
           );
         else if (window === "Internet Explorer" && props.internet === true)
@@ -70,6 +88,8 @@ function WindowsArea(props) {
               hideWindow={props.hideWindow}
               array={props.windowsArray}
               moveItem={props.moveItem}
+              makefullScreen={makefullScreen}
+              fullScreen={fullScreen}
             />
           );
 
@@ -90,6 +110,9 @@ function WindowsArea(props) {
               hideWindow={props.hideWindow}
               array={props.windowsArray}
               moveItem={props.moveItem}
+              makefullScreen={makefullScreen}
+              fullScreen={fullScreen}
+
             />
           );
         else if (window === "Mes Projets" && props.mesprojets === true)
@@ -107,6 +130,8 @@ function WindowsArea(props) {
               hideWindow={props.hideWindow}
               array={props.windowsArray}
               moveItem={props.moveItem}
+              makefullScreen={makefullScreen}
+              fullScreen={fullScreen}
             />
           );
         else if (window === "Corbeille" && props.trash === true)
@@ -122,6 +147,8 @@ function WindowsArea(props) {
               hideWindow={props.hideWindow}
               array={props.windowsArray}
               moveItem={props.moveItem}
+              makefullScreen={makefullScreen}
+              fullScreen={fullScreen}
             />
           );
         else if (window === "Mon Cv.pdf" && props.cv === true)
@@ -129,7 +156,7 @@ function WindowsArea(props) {
             <Fenetre
               putOnTop={props.putOnTop}
               key={window}
-              content={<ContentCv />}
+              content={<ContentCv scale={scale} />}
               width={"706px"}
               height={"700px"}
               closeWindow={props.closeWindow}
@@ -140,6 +167,9 @@ function WindowsArea(props) {
               hideWindow={props.hideWindow}
               array={props.windowsArray}
               moveItem={props.moveItem}
+              makefullScreen={makefullScreen}
+              fullScreen={fullScreen}
+              scale={scale}
             />
           );
       })}
