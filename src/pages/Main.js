@@ -8,6 +8,9 @@ import useSound from "use-sound";
 import msnsound from "../assets/msn.mp3";
 import msnlogo from "../assets/msn_messenger.png";
 import WindowsArea from "../components/Bureau/WindowsArea";
+import Zoom from 'react-reveal/Zoom';
+import LightSpeed from 'react-reveal/LightSpeed';
+import RubberBand from 'react-reveal/RubberBand';
 
 function Main() {
   const [menuderoule, setMenuderoule] = useState(false);
@@ -116,13 +119,15 @@ function Main() {
 
 
   return (
+    <Zoom>
     <div
       style={{
         display: "flex",
         flexDirection: "column",
         height: "100%",
         width: "100%",
-        justifyContent:"flex-end"
+        justifyContent:"flex-end", 
+
       }}
     >
       <WindowsArea
@@ -206,6 +211,7 @@ function Main() {
       </div>}
 
     </div>
+    </Zoom>
   );
 }
 

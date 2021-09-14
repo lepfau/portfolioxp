@@ -29,6 +29,11 @@ overflow: hidden;
   background-color: white;
   margin: none;
   box-sizing: border-box;
+  display: -webkit-flex;
+display: -moz-flex;
+display: flex;
+
+justify-content: center;
 }
 
 .start-btn {
@@ -651,7 +656,7 @@ height: 450px;
 }
 
 .scrollcv {
-  height: 96.8%;
+  height: 95%;
   overflow: scroll;
 }
 
@@ -695,22 +700,13 @@ height: 450px;
 }
 
 .menuderoule_header {
-  background: linear-gradient(
-      to bottom,
-      #98b0e7 0%,
-      #2e81ec 5%,
-      #2174e0 10%,
-      #0759c5 18%,
-      #4778e0 92%,
-      #678fe4 100%
-    )
-    center/cover no-repeat;
+  background: linear-gradient( to bottom, #98b0e7 0%, #2e81ec 5%, #2174e0 10%, #0759c5 18%, #4778e0 92%, #678fe4 100% ) center/cover no-repeat;
   height: 15%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   color: white;
-  font-size: 25px;
+  font-size: 24px;
   font-weight: 400;
   text-shadow: 2px 2px 4px black;
   border-top-right-radius: 8px;
@@ -720,21 +716,22 @@ height: 450px;
 .menuderoule {
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
-  width: 520px;
+  width: 505px;
   cursor: default;
   position: absolute;
   align-self: flex-end;
   justify-self: flex-end;
   box-shadow: 1px 1px 2px black;
-  z-index: 50;
+  z-index: 0;
+  bottom: 130px;
+  height: 80vh;
+  max-height: 591px;
 }
 
 .menuderoule_container {
   display: flex;
   position: absolute;
-  /* top: 911px; */
-  bottom: 34px;
-  height: 100%;
+
 }
 
 .profilepic {
@@ -748,8 +745,9 @@ height: 450px;
 
 .menuderoule_middle {
   display: flex;
-  height: 544px;
+  height: 95%;
 }
+
 
 .menuderoule_leftpart {
   background-color: white;
@@ -766,19 +764,9 @@ height: 450px;
 }
 
 .menuderoule_footer {
-  background-color: blue;
-  background: linear-gradient(
-      to bottom,
-      #98b0e7 0%,
-      #2e81ec 5%,
-      #2174e0 10%,
-      #0759c5 18%,
-      #4075e9 92%,
-      #678fe4 100%
-    )
-    center/cover no-repeat;
-  height: 60px;
-  position: relative;
+    background: linear-gradient( to bottom, #98b0e7 0%, #2e81ec 5%, #2174e0 10%, #0759c5 18%, #4075e9 92%, #678fe4 100% ) center/cover no-repeat;
+    height: 9%;
+    position: relative;
 }
 
 .menuderoule_items {

@@ -3,7 +3,7 @@ import Main from "./Main";
 import Homepage from "./Homepage";
 import useSound from "use-sound";
 import postbeep from "../assets/postbeep.mp3"
-import Zoom from 'react-reveal/Zoom';
+
 
 function First() {
 
@@ -35,7 +35,7 @@ function First() {
         setTimeout(() => {
             setHome(false)
             setMain(true)
-        }, 12000);
+        }, 10000);
     }
 
 
