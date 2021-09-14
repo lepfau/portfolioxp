@@ -33,9 +33,10 @@ function First() {
             setBureau(true)
         }, 10000);
         setTimeout(() => {
+
             setHome(false)
             setMain(true)
-        }, 10000);
+        }, 12000);
     }
 
 
