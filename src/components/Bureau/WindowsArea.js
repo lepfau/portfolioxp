@@ -20,15 +20,13 @@ function WindowsArea(props) {
   const [scale, setScale] = useState(1)
 
   function setthatScale () {
-    fullScreen ? setScale(1) : setScale(2)
+    fullScreen ? setScale(1) : setScale(2.2)
   }
 
   function makefullScreen () {
     setFullscreen(!fullScreen)
     setthatScale()
   }
-
-
 
 
   return (
