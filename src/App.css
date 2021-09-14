@@ -1,5 +1,3 @@
-@import url("http://fonts.cdnfonts.com/css/segoe-ui-4");
-
 html,
 body,
 div,
@@ -560,7 +558,7 @@ form {
   width: 160px;
   display: flex;
   align-items: center;
-  font-size: 22px;
+  font-size: 21px;
   font-style: italic;
 
   background: linear-gradient(
@@ -574,8 +572,8 @@ form {
     center/cover no-repeat;
   height: 34px;
   color: white;
-  font-family: "Segoe UI";
-  font-weight: 900;
+  font-family: "Tahoma";
+  font-weight: 700;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   z-index: 2;
