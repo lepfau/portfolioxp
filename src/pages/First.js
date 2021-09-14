@@ -22,21 +22,19 @@ function First() {
         setTimeout(() => {
             setLoading(true);
         
-        }, 1000000);
+        }, 1000);
         
         setTimeout(() => {
             setLoading(false)
             setXpload(true)
-        }, 8000000);
+        }, 8000);
         setTimeout(() => {
             setXpload(false)
             setBureau(true)
-        }, 10000000);
+        }, 10000);
         setTimeout(() => {
-
             setHome(false)
-            setMain(true)
-        }, 1200000);
+        }, 12000);
     }
 
 
