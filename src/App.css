@@ -1,20 +1,15 @@
-@import url('http://fonts.cdnfonts.com/css/segoe-ui-4');
+@import url('http://fonts.cdnfonts.com/css/Segoe UI Bold Italic');
 
 .fullfenetre {
   width: 100%;
   height: 100%;
 }
 
-@font-face {
-  font-family: "Segoe UI";
-  src: url("assets/Segoe\ UI.woff") format('woff');
-}
 
-.body {
+body {
   margin: none;
   box-sizing: border-box;
-  overflow-y: hidden;
-  overflow-x: hidden;
+overflow: hidden;
 }
 
 .App {
@@ -308,7 +303,7 @@ height: 450px;
     center/cover no-repeat;
   height: 34px;
   color: white;
-  font-family: "Segoe UI";
+  font-family: "Segoe UI Bold Italic";
   font-weight: 600;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
