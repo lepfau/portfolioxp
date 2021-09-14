@@ -3,80 +3,80 @@ import Draggable from "react-draggable";
 
 function Fenetre(props) {
 
-//   let test = '';
-// if (fullScreen) test = "disabled"
+  //   let test = '';
+  // if (fullScreen) test = "disabled"
 
   return (
     <div className="window_elements">
-      {props.fullScreen ? 
-       <div style={{height:"100%", width:"100%"}}>
-       <div className="window_container_fullscreen">
-         <div className="window_basic">
-           <div className="title-bar" id="imhandle" onDoubleClick={() => props.makefullScreen(props.text)}>
-             <div className="title-bar-text">
-               <img
-                 className="fenetre_topbar_image"
-                 src={props.logo}
-                 alt="super"
-               />
-               {props.text}
-             </div>
-             <div className="title-bar-controls">
-               <button
-                 aria-label="Minimize"
-                 onClick={() => props.hideWindow(props.text)}
-               ></button>
-               <button
-                 aria-label="Maximize"
-                 onClick={() => props.makefullScreen(props.text)}
-               ></button>
-               <button
-                 aria-label="Close"
-                 onClick={() => props.closeWindow(props.text)}
-               ></button>
-             </div>
-           </div>
-           <div className="window_content">
-             {props.content}
-           </div>
-         </div>
-       </div>
-     </div> :
-     <Draggable handle="#imhandle">
-     <div className="window_container" style={{width:props.width, height:props.height}}>
-       <div className="window_basic">
-         <div className="title-bar" id="imhandle"  onDoubleClick={() => props.makefullScreen(props.text)}>
-           <div className="title-bar-text" >
-             <img
-               className="fenetre_topbar_image"
-               src={props.logo}
-               alt="super"
-             />
-             {props.text}
-           </div>
-           <div className="title-bar-controls">
-             <button
-               aria-label="Minimize"
-               onClick={() => props.hideWindow(props.text)}
-             ></button>
-             <button
-               aria-label="Maximize"
-               onClick={() => props.makefullScreen(props.text)}
-             ></button>
-             <button
-               aria-label="Close"
-               onClick={() => props.closeWindow(props.text)}
-             ></button>
-           </div>
-         </div>
-         <div className="window_content"  onClick={() => props.moveItem(props.array, props.text)}>
-           {props.content}
-         </div>
-       </div>
-     </div>
-   </Draggable>
-    }
-    
+      {props.fullScreen ?
+        <div style={{ height: "100%", width: "100%" }}>
+          <div className="window_container_fullscreen">
+            <div className="window_basic">
+              <div className="title-bar" id="imhandle" onDoubleClick={() => props.makefullScreen(props.text)}>
+                <div className="title-bar-text">
+                  <img
+                    className="fenetre_topbar_image"
+                    src={props.logo}
+                    alt="super"
+                  />
+                  <p>{props.text}</p>
+                </div>
+                <div className="title-bar-controls">
+                  <button
+                    aria-label="Minimize"
+                    onClick={() => props.hideWindow(props.text)}
+                  ></button>
+                  <button
+                    aria-label="Maximize"
+                    onClick={() => props.makefullScreen(props.text)}
+                  ></button>
+                  <button
+                    aria-label="Close"
+                    onClick={() => props.closeWindow(props.text)}
+                  ></button>
+                </div>
+              </div>
+              <div className="window_content">
+                {props.content}
+              </div>
+            </div>
+          </div>
+        </div> :
+        <Draggable handle="#imhandle">
+          <div className="window_container" style={{ width: props.width, height: props.height }}>
+            <div className="window_basic">
+              <div className="title-bar" id="imhandle" onDoubleClick={() => props.makefullScreen(props.text)}>
+                <div className="title-bar-text" >
+                  <img
+                    className="fenetre_topbar_image"
+                    src={props.logo}
+                    alt="super"
+                  />
+                  <p className="textewindowtopbar">{props.text}</p>
+                </div>
+                <div className="title-bar-controls">
+                  <button
+                    aria-label="Minimize"
+                    onClick={() => props.hideWindow(props.text)}
+                  ></button>
+                  <button
+                    aria-label="Maximize"
+                    onClick={() => props.makefullScreen(props.text)}
+                  ></button>
+                  <button
+                    aria-label="Close"
+                    onClick={() => props.closeWindow(props.text)}
+                  ></button>
+                </div>
+              </div>
+              <div className="window_content" onClick={() => props.moveItem(props.array, props.text)}>
+                {props.content}
+              </div>
+            </div>
+          </div>
+        </Draggable>
+      }
+
     </div>
 
     // <div className={fullScreen ? "fullscreenwindow" : "basicwindow"}>
