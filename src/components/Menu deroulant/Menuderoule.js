@@ -11,13 +11,13 @@ import linkedinlogo from "../../assets/linkedin-icon-png.png"
 
 function Menuderoule(props) {
 
-function openGithub() {
-  window.open("https://www.github.com/lepfau");
-}
+  function openGithub() {
+    window.open("https://www.github.com/lepfau");
+  }
 
-function openLinkedin() {
-  window.open("https://www.linkedin.com/in/edouard-pfauwadel/")
-}
+  function openLinkedin() {
+    window.open("https://www.linkedin.com/in/edouard-pfauwadel/")
+  }
 
   return (
     <div className="menuderoule">
@@ -98,6 +98,13 @@ function openLinkedin() {
               "https://icons.iconarchive.com/icons/dtafalonso/modern-xp/512/ModernXP-38-Folder-Music-icon.png"
             }
             text={"Mes Projets"}
+            showWindow={props.showWindow}
+          />
+          <RightTopMenu
+            picture={
+              "https://icons.iconarchive.com/icons/dtafalonso/modern-xp/256/ModernXP-62-Folder-Images-icon.png"
+            }
+            text={"Mes Images"}
             showWindow={props.showWindow}
           />
 

@@ -27,6 +27,7 @@ function Main() {
   const [mail, setMail] = useState(false);
   const [internet, setInternet] = useState(false);
   const [popup, setPopup] = useState(false);
+  const [mesimages, setMesimages] = useState(false);
 
 
   function setmenu() {
@@ -68,6 +69,7 @@ function Main() {
 
     setMenuderoule(false);
     if (win === "Poste de travail") setPostetravail(true);
+    if (win === "Mes Images") setMesimages(true);
     if (win === "Corbeille") setTrash(true);
     if (win === "Mon Cv.pdf") setCv(true);
     if (win === "Mes Projets") setMesprojets(true);
@@ -106,6 +108,7 @@ function Main() {
     else if (win === "Me contacter") setMail(false);
     else if (win === "Internet Explorer") setInternet(false);
     else if (win === "Popup") setPopup(false);
+    else if (win === "Mes Images") setMesimages(false)
 
 
   }
@@ -118,103 +121,105 @@ function Main() {
     else if (win === "Me contacter") setMail(!mail);
     else if (win === "Internet Explorer") setInternet(!internet)
     else if (win === "Popup") setPopup(!popup)
+    else if (win === "Mes Images") setMesimages(!mesimages)
     closemenu();
   }
 
 
   return (
     <Zoom>
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        height: "100%",
-        width: "100%",
-        justifyContent:"flex-end", 
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          height: "100%",
+          width: "100%",
+          justifyContent: "flex-end",
 
-      }}
-    >
-      <WindowsArea
-        closemenu={closemenu}
-        showWindow={showWindow}
-        closeWindow={closeWindow}
-        hideWindow={hideWindow}
-        posteTravail={posteTravail}
-        trash={trash}
-        cv={cv}
-        mail={mail}
-        mesprojets={mesprojets}
-        internet={internet}
-        popup={popup}
-        windowsArray={windowsArray}
-        moveItem={moveItem}
-      />
-      <div className="full_bottom">
-        <div>
-          <Demarrer setmenu={setmenu} />
-        </div>
-        <div className="barremenu">
-          {taskbarArray.map((window) => {
-            return (
-              <Taskbar
-                key={window.length}
-                appname={window}
-                hideWindow={hideWindow}
-                window={window}
-              />
-            );
-          })}
-        </div>
-        ;
-        <div className="horloge">
-          <img
-            onClick={() => showMsn()}
-            style={{ height: "15px", marginRight: "10px" }}
-            src="https://www.aussitot.fr/imgred/1898.png"
-            alt="msnlogo"
-          />
-          <img
-            style={{ height: "15px", marginRight: "10px" }}
-            src={volumepng}
-            alt="volum icon"
-          />
-          <Clock format={"hh-mm"} hour12={false} />
-        </div>
-      </div>
-
-      <div className="menuderoule_container">
-        {menuderoule && <Menuderoule showWindow={showWindow} />}
-      </div>
-
-      {msn && <div className="msncontainer">
-        <div className="msnnotif">
-          <div className="msnheader">
-            <div style={{ display: "flex", alignItems: "center", marginBottom:"15px", marginTop:'10px'}}>
-              <img
-                alt="msn"
-                style={{ height: "20px", marginRight:'6px' }}
-                src="https://iconape.com/wp-content/files/fb/353373/png/353373.png"
-              />
-              <p style={{fontWeight:"600"}}>Msn Messenger</p>
-            </div>
-            <p style={{ marginRight: "10px" }}>X</p>
+        }}
+      >
+        <WindowsArea
+          closemenu={closemenu}
+          showWindow={showWindow}
+          closeWindow={closeWindow}
+          hideWindow={hideWindow}
+          posteTravail={posteTravail}
+          trash={trash}
+          cv={cv}
+          mail={mail}
+          mesprojets={mesprojets}
+          internet={internet}
+          mesimages={mesimages}
+          popup={popup}
+          windowsArray={windowsArray}
+          moveItem={moveItem}
+        />
+        <div className="full_bottom">
+          <div>
+            <Demarrer setmenu={setmenu} />
           </div>
-
-          <div className="msncontent">
+          <div className="barremenu">
+            {taskbarArray.map((window) => {
+              return (
+                <Taskbar
+                  key={window.length}
+                  appname={window}
+                  hideWindow={hideWindow}
+                  window={window}
+                />
+              );
+            })}
+          </div>
+          ;
+          <div className="horloge">
             <img
-              className="msncontent_pic"
-              src={photoed}
-              alt="moi"
-            ></img>
-            <div className="msncontent_text">
-              <p style={{ marginBottom: "10px", fontStyle:'italic' }}>Edouard dit:</p>
-              <p style={{ margin: "0px" }}>Merci de votre visite</p>
-            </div>
+              onClick={() => showMsn()}
+              style={{ height: "15px", marginRight: "10px" }}
+              src="https://www.aussitot.fr/imgred/1898.png"
+              alt="msnlogo"
+            />
+            <img
+              style={{ height: "15px", marginRight: "10px" }}
+              src={volumepng}
+              alt="volum icon"
+            />
+            <Clock format={"hh-mm"} hour12={false} />
           </div>
         </div>
-      </div>}
 
-    </div>
+        <div className="menuderoule_container">
+          {menuderoule && <Menuderoule showWindow={showWindow} />}
+        </div>
+
+        {msn && <div className="msncontainer">
+          <div className="msnnotif">
+            <div className="msnheader">
+              <div style={{ display: "flex", alignItems: "center", marginBottom: "15px", marginTop: '10px' }}>
+                <img
+                  alt="msn"
+                  style={{ height: "20px", marginRight: '6px' }}
+                  src="https://iconape.com/wp-content/files/fb/353373/png/353373.png"
+                />
+                <p style={{ fontWeight: "600" }}>Msn Messenger</p>
+              </div>
+              <p style={{ marginRight: "10px" }}>X</p>
+            </div>
+
+            <div className="msncontent">
+              <img
+                className="msncontent_pic"
+                src={photoed}
+                alt="moi"
+              ></img>
+              <div className="msncontent_text">
+                <p style={{ marginBottom: "10px", fontStyle: 'italic' }}>Edouard dit:</p>
+                <p style={{ margin: "0px" }}>Merci de votre visite</p>
+              </div>
+            </div>
+          </div>
+        </div>}
+
+      </div>
     </Zoom>
   );
 }

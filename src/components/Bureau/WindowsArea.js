@@ -6,6 +6,7 @@ import ContentTrash from "../Fenetres/ContentTrash";
 import ContentCv from "../Fenetres/ContentCv";
 import ContentProjets from "../Fenetres/ContentProjets";
 import ContentInternet from "../Fenetres/ContentInternet"
+import ContentImages from "../Fenetres/ContentImages";
 import ContentPopup from "../Fenetres/ContentPopup";
 import Form from "../Fenetres/Form";
 import postetravail from "../../assets/5131-tOo-Postedetravail.png";
@@ -39,10 +40,10 @@ function WindowsArea(props) {
     else if (win === "Me contacter") setFullScreenContact(!fullScreenContact);
     else if (win === "Mes Projets") setfullScreenProjets(!fullScreenProjets);
     else if (win === "Corbeille") setFullScreenTrash(!fullScreenTrash);
-    else if (win === "Mon Cv.pdf" && fullScreenCv === false) {setfullScreenCv(true); setthatScale()};
-    if(win === "Mon Cv.pdf" && fullScreenCv) {setfullScreenCv(false); setthatScale()}
-   
-  
+    else if (win === "Mon Cv.pdf" && fullScreenCv === false) { setfullScreenCv(true); setthatScale() };
+    if (win === "Mon Cv.pdf" && fullScreenCv) { setfullScreenCv(false); setthatScale() }
+
+
   }
 
 
@@ -78,6 +79,27 @@ function WindowsArea(props) {
               text={"Popup"}
               logo={
                 logointernet
+
+              }
+              hideWindow={props.hideWindow}
+              array={props.windowsArray}
+              moveItem={props.moveItem}
+              makefullScreen={makefullScreen}
+              fullScreen={fullScreenPopup}
+            />
+          );
+        else if (window === "Mes Images" && props.mesimages === true)
+          return (
+            <Fenetre
+              putOnTop={props.putOnTop}
+              key={window}
+              content={<ContentImages />}
+              width={"500px"}
+              height={"400px"}
+              closeWindow={props.closeWindow}
+              text={"Mes Images"}
+              logo={
+                "https://icons.iconarchive.com/icons/dtafalonso/modern-xp/256/ModernXP-62-Folder-Images-icon.png"
 
               }
               hideWindow={props.hideWindow}
