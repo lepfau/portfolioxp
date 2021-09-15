@@ -20,7 +20,7 @@ const {loading, xpload, bureau, blink, arroww} = props
             <div class="eteint"></div>
             {loading &&  <img className="bios" src={bios}></img>}
             {xpload && <img className="xploading" src={xpgif}></img> }
-            {bureau && <img className="bios" src={bureaupng}></img>}
+            {bureau && <img className="bureau" src={bureaupng}></img>}
             {arroww && <p className="indicationdem">Démarrer l'ordinateur</p>}
             {arroww && <img className="arrow" src={arrow}></img>}
             

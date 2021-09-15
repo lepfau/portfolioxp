@@ -175,10 +175,10 @@ body {
   color: orange;
   font-size: 4vh;
   position: absolute;
-  margin-left: 76.79vh;
+  margin-left: 68.75vh;
   z-index: 999;
   /* height: 28vh; */
-  margin-right: 8.12vh;
+  margin-right: 0vh;
   margin-top: 10.40vh;
   margin-bottom: 0vh;
 }
@@ -269,9 +269,9 @@ body {
 .bios {
   position: absolute;
   z-index: 1;
-  height: 36vh;
+  height: 32vh;
   margin-top: -9vh;
-  width: 46vh;
+  width: 42vh;
   margin-left: -10vh;
 }
 
@@ -288,7 +288,7 @@ body {
 .xploading {
   position: absolute;
   z-index: 1;
-  height: 36vh;
+  height: 30vh;
   margin-top: -9vh;
   width: 46vh;
   margin-left: -10vh;
@@ -766,6 +766,14 @@ form {
   justify-content: space-around;
   width: auto;
   margin-left: 3px;
+}
+.bureau {
+  position: absolute;
+  z-index: 1;
+  height: 36vh;
+  margin-top: -9vh;
+  width: 46vh;
+  margin-left: -10vh;
 }
 
 .fenetre_content {
