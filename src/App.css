@@ -512,6 +512,16 @@ form {
   position: absolute;
 }
 
+.mesimages_container {
+  display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 160px;
+    font-size: 13px;
+    margin: 30px;
+    flex-direction: column;
+}
+
 .trash_picture {
   padding: 12px;
   height: 55px;
@@ -530,8 +540,10 @@ form {
 
 .pdt_content {
   display: flex;
-  align-self: flex-start;
+  /* align-self: flex-start; */
   width: 100%;
+  /* max-width: 50px; */
+  flex-wrap: wrap;
 
 }
 
@@ -539,6 +551,20 @@ form {
   height: 50px;
   margin-right: 10px;
 }
+
+.pdt_drive2 {
+  height:50px;
+  margin-right: 10px
+
+}
+
+.pdt_drive2:active {
+  height: 60vh;
+  position: absolute;
+  top: 50%; right: 50%;
+  transform: translate(50%,-50%);
+}
+
 
 .corbeille_container {
   position: absolute;

@@ -29,7 +29,6 @@ function Main() {
   const [popup, setPopup] = useState(false);
   const [mesimages, setMesimages] = useState(false);
 
-
   function setmenu() {
     setMenuderoule(!menuderoule);
   }
@@ -76,6 +75,7 @@ function Main() {
     if (win === "Me contacter") setMail(true);
     if (win === "Internet Explorer") { setInternet(true); setPopup(true); }
     if (win === "Popup") { setPopup(true) }
+    
     if (newArray.includes(win) === false) {
       newArray.push(win);
     }
