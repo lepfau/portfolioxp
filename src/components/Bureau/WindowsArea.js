@@ -7,7 +7,7 @@ import ContentCv from "../Fenetres/ContentCv";
 import ContentProjets from "../Fenetres/ContentProjets";
 import ContentInternet from "../Fenetres/ContentInternet"
 import ContentPopup from "../Fenetres/ContentPopup";
-import Form from "../Form";
+import Form from "../Fenetres/Form";
 import postetravail from "../../assets/5131-tOo-Postedetravail.png";
 import logointernet from "../../assets/internetlogo.png";
 

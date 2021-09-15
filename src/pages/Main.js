@@ -63,7 +63,8 @@ function Main() {
 
   function showWindow(win) {
     let newArray = windowsArray;
-    let newTaskbar = taskbarArray
+    let newTaskbar = taskbarArray;
+
     setMenuderoule(false);
     if (win === "Poste de travail") setPostetravail(true);
     if (win === "Corbeille") setTrash(true);
@@ -81,7 +82,9 @@ function Main() {
     if (newTaskbar.includes(win) === false) {
       newTaskbar.push(win);
     }
-    if (newTaskbar.includes("Internet Explorer") && !newTaskbar.includes("Popup")) newTaskbar.push("Popup")
+    if (newTaskbar.includes("Internet Explorer") && !newTaskbar.includes("Popup")) newTaskbar.push("Popup");
+    setTaskbararray(newTaskbar);
+    setWindowsarray(newArray);
   }
 
 
