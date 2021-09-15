@@ -7,7 +7,7 @@ function ContentCv(props) {
 
   return (
     <div className="scrollcv noselect">
-      <Document file={moncv}>
+      <Document file={moncv} style={{display:"flex", justifyContent:'center'}}>
         <Page pageNumber={1} renderAnnotationLayer={false} scale={props.scale} />
       </Document>
     </div>

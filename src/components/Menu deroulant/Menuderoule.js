@@ -6,8 +6,19 @@ import TopMenuItem from "../Menu deroulant/TopMenuItem";
 import MiddleMenuItem from "../Menu deroulant/MiddleMenuItem";
 import RightTopMenu from "../Menu deroulant/RightTopMenu";
 import postetravail from "../../assets/5131-tOo-Postedetravail.png";
+import githublogo from "../../assets/github.png"
+import linkedinlogo from "../../assets/linkedin-icon-png.png"
 
 function Menuderoule(props) {
+
+function openGithub() {
+  window.open("https://www.github.com/lepfau");
+}
+
+function openLinkedin() {
+  window.open("https://www.linkedin.com/in/edouard-pfauwadel/")
+}
+
   return (
     <div className="menuderoule">
       <div className="menuderoule_header">
@@ -34,15 +45,17 @@ function Menuderoule(props) {
           <div class="fade_rule"></div>
           <MiddleMenuItem
             picture={
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCYaWMh4FOpU2v52g1VVqj7Rn-CR9JjLUErDdQ6KBSIVwU6ZqB2ySPVl2TRjLVCcFXtbE&usqp=CAU"
+              githublogo
             }
-            text={"MSN Explorer"}
+            text={"Github"}
+            todo={openGithub}
           />
           <MiddleMenuItem
             picture={
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvv7j1N-bKqOST0LHtRF5ttHPN6jj7w50uu47XDeq98dKu3RJbQEfwldIN9u6KWKAjiTs&usqp=CAU"
+              linkedinlogo
             }
-            text={"Windows Media Player"}
+            text={"Linkedin"}
+            todo={openLinkedin}
           />
           <MiddleMenuItem
             picture={

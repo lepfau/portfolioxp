@@ -532,6 +532,7 @@ form {
   display: flex;
   align-self: flex-start;
   width: 100%;
+
 }
 
 .pdt_drive {
@@ -843,6 +844,8 @@ form {
 .scrollcv {
   height: 95%;
   overflow: scroll;
+  display: flex;
+  justify-content: center;
 }
 
 .icone {
@@ -920,9 +923,10 @@ form {
   justify-self: flex-end;
   box-shadow: 1px 1px 2px black;
   z-index: 0;
-  bottom: 130px;
+  bottom: 146px;
   height: 80vh;
   max-height: 591px;
+  z-index: 2;
 }
 
 .menuderoule_container {
@@ -980,7 +984,7 @@ form {
   align-items: center;
   cursor: default;
   height: 40px;
-  padding: 4px;
+  padding: 6px;
 }
 
 .trashh {
@@ -1015,8 +1019,8 @@ form {
   justify-content: flex-start;
   align-items: center;
   cursor: default;
-  height: 40px;
-  padding: 4px;
+  height: 46px;
+  padding: 1px;
   width: 245px;
 }
 

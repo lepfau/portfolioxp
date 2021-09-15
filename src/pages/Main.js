@@ -7,6 +7,7 @@ import photoed from "../assets/photoed.PNG";
 import useSound from "use-sound";
 import msnsound from "../assets/msn.mp3";
 import msnlogo from "../assets/msn_messenger.png";
+import volumepng from "../assets/volume.png"
 import WindowsArea from "../components/Bureau/WindowsArea";
 import Zoom from 'react-reveal/Zoom';
 import LightSpeed from 'react-reveal/LightSpeed';
@@ -169,12 +170,12 @@ function Main() {
           <img
             onClick={() => showMsn()}
             style={{ height: "15px", marginRight: "10px" }}
-            src={msnlogo}
+            src="https://www.aussitot.fr/imgred/1898.png"
             alt="msnlogo"
           />
           <img
             style={{ height: "15px", marginRight: "10px" }}
-            src="https://icon-library.com/images/volume-icon/volume-icon-17.jpg"
+            src={volumepng}
             alt="volum icon"
           />
           <Clock format={"hh-mm"} hour12={false} />
@@ -188,13 +189,13 @@ function Main() {
       {msn && <div className="msncontainer">
         <div className="msnnotif">
           <div className="msnheader">
-            <div style={{ display: "flex", alignItems: "center" }}>
+            <div style={{ display: "flex", alignItems: "center", marginBottom:"15px", marginTop:'10px'}}>
               <img
                 alt="msn"
-                style={{ height: "20px" }}
+                style={{ height: "20px", marginRight:'6px' }}
                 src="https://iconape.com/wp-content/files/fb/353373/png/353373.png"
               />
-              <p>Msn Messenger</p>
+              <p style={{fontWeight:"600"}}>Msn Messenger</p>
             </div>
             <p style={{ marginRight: "10px" }}>X</p>
           </div>
@@ -206,7 +207,7 @@ function Main() {
               alt="moi"
             ></img>
             <div className="msncontent_text">
-              <p style={{ marginBottom: "10px", }}>Edouard dit:</p>
+              <p style={{ marginBottom: "10px", fontStyle:'italic' }}>Edouard dit:</p>
               <p style={{ margin: "0px" }}>Merci de votre visite</p>
             </div>
           </div>
