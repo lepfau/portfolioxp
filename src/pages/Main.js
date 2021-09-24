@@ -12,6 +12,7 @@ import WindowsArea from "../components/Bureau/WindowsArea";
 import Zoom from 'react-reveal/Zoom';
 import LightSpeed from 'react-reveal/LightSpeed';
 import RubberBand from 'react-reveal/RubberBand';
+import Face from "../components/Face"
 
 function Main() {
   const [menuderoule, setMenuderoule] = useState(false);
@@ -154,6 +155,8 @@ function Main() {
           windowsArray={windowsArray}
           moveItem={moveItem}
         />
+
+        
         <div className="full_bottom">
           <div>
             <Demarrer setmenu={setmenu} />

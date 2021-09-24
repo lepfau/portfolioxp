@@ -543,6 +543,7 @@ form {
   /* align-self: flex-start; */
   width: 100%;
   /* max-width: 50px; */
+  /* height: 100%; */
   flex-wrap: wrap;
 
 }

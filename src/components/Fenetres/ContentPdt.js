@@ -1,8 +1,14 @@
+
+
+
+
 import React from "react";
+import Face from "../Face";
 
 function ContentPdt() {
   return (
     <div className="pdt_content">
+    
       
       <div className="pdt_fulldrive">
         <img

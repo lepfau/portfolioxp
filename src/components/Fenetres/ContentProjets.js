@@ -1,6 +1,7 @@
 import React from "react";
 import pickit from "../../assets/pickit.PNG";
 import supertyper from "../../assets/supertyper.png";
+import myface from "../../assets/photoed.PNG"
 
 function ContentProjets() {
   return (
@@ -19,6 +20,22 @@ function ContentProjets() {
           rel="noreferrer"
         >
           Instagreen
+        </a>
+      </div>
+      <div className="pdt_fulldrive">
+        <img
+          className="pdt_drive"
+          alt="drivepicture"
+          src={myface}
+        />{" "}
+        <a
+          style={{ marginTop: "10px" }}
+          href="https://lepfau.github.io/testface"
+          target="_blank"
+          alt="link"
+          rel="noreferrer"
+        >
+          Face anim
         </a>
       </div>
       <div className="pdt_fulldrive">
