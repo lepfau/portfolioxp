@@ -18,6 +18,9 @@ function Taskbar(props) {
   if (props.appname === "Me contacter")
     logo =
       "https://upload.wikimedia.org/wikipedia/fr/5/53/Outlook_express_logo-200-200.jpg";
+
+  if (props.appname === "Mes Compétences")
+  logo = "https://iconarchive.com/download/i95231/dtafalonso/modern-xp/ModernXP-16-Folder-Documents.ico"
   if (props.appname === "Internet Explorer")
     logo = logointernet
   if (props.appname === "Popup")

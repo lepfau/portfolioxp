@@ -86,6 +86,7 @@ function Menuderoule(props) {
               "https://iconarchive.com/download/i95231/dtafalonso/modern-xp/ModernXP-16-Folder-Documents.ico"
             }
             text={"Mes Compétences"}
+            showWindow={props.showWindow}
           />
           <RightTopMenu
             picture={
