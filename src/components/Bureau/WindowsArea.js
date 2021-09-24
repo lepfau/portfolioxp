@@ -13,6 +13,7 @@ import logointernet from "../../assets/internetlogo.png";
 
 import Icone from "../Icones/Icone";
 import trashlogo from "../../assets/trash.png";
+import ContentFormations from "../Fenetres/ContentFormations";
 
 
 function WindowsArea(props) {
@@ -24,6 +25,7 @@ function WindowsArea(props) {
   const [fullScreenCv, setfullScreenCv] = useState(false);
   const [fullScreenProjets, setfullScreenProjets] = useState(false);
   const [fullScreenImages, setFullscreenImages] = useState(false)
+  const [fullScreenFormations, setFullscreenFormations] = useState(false)
 
 
   const [scale, setScale] = useState(1)
@@ -39,7 +41,8 @@ function WindowsArea(props) {
     else if (win === "Me contacter") setFullScreenContact(!fullScreenContact);
     else if (win === "Mes Projets") setfullScreenProjets(!fullScreenProjets);
     else if (win === "Corbeille") setFullScreenTrash(!fullScreenTrash);
-    else if (win === "Mes Images") setFullscreenImages(!fullScreenImages)
+    else if (win === "Mes Images") setFullscreenImages(!fullScreenImages);
+    else if (win === "Mes Formations") setFullscreenFormations(!fullScreenFormations)
     else if (win === "Mon Cv.pdf" && fullScreenCv === false) { setfullScreenCv(true); setthatScale() };
     if (win === "Mon Cv.pdf" && fullScreenCv) { setfullScreenCv(false); setthatScale() }
   }
@@ -66,27 +69,7 @@ function WindowsArea(props) {
               fullScreen={fullScreenPdt}
             />
           );
-          else if (window === "Popup" && props.popup === true)
-          return (
-            <Fenetre
-              putOnTop={props.putOnTop}
-              key={window}
-              content={<ContentPopup />}
-              width={"500px"}
-              height={"400px"}
-              closeWindow={props.closeWindow}
-              text={"Popup"}
-              logo={
-                logointernet
-
-              }
-              hideWindow={props.hideWindow}
-              array={props.windowsArray}
-              moveItem={props.moveItem}
-              makefullScreen={makefullScreen}
-              fullScreen={fullScreenPopup}
-            />
-          );
+        
         else if (window === "Popup" && props.popup === true)
           return (
             <Fenetre
@@ -127,6 +110,28 @@ function WindowsArea(props) {
               moveItem={props.moveItem}
               makefullScreen={makefullScreen}
               fullScreen={fullScreenImages}
+            />
+          );
+
+          else if (window === "Mes Formations" && props.mesformations === true)
+          return (
+            <Fenetre
+              putOnTop={props.putOnTop}
+              key={window}
+              content={<ContentFormations/>}
+              width={"700px"}
+              height={"500px"}
+              closeWindow={props.closeWindow}
+              text={"Mes Formations"}
+              logo={
+                "https://icons.iconarchive.com/icons/dtafalonso/modern-xp/256/ModernXP-62-Folder-Images-icon.png"
+
+              }
+              hideWindow={props.hideWindow}
+              array={props.windowsArray}
+              moveItem={props.moveItem}
+              makefullScreen={makefullScreen}
+              fullScreen={fullScreenFormations}
             />
           );
         else if (window === "Internet Explorer" && props.internet === true)

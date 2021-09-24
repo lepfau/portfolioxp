@@ -92,6 +92,7 @@ function Menuderoule(props) {
               "https://icons.iconarchive.com/icons/dtafalonso/modern-xp/256/ModernXP-62-Folder-Images-icon.png"
             }
             text={"Mes Formations"}
+            showWindow={props.showWindow}
           />
           <RightTopMenu
             picture={

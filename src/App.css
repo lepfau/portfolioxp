@@ -559,6 +559,12 @@ form {
 
 }
 
+.pdt_drive3 {
+  height:40px;
+  margin-right: 10px
+
+}
+
 .pdt_drive2:active {
   height: 60vh;
   position: absolute;
