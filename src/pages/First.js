@@ -3,11 +3,13 @@ import Main from "./Main";
 import Homepage from "./Homepage";
 import useSound from "use-sound";
 import postbeep from "../assets/postbeep.mp3"
+import xpsound from "../assets/windows-xp-startup.mp3"
 
 
 function First() {
 
     const [play] = useSound(postbeep);
+    const [playxp] = useSound(xpsound)
 
     const [loading, setLoading] = useState(false)
     const [xpload, setXpload] = useState(false)
@@ -35,6 +37,7 @@ function First() {
         setTimeout(() => {
             setHome(false)
             setMain(true)
+            playxp()
         }, 12000);
     }
 
