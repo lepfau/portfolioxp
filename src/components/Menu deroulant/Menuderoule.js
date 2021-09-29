@@ -59,23 +59,24 @@ function Menuderoule(props) {
           />
           <MiddleMenuItem
             picture={
-              "https://www.kindpng.com/picc/m/27-270400_windows-movie-maker-hd-png-download.png"
+              "https://simg.nicepng.com/png/small/311-3117813_music-piano-royal-instument-keys-keyboard-midi-notes.png"
             }
-            text={"Windows Movie Maker"}
+            text={"Piano"}
+            todo={props.showWindow}
           />
           <MiddleMenuItem
             picture={
               "https://i1.sndcdn.com/artworks-000078425043-oloazo-t500x500.jpg"
             }
             text={"Paint"}
-            todo={props.setPaint}
+       
           />
           <MiddleMenuItem
             picture={
               "https://img.favpng.com/13/5/9/microsoft-word-office-open-xml-document-computer-icons-computer-file-png-favpng-7SuhHUxg3rqzd8iAKkryFYKCy.jpg"
             }
             text={"Word"}
-            todo={props.setPaint}
+           
           />
           <div style={{ marginTop: "40px" }} class="fade_rule"></div>
         </div>

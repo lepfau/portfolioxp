@@ -30,7 +30,8 @@ function Main() {
   const [popup, setPopup] = useState(false);
   const [mesimages, setMesimages] = useState(false);
   const [mesformations, setMesformations] = useState(false);
-  const [mescompetences, setMescompetences] = useState(false)
+  const [mescompetences, setMescompetences] = useState(false);
+  const [piano, setPiano] = useState(false);
 
 
   function setmenu() {
@@ -80,7 +81,8 @@ function Main() {
     if (win === "Internet Explorer") { setInternet(true); setPopup(true); }
     if (win === "Popup") { setPopup(true) }
     if (win === "Mes Formations") setMesformations(true);
-    if (win === "Mes Compétences") setMescompetences(true)
+    if (win === "Mes Compétences") setMescompetences(true);
+    if (win === "Piano") setPiano(true);
     
     if (newArray.includes(win) === false) {
       newArray.push(win);
@@ -117,6 +119,7 @@ function Main() {
     else if (win === "Mes Images") setMesimages(false)
     else if (win === "Mes Formations") setMesformations(false)
     else if (win === "Mes Compétences") setMescompetences(false)
+    else if (win === "Piano") setPiano(false)
 
 
   }
@@ -132,6 +135,7 @@ function Main() {
     else if (win === "Mes Images") setMesimages(!mesimages)
     else if (win === "Mes Formations") setMesformations(!mesformations)
     else if (win === "Mes Compétences") setMescompetences(!mescompetences)
+    else if (win === "Piano") setPiano(!piano)
     closemenu();
   }
 
@@ -161,6 +165,7 @@ function Main() {
           internet={internet}
           mesimages={mesimages}
           popup={popup}
+          piano={piano}
           windowsArray={windowsArray}
           moveItem={moveItem}
           mesformations={mesformations}

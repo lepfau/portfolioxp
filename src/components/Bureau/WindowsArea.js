@@ -10,6 +10,7 @@ import ContentPopup from "../Fenetres/ContentPopup";
 import Form from "../Fenetres/Form";
 import postetravail from "../../assets/5131-tOo-Postedetravail.png";
 import logointernet from "../../assets/internetlogo.png";
+import Piano from "./../Fenetres/Piano"
 
 import Icone from "../Icones/Icone";
 import trashlogo from "../../assets/trash.png";
@@ -27,7 +28,8 @@ function WindowsArea(props) {
   const [fullScreenProjets, setfullScreenProjets] = useState(false);
   const [fullScreenImages, setFullscreenImages] = useState(false);
   const [fullScreenFormations, setFullscreenFormations] = useState(false);
-  const [fullScreenCompetences, setFullscreenCompetences] = useState(false)
+  const [fullScreenCompetences, setFullscreenCompetences] = useState(false);
+  const [fullScreenPiano, setFullscreenPiano] = useState(false)
 
 
   const [scale, setScale] = useState(1)
@@ -46,6 +48,7 @@ function WindowsArea(props) {
     else if (win === "Mes Images") setFullscreenImages(!fullScreenImages);
     else if (win === "Mes Formations") setFullscreenFormations(!fullScreenFormations)
     else if (win === "Mes Compétences") setFullscreenCompetences(!fullScreenCompetences)
+    else if (win === "Piano") setFullscreenPiano(!fullScreenPiano)
     else if (win === "Mon Cv.pdf" && fullScreenCv === false) { setfullScreenCv(true); setthatScale() };
     if (win === "Mon Cv.pdf" && fullScreenCv) { setfullScreenCv(false); setthatScale() }
   }
@@ -70,6 +73,27 @@ function WindowsArea(props) {
               moveItem={props.moveItem}
               makefullScreen={makefullScreen}
               fullScreen={fullScreenPdt}
+            />
+          );
+          else if (window === "Piano" && props.piano === true)
+          return (
+            <Fenetre
+              putOnTop={props.putOnTop}
+              key={window}
+              content={<Piano />}
+              width={"500px"}
+              height={"150px"}
+              closeWindow={props.closeWindow}
+              text={"Piano"}
+              logo={
+                "https://simg.nicepng.com/png/small/311-3117813_music-piano-royal-instument-keys-keyboard-midi-notes.png"
+
+              }
+              hideWindow={props.hideWindow}
+              array={props.windowsArray}
+              moveItem={props.moveItem}
+              makefullScreen={makefullScreen}
+              fullScreen={fullScreenPiano}
             />
           );
         

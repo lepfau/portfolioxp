@@ -2,7 +2,7 @@ import React from "react";
 
 function MiddleMenuItem(props) {
   return (
-    <div className="menuderoule_items" onClick={() => props.todo()}>
+    <div className="menuderoule_items" onClick={() => props.todo(props.text)}>
       <div className="piccontainermenu">
         <img className="menuderoule_items_pic" src={props.picture}></img>
       </div>

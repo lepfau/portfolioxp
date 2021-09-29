@@ -548,6 +548,10 @@ form {
 
 }
 
+.ReactPiano__Keyboard {
+  width: 100%;
+}
+
 .pdt_drive {
   height: 50px;
 
