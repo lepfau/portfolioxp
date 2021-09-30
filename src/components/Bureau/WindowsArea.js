@@ -29,7 +29,8 @@ function WindowsArea(props) {
   const [fullScreenImages, setFullscreenImages] = useState(false);
   const [fullScreenFormations, setFullscreenFormations] = useState(false);
   const [fullScreenCompetences, setFullscreenCompetences] = useState(false);
-  const [fullScreenPiano, setFullscreenPiano] = useState(false)
+  const [fullScreenPiano, setFullscreenPiano] = useState(false);
+  const [pianowidth, setPianoWidth] = useState('490')
 
 
   const [scale, setScale] = useState(1)
@@ -48,7 +49,7 @@ function WindowsArea(props) {
     else if (win === "Mes Images") setFullscreenImages(!fullScreenImages);
     else if (win === "Mes Formations") setFullscreenFormations(!fullScreenFormations)
     else if (win === "Mes Compétences") setFullscreenCompetences(!fullScreenCompetences)
-    else if (win === "Piano") setFullscreenPiano(!fullScreenPiano)
+    else if (win === "Piano") { setFullscreenPiano(!fullScreenPiano); setPianoWidth(800) }
     else if (win === "Mon Cv.pdf" && fullScreenCv === false) { setfullScreenCv(true); setthatScale() };
     if (win === "Mon Cv.pdf" && fullScreenCv) { setfullScreenCv(false); setthatScale() }
   }
@@ -80,13 +81,13 @@ function WindowsArea(props) {
             <Fenetre
               putOnTop={props.putOnTop}
               key={window}
-              content={<Piano />}
+              content={<Piano pianowidth />}
               width={"500px"}
               height={"150px"}
               closeWindow={props.closeWindow}
               text={"Piano"}
               logo={
-                "https://simg.nicepng.com/png/small/311-3117813_music-piano-royal-instument-keys-keyboard-midi-notes.png"
+                "https://www.pngrepo.com/png/38467/512/piano-top-view.png"
 
               }
               hideWindow={props.hideWindow}

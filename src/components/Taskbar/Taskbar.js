@@ -26,7 +26,7 @@ function Taskbar(props) {
   if (props.appname === "Popup")
     logo = logointernet
     if(props.appname === "Piano")
-    logo = "https://simg.nicepng.com/png/small/311-3117813_music-piano-royal-instument-keys-keyboard-midi-notes.png"
+    logo = "https://www.pngrepo.com/png/38467/512/piano-top-view.png"
   return (
     <div onClick={() => props.hideWindow(props.window)} className="classbar">
       <img className="taskbarlogo" src={logo} alt="logotaskbar"></img>

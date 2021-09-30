@@ -59,7 +59,7 @@ function Menuderoule(props) {
           />
           <MiddleMenuItem
             picture={
-              "https://simg.nicepng.com/png/small/311-3117813_music-piano-royal-instument-keys-keyboard-midi-notes.png"
+              "https://www.pngrepo.com/png/38467/512/piano-top-view.png"
             }
             text={"Piano"}
             todo={props.showWindow}

@@ -193,7 +193,7 @@ function Main() {
           <div className="horloge">
             <img
               onClick={() => showMsn()}
-              style={{ height: "15px", marginRight: "10px" }}
+              style={{ height: "15px", marginRight: "10px", marginLeft:"10px" }}
               src="https://www.aussitot.fr/imgred/1898.png"
               alt="msnlogo"
             />

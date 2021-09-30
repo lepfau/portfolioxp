@@ -3,8 +3,6 @@ import Draggable from "react-draggable";
 
 function Fenetre(props) {
 
-  //   let test = '';
-  // if (fullScreen) test = "disabled"
 
   return (
     <div className="window_elements">
