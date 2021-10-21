@@ -3,9 +3,19 @@
 > Portfolio for my project inspired by windows xp nostalgia
 ## Table of contents
 
+- [Screenshots](#screenshots)
 - [Technologies](#technologies)
 - [Status](#status)
 - [Contact](#contact)
+
+
+
+## Screenshots
+
+![App screenshot](portfolioxp1.png)
+![App screenshot1](portfolioxp2.png)
+
+
 
 ## Technologies
 
