@@ -71,7 +71,7 @@ function ContentProjets() {
         <img className="pdt_drive" alt="drivepicture" src={pickit} />{" "}
         <a
           style={{ marginTop: "10px" }}
-          href="https://iron-hack-project-2.herokuapp.com/
+          href="https://pickitapp.herokuapp.com/
 "
           alt="link"
           rel="noreferrer"
