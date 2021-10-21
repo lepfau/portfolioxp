@@ -1,6 +1,8 @@
 # EP Portfolio
 
-> Portfolio for my project inspired by windows xp nostalgia
+Portfolio for my project inspired by windows xp nostalgia
+> The site is deployed [here](https://lepfau/github.io/portfolioxp)
+> 
 ## Table of contents
 
 - [Screenshots](#screenshots)
