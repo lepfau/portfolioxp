@@ -5,10 +5,17 @@ import myface from "../../assets/photoed.PNG"
 
 function ContentProjets() {
   return (
-    <div className="pdt_content">
-      <div className="pdt_fulldrive">
+    <div>
+      <div className="projets_headbar">
+        <p style={{width:"31%", marginLeft:"12px"}}>Nom</p>
+        <p style={{width:"35%"}}>Technos</p>
+        <p>Date création</p>
+      </div>
+    <div className="pdt_content_projets">
+      <div style={{display:"flex", alignItems:"center"}}>
+      <div className="pdt_fulldrive_projets">
         <img
-          className="pdt_drive"
+          className="pdt_drive_projets"
           alt="drivepicture"
           src="https://raw.githubusercontent.com/lepfau/instagreen-client/master/public/favicon.ico"
         />{" "}
@@ -22,9 +29,14 @@ function ContentProjets() {
           Instagreen
         </a>
       </div>
-      <div className="pdt_fulldrive">
+      <div style={{width:"35%"}}> <p>React, Express, MongoDB</p></div>
+      
+     <div style={{width:"22%"}}> <p>Janvier 2021</p></div> 
+      </div>
+      <div style={{display:"flex", alignItems:"center"}}>
+      <div className="pdt_fulldrive_projets">
         <img
-          className="pdt_drive"
+          className="pdt_drive_projets"
           alt="drivepicture"
           src={myface}
         />{" "}
@@ -38,9 +50,14 @@ function ContentProjets() {
           Face anim
         </a>
       </div>
-      <div className="pdt_fulldrive">
+      <div style={{width:"35%"}}> <p>React, ThreeJs, Blender</p></div>
+      
+      <div style={{width:"22%"}}> <p>Août 2021</p></div> 
+      </div>
+      <div style={{display:"flex", alignItems:"center"}}>
+      <div className="pdt_fulldrive_projets">
         <img
-          className="pdt_drive"
+          className="pdt_drive_projets"
           alt="drivepicture"
           src="https://raw.githubusercontent.com/lepfau/recipeflix-client/master/public/favicon.ico"
         />{" "}
@@ -54,8 +71,13 @@ function ContentProjets() {
           Recipeflix
         </a>
       </div>
-      <div className="pdt_fulldrive">
-        <img className="pdt_drive" alt="drivepicture" src={supertyper} />{" "}
+      <div style={{width:"35%"}}> <p>React, Express, MongoDB</p></div>
+      
+      <div style={{width:"22%"}}> <p>Avril 2021</p></div> 
+      </div>
+      <div style={{display:"flex", alignItems:"center"}}>
+      <div className="pdt_fulldrive_projets">
+        <img className="pdt_drive_projets" alt="drivepicture" src={supertyper} />{" "}
         <a
           style={{ marginTop: "10px" }}
           href="https://lepfau.github.io/Project-1/
@@ -67,8 +89,13 @@ function ContentProjets() {
           Super Typer 2077
         </a>
       </div>
-      <div className="pdt_fulldrive">
-        <img className="pdt_drive" alt="drivepicture" src={pickit} />{" "}
+      <div style={{width:"35%"}}> <p>HTML, CSS, JS</p></div>
+      
+      <div style={{width:"22%"}}> <p>Novembre 2020</p></div> 
+      </div>
+      <div style={{display:"flex", alignItems:"center"}}>
+      <div className="pdt_fulldrive_projets">
+        <img className="pdt_drive_projets" alt="drivepicture" src={pickit} />{" "}
         <a
           style={{ marginTop: "10px" }}
           href="https://pickitapp.herokuapp.com/
@@ -80,6 +107,11 @@ function ContentProjets() {
           Pickit!
         </a>
       </div>
+      <div style={{width:"35%"}}> <p>HBS, Express, MongoDB</p></div>
+      
+      <div style={{width:"22%"}}> <p>Decembre 2020</p></div> 
+      </div>
+    </div>
     </div>
   );
 }

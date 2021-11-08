@@ -4,30 +4,72 @@ import backarrow from "../../assets/backarrow.png"
 
 function ContentCompetences() {
   const [frontEnd, setFrontEnd] = useState(false);
-  const [backEnd, setBackEnd] = useState(false)
+  const [backEnd, setBackEnd] = useState(false);
+  const [selected, setSelected] = useState(false);
+  const [selected2, setSelected2] = useState(false);
+
+
+const putSelected = () => {
+  setSelected(!selected);
+  setSelected2(false)
+}
+
+const putSelected2 = () => {
+  setSelected2(!selected2);
+  setSelected(false)
+}
+
+
 
   return (
 
     <div>
       <img style={{height:"39px", margin:"10px", padding:'5px'}}src={"https://images.all-free-download.com/images/graphiclarge/back_button_37286.jpg"} onClick={() => {setFrontEnd(false); setBackEnd(false)}}/>
-        {!frontEnd && !backEnd && <div className="pdt_content" >
-      <div className="pdt_fulldrive" onDoubleClick={() => setFrontEnd(true)}>
-        <img
-          className="pdt_drive"
-          alt="drivepicture"
-          src="https://icons.iconarchive.com/icons/dtafalonso/modern-xp/512/ModernXP-60-Disk-icon.png"
-        />{" "}
-        <p style={{ marginTop: "10px" }}>Front End</p>
-      </div>
-      <div className="pdt_fulldrive" onDoubleClick={() => setBackEnd(true)}>
+        {!frontEnd && !backEnd && <div className="pdt_content2" >
+   
+   {selected ?
+     <div style={{border: "1px dotted black", backgroundColor:"lightblue", }} className="pdt_fulldrive2" 
+     onDoubleClick={() => setFrontEnd(true)} onClick={() => putSelected()}>
+     <img
+       className="pdt_drive"
+       alt="drivepicture"
+       src="https://icons.iconarchive.com/icons/dtafalonso/modern-xp/512/ModernXP-60-Disk-icon.png"
+     />{" "}
+     <p style={{ marginTop: "10px" }}>Front End</p>
+   </div> :
+   
+   <div className="pdt_fulldrive2" onDoubleClick={() => setFrontEnd(true)} onClick={() => putSelected()}>
+   <img
+     className="pdt_drive"
+     alt="drivepicture"
+     src="https://icons.iconarchive.com/icons/dtafalonso/modern-xp/512/ModernXP-60-Disk-icon.png"
+   />{" "}
+   <p style={{ marginTop: "10px" }}>Front End</p>
+ </div>
+  }
+
+{selected2 ?    <div className="pdt_fulldrive2" onClick={() => putSelected2()} style={{border: "1px dotted black", backgroundColor:"lightblue", }} onDoubleClick={() => setBackEnd(true)}>
         <img
           className="pdt_drive"
           alt="drivepicture"
           src="https://icons.iconarchive.com/icons/dtafalonso/modern-xp/512/ModernXP-60-Disk-icon.png"
         />{" "}
         <p style={{ marginTop: "10px" }}>Back End</p>
-        </div>
-      </div>}
+        </div> :
+        
+        <div className="pdt_fulldrive2" onClick={() => putSelected2()} onDoubleClick={() => setBackEnd(true)}>
+        <img
+          className="pdt_drive"
+          alt="drivepicture"
+          src="https://icons.iconarchive.com/icons/dtafalonso/modern-xp/512/ModernXP-60-Disk-icon.png"
+        />{" "}
+        <p style={{ marginTop: "10px" }}>Back End</p>
+        </div>}
+
+   
+      </div>
+      
+      }
 
       {frontEnd && <div className="pdt_content" >
       <div className="pdt_fulldrive">
