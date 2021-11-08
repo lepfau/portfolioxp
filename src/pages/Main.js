@@ -14,7 +14,7 @@ import LightSpeed from 'react-reveal/LightSpeed';
 import RubberBand from 'react-reveal/RubberBand';
 import Face from "../components/Face"
 
-function Main() {
+function Main(props) {
   const [menuderoule, setMenuderoule] = useState(false);
   const [windowsArray, setWindowsarray] = useState([]);
   const [taskbarArray, setTaskbararray] = useState([]);
@@ -207,7 +207,7 @@ function Main() {
         </div>
 
         <div className="menuderoule_container">
-          {menuderoule && <Menuderoule showWindow={showWindow} />}
+          {menuderoule && <Menuderoule shutdown={props.shutdown} showWindow={showWindow} />}
         </div>
 
         {msn && <div className="msncontainer">

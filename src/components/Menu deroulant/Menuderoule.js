@@ -8,6 +8,7 @@ import RightTopMenu from "../Menu deroulant/RightTopMenu";
 import postetravail from "../../assets/5131-tOo-Postedetravail.png";
 import githublogo from "../../assets/github.png"
 import linkedinlogo from "../../assets/linkedin-icon-png.png"
+import logoout from "../../assets/logout.png"
 
 function Menuderoule(props) {
 
@@ -120,7 +121,18 @@ function Menuderoule(props) {
         </div>
       </div>
 
-      <div className="menuderoule_footer"></div>
+      <div className="menuderoule_footer">
+     
+        <div className="footer_element2">  <img className="footer_image" src={logoout}
+          alt="logoutlogo"/>          <p>Fermer la session</p>
+        
+        </div>
+        <div onClick={() => props.shutdown()} className="footer_element">
+          <img className="footer_image" src="https://lh3.googleusercontent.com/proxy/T3OQuRJJo5F1f7_MS3kxtBKcJfhS8Fm07zzomHiBUjyROAw80jOHfK8f2rf_xsYCIqUqD4AGOjBQ77pLn5UHqc9SkucWXUYPwFicc8sNdGotn4gMsEYTAarMSk9RjxyeYUZdaKLOwKs"
+          alt="shutdownlogo"/>
+          <p>Arrêter</p>
+        </div>
+      </div>
 
       {/* <p className="noselect">Menu windows</p>
       <p className="noselect" onClick={() => props.setPostetravail()}>

@@ -22,10 +22,8 @@ const {loading, xpload, bureau, blink, arroww} = props
             {xpload && <img className="xploading" src={xpgif}></img> }
             {bureau && <img className="bureau" src={bureaupng}></img>}
             {arroww && <p className="indicationdem">Démarrer l'ordinateur</p>}
-            {arroww && <img className="arrow" src={arrow}></img>}
-            
-        
-        </div>
+            {arroww && <img className="arrow" src={arrow}></img>} 
+                </div>
     )
 }
 

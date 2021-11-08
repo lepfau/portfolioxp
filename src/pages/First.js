@@ -41,6 +41,10 @@ function First() {
         }, 12000);
     }
 
+    const shutdown = () => {
+        window.location.reload()
+    }
+
 
 const [home, setHome] = useState(true)
 const [main, setMain] = useState(false)
@@ -49,7 +53,7 @@ const [main, setMain] = useState(false)
     return (
         <div style={{height:"100%", width:'100%'}}>
            {home && <Homepage loading={loading} xpload={xpload} bureau={bureau} gifShowing={gifShowing} blink={blink} arroww={arrow}/>}
-           {main &&  <Main/>}
+           {main &&  <Main shutdown={shutdown} />}
         </div>
     )
 }

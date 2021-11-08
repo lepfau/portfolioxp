@@ -1112,6 +1112,41 @@ flex-direction: column;
     center/cover no-repeat;
   height: 9%;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.footer_element {
+  width: 80px
+  ;
+      color: white;
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      justify-content: space-evenly;
+      margin-right: 10px;
+      cursor: pointer;
+}
+
+.footer_element2{
+  width: 140px
+  ;
+      color: white;
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      justify-content: space-evenly;
+      margin-right: 10px;
+}
+
+.footer_image {
+  height: 26px
+;
+    border-radius: 6px
+;
+    border: 1px
+ solid white;
 }
 
 .menuderoule_items {
