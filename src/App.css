@@ -1074,9 +1074,10 @@ form {
   justify-self: flex-end;
   box-shadow: 1px 1px 2px black;
   z-index: -2;
-  margin-bottom: 19vh;
-  height: 79vh;
+  margin-bottom: 135px;
+  height: 75vh;
   max-height: 591px;
+  min-height: 540px;
   z-index: 0;
 }
 
