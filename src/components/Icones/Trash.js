@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import trashlogo from "../../assets/trash.png";
 import Draggable from "react-draggable";
+import LangContext from "../Context/LangContext";
 
 function Trash(props) {
   const [style, setStyle] = useState("trashh");
-
+const lang = useContext(LangContext);
   return (
     <Draggable scale={1}>
       <div
@@ -23,7 +24,7 @@ function Trash(props) {
           >
             <img className="icone" src={trashlogo} alt="corbeille" />
             <p style={{ color: "white", fontSize: "13px", margin: "6px" }}>
-              Corbeille
+            {lang.language === "English" ? "Trash" : "Corbeille" }
             </p>
           </div>
         ) : (
@@ -37,7 +38,7 @@ function Trash(props) {
           >
             <img className="icone" src={trashlogo} alt="corbeille" />
             <p style={{ color: "white", fontSize: "13px", margin: "6px" }}>
-              Corbeille
+            {lang.language === "English" ? "Trash" : "Corbeille" }
             </p>
           </div>
         )}

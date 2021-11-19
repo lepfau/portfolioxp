@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Demarrer from "../components/Bureau/Demarrer";
 import Menuderoule from "../components/Menu deroulant/Menuderoule";
 import Taskbar from "../components/Taskbar/Taskbar";
@@ -13,6 +13,7 @@ import Zoom from 'react-reveal/Zoom';
 import LightSpeed from 'react-reveal/LightSpeed';
 import RubberBand from 'react-reveal/RubberBand';
 import Face from "../components/Face"
+import LangContext from "../components/Context/LangContext";
 
 function Main(props) {
   const [menuderoule, setMenuderoule] = useState(false);
@@ -33,6 +34,7 @@ function Main(props) {
   const [mescompetences, setMescompetences] = useState(false);
   const [piano, setPiano] = useState(false);
 
+const lang = useContext(LangContext)
 
   function setmenu() {
     setMenuderoule(!menuderoule);
@@ -109,32 +111,32 @@ function Main(props) {
     setTaskbararray(arr2)
     setWindowsarray(arr);
 
-    if (win === "Poste de travail") setPostetravail(false);
-    else if (win === "Corbeille") setTrash(false);
-    else if (win === "Mon Cv.pdf") setCv(false);
-    else if (win === "Mes Projets") setMesprojets(false);
-    else if (win === "Me contacter") setMail(false);
+    if (win === "Poste de travail" || win === "Computer") setPostetravail(false);
+    else if (win === "Corbeille" || win === "Trash" ) setTrash(false);
+    else if (win === "Mon Cv.pdf" || win === "Resume.pdf") setCv(false);
+    else if (win === "Mes Projets" || win === "My Projects") setMesprojets(false);
+    else if (win === "Me contacter" || win === "Contact Me") setMail(false);
     else if (win === "Internet Explorer") setInternet(false);
     else if (win === "Popup") setPopup(false);
-    else if (win === "Mes Images") setMesimages(false)
-    else if (win === "Mes Formations") setMesformations(false)
-    else if (win === "Mes Compétences") setMescompetences(false)
+    else if (win === "Mes Images" || win === "My Pictures") setMesimages(false)
+    else if (win === "Mes Formations" || win === "My Education") setMesformations(false)
+    else if (win === "Mes Compétences" || win === "My Skills") setMescompetences(false)
     else if (win === "Piano") setPiano(false)
 
 
   }
 
   function hideWindow(win) {
-    if (win === "Corbeille") setTrash(!trash);
-    else if (win === "Poste de travail") setPostetravail(!posteTravail);
-    else if (win === "Mon Cv.pdf") setCv(!cv);
-    else if (win === "Mes Projets") setMesprojets(!mesprojets);
-    else if (win === "Me contacter") setMail(!mail);
+    if (win === "Corbeille" || win === "Trash") setTrash(!trash);
+    else if (win === "Poste de travail" || win === "Computer") setPostetravail(!posteTravail);
+    else if (win === "Mon Cv.pdf" || win === "Resume.pdf") setCv(!cv);
+    else if (win === "Mes Projets" || win === "My Projects") setMesprojets(!mesprojets);
+    else if (win === "Me contacter" || win === "Contact Me") setMail(!mail);
     else if (win === "Internet Explorer") setInternet(!internet)
     else if (win === "Popup") setPopup(!popup)
-    else if (win === "Mes Images") setMesimages(!mesimages)
-    else if (win === "Mes Formations") setMesformations(!mesformations)
-    else if (win === "Mes Compétences") setMescompetences(!mescompetences)
+    else if (win === "Mes Images" || win === "My Pictures") setMesimages(!mesimages)
+    else if (win === "Mes Formations" || win === "My Education") setMesformations(!mesformations)
+    else if (win === "Mes Compétences" || win === "My Skills") setMescompetences(!mescompetences)
     else if (win === "Piano") setPiano(!piano)
     closemenu();
   }
@@ -231,8 +233,8 @@ function Main(props) {
                 alt="moi"
               ></img>
               <div className="msncontent_text">
-                <p style={{ marginBottom: "10px", fontStyle: 'italic' }}>Edouard dit:</p>
-                <p style={{ margin: "0px" }}>Merci de votre visite</p>
+                <p style={{ marginBottom: "10px", fontStyle: 'italic' }}>{lang.language === "English" ? 'Edouard says' : 'Edouard dit'}:</p>
+                <p style={{ margin: "0px" }}>{lang.language === "English" ? "Thanks for coming here ! " : "Merci de votre visite !"}</p>
               </div>
             </div>
           </div>

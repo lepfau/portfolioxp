@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Fenetre from "../Fenetres/Fenetre";
 import photoed from "../../assets/photoed.PNG";
 import logointernet from "../../assets/internetlogo.png";
@@ -10,8 +10,11 @@ import githublogo from "../../assets/github.png"
 import linkedinlogo from "../../assets/linkedin-icon-png.png"
 import logoout from "../../assets/logout.png"
 import shudownlogo from "../../assets/shutdown.png"
+import LangContext from "../Context/LangContext";
 
 function Menuderoule(props) {
+
+  const lang = useContext(LangContext)
 
   function openGithub() {
     window.open("https://www.github.com/lepfau");
@@ -41,7 +44,7 @@ function Menuderoule(props) {
               "https://upload.wikimedia.org/wikipedia/fr/5/53/Outlook_express_logo-200-200.jpg"
             }
             firsttext={"E-mail"}
-            secondtext={"Me contacter"}
+            secondtext={lang.language === "English" ? "Contact Me" : "Me contacter"}
             showWindow={props.showWindow}
           />
           <div class="fade_rule"></div>
@@ -88,34 +91,34 @@ function Menuderoule(props) {
             picture={
               "https://iconarchive.com/download/i95231/dtafalonso/modern-xp/ModernXP-16-Folder-Documents.ico"
             }
-            text={"Mes Compétences"}
+            text={lang.language === "English" ? "My Skills" : "Mes Compétences"}
             showWindow={props.showWindow}
           />
           <RightTopMenu
             picture={
               "https://icons.iconarchive.com/icons/dtafalonso/modern-xp/256/ModernXP-62-Folder-Images-icon.png"
             }
-            text={"Mes Formations"}
+            text={lang.language === "English" ? "My Education" : "Mes Formations"}
             showWindow={props.showWindow}
           />
           <RightTopMenu
             picture={
               "https://icons.iconarchive.com/icons/dtafalonso/modern-xp/512/ModernXP-38-Folder-Music-icon.png"
             }
-            text={"Mes Projets"}
+            text={lang.language === "English" ?"My Projects" : "Mes Projets"}
             showWindow={props.showWindow}
           />
           <RightTopMenu
             picture={
               "https://icons.iconarchive.com/icons/dtafalonso/modern-xp/256/ModernXP-62-Folder-Images-icon.png"
             }
-            text={"Mes Images"}
+            text={lang.language === "English" ? "My Pictures" : "Mes Images"}
             showWindow={props.showWindow}
           />
 
           <RightTopMenu
             picture={postetravail}
-            text={"Poste de travail"}
+            text={lang.language === "English" ? "Computer" : "Poste de travail"}
             showWindow={props.showWindow}
           />
           <div class="fade_rule2"></div>
@@ -124,14 +127,14 @@ function Menuderoule(props) {
 
       <div className="menuderoule_footer">
      
-        <div className="footer_element2">  <img className="footer_image" src={logoout}
-          alt="logoutlogo"/>          <p>Fermer la session</p>
+        <div className={lang.language === "English" ? "footer_element2_en" : "footer_element2"}>  <img className="footer_image" src={logoout}
+          alt="logoutlogo"/>          <p>{lang.language === "English" ? "Log Off" : "Fermer la session"}</p>
         
         </div>
-        <div onClick={() => props.shutdown()} className="footer_element">
-          <img className="footer_image" src={shudownlogo}
+        <div onClick={() => props.shutdown()} className={lang.language === "English" ? "footer_element_en" : "footer_element"}>
+          <img className="footer_image" src={shudownlogo} 
           alt="shutdownlogo"/>
-          <p>Arrêter</p>
+          <p>{lang.language === "English" ? 'Shut Down' : 'Arrêter'}</p>
         </div>
       </div>
 

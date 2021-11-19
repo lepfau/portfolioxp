@@ -1,10 +1,36 @@
 import React from "react";
 
 function RightTopMenu(props) {
+
+const showWindowLang = (text) => {
+  if(text === "Computer") {
+    props.showWindow("Poste de travail")
+  }
+  else if (text === "My Projects") {
+    props.showWindow("Mes Projets")
+  }
+  else if (text === "My Pictures") {
+    props.showWindow("Mes Images")
+  }
+  else if (text === "My Skills") {
+    props.showWindow("Mes Compétences")
+  }
+  else if (text === "E-mail") {
+    props.showWindow("E-mail")
+  }
+  else if (text === "My Education") {
+    props.showWindow("Mes Formations")
+  }
+  else if (text === "Internet Explorer") {
+    props.showWindow("Internet Explorer")
+  }
+  else props.showWindow(props.text)
+}
+
   return (
     <div
       className="menuderoule_items_topright"
-      onClick={() => props.showWindow(props.text)}
+      onClick={() => showWindowLang(props.text)}
     >
       <div className="piccontainermenu">
         <img className="menuderoule_items_picsmall" src={props.picture}></img>

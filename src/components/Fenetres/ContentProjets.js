@@ -1,15 +1,19 @@
-import React from "react";
+import React, {useContext} from "react";
 import pickit from "../../assets/pickit.PNG";
 import supertyper from "../../assets/supertyper.png";
 import myface from "../../assets/photoed.PNG"
+import LangContext from "../Context/LangContext";
 
 function ContentProjets() {
+
+  const lang = useContext(LangContext)
+
   return (
     <div>
       <div className="projets_headbar">
-        <p style={{width:"31%", marginLeft:"12px"}}>Nom</p>
+        <p style={{width:"31%", marginLeft:"12px"}}>{lang.language === "English" ? "Name" : "Nom"}</p>
         <p style={{width:"35%"}}>Technos</p>
-        <p>Date création</p>
+        <p>{lang.language === "English" ? "Date created" : "Date création"}</p>
       </div>
     <div className="pdt_content_projets">
       <div style={{display:"flex", alignItems:"center"}}>

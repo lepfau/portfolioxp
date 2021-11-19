@@ -1,12 +1,15 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import Main from "./Main";
 import Homepage from "./Homepage";
 import useSound from "use-sound";
 import postbeep from "../assets/postbeep.mp3"
 import xpsound from "../assets/windows-xp-startup.mp3"
+import LangContext from "../components/Context/LangContext"
 
 
 function First() {
+
+
 
     const [play] = useSound(postbeep);
     const [playxp] = useSound(xpsound)

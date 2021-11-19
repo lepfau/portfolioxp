@@ -1,9 +1,26 @@
-import React from "react";
+import React, {useContext} from "react";
 import pdtlogo from "../../assets/5131-tOo-Postedetravail.png";
 import trashlogo from "../../assets/trash.png";
 import logointernet from "../../assets/internetlogo.png";
+import LangContext from "../Context/LangContext";
 
 function Taskbar(props) {
+
+  const lang = useContext(LangContext)
+  let nametouse = props.appname;
+let englishTrue = lang.language === "English";
+
+  if (nametouse === "Poste de travail" && englishTrue ) nametouse = "Computer";
+  else if (nametouse === "Mes Projets" && englishTrue) nametouse = "My Projects";
+  else if (nametouse === "Mes Images" && englishTrue) nametouse = "My Pictures";
+  else if (nametouse === "Mes Compétences" && englishTrue) nametouse = "My Skills";
+  else if (nametouse === "Mes Formations" && englishTrue) nametouse = "My Education";
+  else if (nametouse === "Corbeille" && englishTrue) nametouse = "Trash";
+  else if (nametouse === "Mon Cv.pdf" && englishTrue) nametouse = "Resume.pdf";
+  else if (nametouse === "Me contacter" && englishTrue) nametouse = "Contact Me";
+
+
+
   let logo = "";
   if (props.appname === "Poste de travail") logo = pdtlogo;
   if (props.appname === "Corbeille") logo = trashlogo;
@@ -30,7 +47,7 @@ function Taskbar(props) {
   return (
     <div onClick={() => props.hideWindow(props.window)} className="classbar">
       <img className="taskbarlogo" src={logo} alt="logotaskbar"></img>
-      {props.appname}
+      {nametouse}
     </div>
   );
 }

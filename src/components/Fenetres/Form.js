@@ -1,11 +1,14 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { send } from "emailjs-com";
 import phonebook from "../../assets/phonebookmail.PNG"
 import { getByDisplayValue } from "@testing-library/dom";
+import LangContext from "../Context/LangContext";
 
 
 function Form() {
+
+  const lang = useContext(LangContext)
   const [toSend, setToSend] = useState({
     from_name: "",
     from_email: "",
@@ -22,7 +25,7 @@ function Form() {
     )
       .then((response) => {
         console.log("SUCCESS!", response.status, response.text);
-        alert("Envoyé avec succès");
+        alert(lang.language === "English" ? "Sent !" : "Envoyé avec succès");
         setToSend({ from_name: "", from_email: "", message: "" });
       })
       .catch((err) => {
@@ -52,19 +55,21 @@ function Form() {
           >
             {" "}
             <img
+            alt="maillogo"
               style={{ height: "20px" }}
               src="https://cdn-icons-png.flaticon.com/512/176/176674.png"
             />
-            Envoyer
+            {lang.language === "English" ? "Send" : "Envoyer"}
+       
           </button>
           <div style={{ width: "90%" }}>
             <div className="input_container">
-              <label className="labelform" htmlFor="myemail"><img src={phonebook} />À </label>
+              <label className="labelform" htmlFor="myemail"><img src={phonebook} alt="phonebook" />{lang.language === "English" ? "To" : "A"} </label>
               <input
                 style={{
                   fontSize: "13px",
                   fontFamily: "Tahoma",
-                  margin: "5px",
+                  margin: "12px",
                   border: "1px solid black",
                   height: "30px",
                   width: "85%"
@@ -73,18 +78,18 @@ function Form() {
                 type="text"
                 id="from_name"
                 name="from_name"
-                placeholder="Nom"
+           
                 value="edouard.pfauwadel@gmail.com"
 
               />
             </div>
             <div className="input_container">
-              <label className="labelform" htmlFor="from_name"><img src={phonebook} />Nom</label>
+              <label className="labelform" htmlFor="from_name"><img src={phonebook} />{lang.language === "English" ? "Name" : "Nom"}</label>
               <input
                 style={{
                   fontSize: "13px",
                   fontFamily: "Tahoma",
-                  margin: "5px",
+                  margin: "12px",
                   border: "1px solid black",
                   height: "30px",
                   width: "85%"
@@ -93,7 +98,7 @@ function Form() {
                 type="text"
                 id="from_name"
                 name="from_name"
-                placeholder="Nom"
+               
                 value={toSend.from_name}
                 onChange={handleChange}
               />
@@ -104,7 +109,7 @@ function Form() {
                 style={{
                   fontSize: "13px",
                   fontFamily: "Tahoma",
-                  margin: "5px",
+                  margin: "12px",
                   border: "1px solid black",
                   height: "30px",
                   width: "85%"
@@ -113,7 +118,7 @@ function Form() {
                 className="forminput"
                 type="text"
                 name="from_email"
-                placeholder="email"
+              
                 value={toSend.from_email}
                 onChange={handleChange}
               />

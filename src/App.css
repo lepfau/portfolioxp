@@ -752,6 +752,31 @@ flex-direction: column;
   box-shadow: 0.5px 0.5px 1px black;
 }
 
+.demarreren {
+  width: 110px;
+  display: flex;
+  align-items: center;
+  font-size: 21px;
+  font-style: italic;
+
+  background: linear-gradient(
+      to bottom,
+      #074e09 0%,
+      #1d8821 9%,
+      #1d8821 18%,
+      #07660d 92%,
+      #333 100%
+    )
+    center/cover no-repeat;
+  height: 34px;
+  color: white;
+  font-family: "Tahoma";
+  font-weight: 700;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  z-index: 2;
+  box-shadow: 0.5px 0.5px 1px black;
+}
 .logoxp {
   height: 28px;
   margin-right: 7px;
@@ -1129,8 +1154,64 @@ flex-direction: column;
       cursor: pointer;
 }
 
+
+.footer_element_en {
+  width: 105px
+  ;
+      color: white;
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      justify-content: space-evenly;
+      margin-right: 10px;
+      cursor: pointer;
+}
+
+
+.frenchflag {
+      /* position: absolute; */
+    /* left: 43px; */
+    position: absolute;
+    /* right: 80px; */
+    margin-left: 52vh;
+    z-index: 999;
+    height: 4vh;
+    width: 6vh;
+    margin-top: -8vh;
+    cursor: pointer;
+    color: black;
+    ;
+}
+
+.englishflag {
+
+    /* position: absolute; */
+  /* left: 43px; */
+  position: absolute;
+  /* right: 80px; */
+  margin-left: 52vh;
+  z-index: 999;
+  height: 4vh;
+  width:6vh;
+  margin-top: -3vh;
+  cursor: pointer;
+  color: black;
+
+}
+
 .footer_element2{
   width: 140px
+  ;
+      color: white;
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      justify-content: space-evenly;
+      margin-right: 10px;
+}
+
+.footer_element2_en{
+  width: 100px
   ;
       color: white;
       display: flex;
