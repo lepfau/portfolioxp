@@ -769,6 +769,18 @@ form {
   z-index: 2;
   box-shadow: 0.5px 0.5px 1px black;
 }
+
+.demarreren:hover {
+  background: linear-gradient(
+      to bottom,
+      #337d35 0%,
+      #1d8821 9%,
+      #2a9e2e 18%,
+      #4a904f 92%,
+      #333 100%
+    )
+    center/cover no-repeat;
+}
 .logoxp {
   height: 28px;
   margin-right: 7px;
@@ -971,8 +983,46 @@ form {
   box-shadow: 0px 0px 1px black;
 }
 
+.langmenu {
+  position: absolute;
+  bottom: 43px;
+  /* text-align: right; */
+  display: flex;
+  flex-direction: column;
+  right: 94px;
+  color: black;
+  background-color: white;
+  height: 73px;
+  width: 60px;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 5px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.langmenuitem {
+  width: 100%;
+  text-align: center;
+  height: 50%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.langmenuchose {
+  color: white;
+  cursor: pointer;
+}
+
+.langmenuitem:hover {
+  background-color: lightblue;
+}
+
 .horloge {
-  width: 135px;
+  width: 215px;
   display: flex;
   align-items: center;
   justify-content: flex-end;

@@ -33,8 +33,11 @@ function Main(props) {
   const [mesformations, setMesformations] = useState(false);
   const [mescompetences, setMescompetences] = useState(false);
   const [piano, setPiano] = useState(false);
+  const [langMenu, setLangMenu] = useState(false);
 
-const lang = useContext(LangContext)
+  const lang = useContext(LangContext);
+  const enTrue = lang.language === "English";
+
 
   function setmenu() {
     setMenuderoule(!menuderoule);
@@ -51,8 +54,28 @@ const lang = useContext(LangContext)
     }, (6000));
   }
 
+  function showLang() {
+    setLangMenu(!langMenu)
+    console.log("lang menu")
+  }
+
+  function changeLanguageEN() {
+    lang.changeLanguageEn();
+    setLangMenu(false)
+  }
+
+  function changeLanguageFR() {
+    lang.changeLanguageFr();
+    setLangMenu(false)
+  }
+
+
   function closemenu() {
     setMenuderoule(false);
+  }
+
+  function closelang() {
+    setLangMenu(false)
   }
 
   function showPopup() {
@@ -85,7 +108,7 @@ const lang = useContext(LangContext)
     if (win === "Mes Formations") setMesformations(true);
     if (win === "Mes Compétences") setMescompetences(true);
     if (win === "Piano") setPiano(true);
-    
+
     if (newArray.includes(win) === false) {
       newArray.push(win);
     }
@@ -112,7 +135,7 @@ const lang = useContext(LangContext)
     setWindowsarray(arr);
 
     if (win === "Poste de travail" || win === "Computer") setPostetravail(false);
-    else if (win === "Corbeille" || win === "Trash" ) setTrash(false);
+    else if (win === "Corbeille" || win === "Trash") setTrash(false);
     else if (win === "Mon Cv.pdf" || win === "Resume.pdf") setCv(false);
     else if (win === "Mes Projets" || win === "My Projects") setMesprojets(false);
     else if (win === "Me contacter" || win === "Contact Me") setMail(false);
@@ -156,6 +179,7 @@ const lang = useContext(LangContext)
       >
         <WindowsArea
           closemenu={closemenu}
+          closelang={closelang}
           showWindow={showWindow}
           closeWindow={closeWindow}
           hideWindow={hideWindow}
@@ -171,10 +195,10 @@ const lang = useContext(LangContext)
           windowsArray={windowsArray}
           moveItem={moveItem}
           mesformations={mesformations}
-          mescompetences= {mescompetences}
+          mescompetences={mescompetences}
         />
 
-        
+
         <div className="full_bottom">
           <div>
             <Demarrer setmenu={setmenu} />
@@ -192,10 +216,13 @@ const lang = useContext(LangContext)
             })}
           </div>
           ;
+
           <div className="horloge">
+            {enTrue ? <p className='langmenuchose' onClick={() => showLang()}>ENG</p> : <p className="langmenuchose" onClick={() => showLang()}>FRA</p>}
+
             <img
               onClick={() => showMsn()}
-              style={{ height: "15px", marginRight: "10px", marginLeft:"10px" }}
+              style={{ height: "15px", marginRight: "10px", marginLeft: "10px" }}
               src="https://www.aussitot.fr/imgred/1898.png"
               alt="msnlogo"
             />
@@ -238,6 +265,11 @@ const lang = useContext(LangContext)
               </div>
             </div>
           </div>
+        </div>}
+        {langMenu && <div className="langmenu">
+          <p className="langmenuitem" onClick={() => changeLanguageEN()} >ENG</p>
+          <p className="langmenuitem" onClick={() => changeLanguageFR()}>FRA</p>
+
         </div>}
 
       </div>

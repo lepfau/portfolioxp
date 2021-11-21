@@ -1,4 +1,4 @@
-import React, { useState,  useContext } from "react";
+import React, { useState, useContext } from "react";
 import Fenetre from "../Fenetres/Fenetre";
 import ContentPdt from "../Fenetres/ContentPdt";
 import ContentTrash from "../Fenetres/ContentTrash";
@@ -37,7 +37,8 @@ function WindowsArea(props) {
   const lang = useContext(LangContext);
 
   function setthatScale() {
-    fullScreenCv ? setScale(1) : setScale(2.2)
+    fullScreenCv ? setScale(1) : setScale(2.2);
+
   }
 
   function makefullScreen(win) {
@@ -55,12 +56,17 @@ function WindowsArea(props) {
     if ((win === "Mon Cv.pdf" || win === "Resume.pdf") && fullScreenCv) { setfullScreenCv(false); setthatScale() }
   }
 
+  function closeAll() {
+    props.closemenu();
+    props.closelang()
+  }
+
 
   return (
-    <div className="windows_all" onClick={() => props.closemenu()}>
+    <div className="windows_all" onClick={() => closeAll()}>
 
       {props.windowsArray.map((window, index) => {
-        if (window === "Poste de travail" && props.posteTravail === true )
+        if (window === "Poste de travail" && props.posteTravail === true)
           return (
             <Fenetre
               putOnTop={props.putOnTop}
@@ -79,7 +85,7 @@ function WindowsArea(props) {
           );
 
 
-          else if (window === "Piano" && props.piano === true)
+        else if (window === "Piano" && props.piano === true)
           return (
             <Fenetre
               putOnTop={props.putOnTop}
@@ -100,7 +106,7 @@ function WindowsArea(props) {
               fullScreen={fullScreenPiano}
             />
           );
-        
+
         else if (window === "Popup" && props.popup === true)
           return (
             <Fenetre
@@ -144,12 +150,12 @@ function WindowsArea(props) {
             />
           );
 
-          else if (window === "Mes Formations" && props.mesformations === true)
+        else if (window === "Mes Formations" && props.mesformations === true)
           return (
             <Fenetre
               putOnTop={props.putOnTop}
               key={window}
-              content={<ContentFormations/>}
+              content={<ContentFormations />}
               width={"700px"}
               height={"500px"}
               closeWindow={props.closeWindow}
@@ -165,13 +171,13 @@ function WindowsArea(props) {
               fullScreen={fullScreenFormations}
             />
           );
-          
-          else if (window === "Mes Compétences" && props.mescompetences === true)
+
+        else if (window === "Mes Compétences" && props.mescompetences === true)
           return (
             <Fenetre
               putOnTop={props.putOnTop}
               key={window}
-              content={<ContentCompetences/>}
+              content={<ContentCompetences />}
               width={"700px"}
               height={"500px"}
               closeWindow={props.closeWindow}
@@ -292,14 +298,14 @@ function WindowsArea(props) {
       <div className="icones">
         <Icone
           showWindow={props.showWindow}
-          name={lang.language === "English" ? "Trash" : "Corbeille" }
+          name={lang.language === "English" ? "Trash" : "Corbeille"}
           logo={trashlogo}
           bottom={"71px"}
           right={"44px"}
         />
         <Icone
           showWindow={props.showWindow}
-          name={lang.language === "English" ? "Resume.pdf" : "Mon Cv.pdf" }
+          name={lang.language === "English" ? "Resume.pdf" : "Mon Cv.pdf"}
           logo={
             "https://seeklogo.com/images/A/adobe-pdf-logo-1480D328A9-seeklogo.com.png"
           }
