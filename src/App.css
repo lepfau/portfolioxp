@@ -639,7 +639,15 @@ form {
   margin-right: 10px;
 }
 
-.pdt_drive2:active {
+/* .pdt_drive2:active {
+  height: 60vh;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+} */
+
+.mesimages_fullscreen {
   height: 60vh;
   position: absolute;
   top: 50%;

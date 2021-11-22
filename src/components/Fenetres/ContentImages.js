@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import hopper from "../../assets/hooper.png"
 import space from "../../assets/space.png"
 import kitchen from "../../assets/kitchen.png"
@@ -7,12 +7,20 @@ import appart from "../../assets/appart.png"
 
 function ContentImages() {
 
+const [hoper, setHoper] = useState(false);
+const [spaceimg, setSpace] = useState(false);
+const [kitimg, setKitimg] = useState(false);
+const [seaimg, setSeaimg] = useState(false);
+const [aptimg, setAptimg] = useState(false);
+
     return (
+        <div>
+        
         <div className="pdt_content" style={{marginTop:"15px"}}>
-            
-            <div className="mesimages_container">
+           
+            <div className="mesimages_container" onClick={() => setHoper(!hoper)}>
                 <img
-                    className="pdt_drive2"
+                    className={hoper ? "mesimages_fullscreen" : "pdt_drive2"}
                     alt="drivepicture"
                     src={hopper}
                 />
@@ -21,9 +29,9 @@ function ContentImages() {
                 </p>
             </div>
            
-            <div className="mesimages_container">
+            <div className="mesimages_container" onClick={() => setSpace(!spaceimg)}>
                 <img
-                    className="pdt_drive2"
+                    className={spaceimg ? "mesimages_fullscreen" : "pdt_drive2"}
                     alt="drivepicture"
                     src={space}
                 />
@@ -32,9 +40,9 @@ function ContentImages() {
                 </p>
             </div>
 
-            <div className="mesimages_container">
+            <div className="mesimages_container" onClick={() => setKitimg(!kitimg)}>
                 <img
-                    className="pdt_drive2"
+                    className={kitimg ? "mesimages_fullscreen" : "pdt_drive2"}
                     alt="drivepicture"
                     src={kitchen}
                 />
@@ -43,9 +51,9 @@ function ContentImages() {
                 </p>
             </div>
 
-            <div className="mesimages_container">
+            <div className="mesimages_container" onClick={() => setSeaimg(!seaimg)}>
                 <img
-                    className="pdt_drive2"
+                    className={seaimg ? "mesimages_fullscreen" : "pdt_drive2"}
                     alt="drivepicture"
                     src={sea}
                 />
@@ -54,9 +62,9 @@ function ContentImages() {
                 </p>
             </div>
 
-            <div className="mesimages_container">
+            <div className="mesimages_container" onClick={() => setAptimg(!aptimg)}>
                 <img
-                    className="pdt_drive2"
+                    className={aptimg ? "mesimages_fullscreen" : "pdt_drive2"}
                     alt="drivepicture"
                     src={appart}
                 />
@@ -65,6 +73,7 @@ function ContentImages() {
                 </p>
             </div>
         
+        </div>
         </div>
     )
 }
