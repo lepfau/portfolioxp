@@ -73,8 +73,8 @@ function WindowsArea(props) {
               key={window}
               closeWindow={props.closeWindow}
               hideWindow={props.hideWindow}
-              width={"700px"}
-              height={"400px"}
+              width={"65vw"}
+              height={"50vh"}
               text={lang.language === "English" ? "Computer" : "Poste de travail"}
               logo={postetravail}
               content={<ContentPdt />}
@@ -243,7 +243,8 @@ function WindowsArea(props) {
               putOnTop={props.putOnTop}
               key={window}
               content={<ContentProjets />}
-              width={"550px"}
+              width={"50vw"}
+              height={"50vh"}
               closeWindow={props.closeWindow}
               text={lang.language === "English" ? "My Projects" : "Mes Projets"}
               logo={
