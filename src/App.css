@@ -1204,11 +1204,10 @@ form {
   cursor: pointer;
 }
 
+
+
 .frenchflag {
-  /* position: absolute; */
-  /* left: 43px; */
   position: absolute;
-  /* right: 80px; */
   margin-left: 52vh;
   z-index: 999;
   height: 4vh;
@@ -1218,11 +1217,36 @@ form {
   color: black;
 }
 
-.englishflag {
-  /* position: absolute; */
-  /* left: 43px; */
+.frenchflag_selected {
   position: absolute;
-  /* right: 80px; */
+  margin-left: 52vh;
+  z-index: 999;
+  height: 4vh;
+  width: 6vh;
+  margin-top: -8vh;
+  cursor: pointer;
+  color: black;
+  border: 2px solid black;
+  padding: 5px;
+}
+
+
+
+.englishflag {
+  position: absolute;
+  margin-left: 52vh;
+  z-index: 999;
+  height: 4vh;
+  width: 6vh;
+  margin-top: -2vh;
+  cursor: pointer;
+  color: black;
+}
+
+
+
+.englishflag_selected {
+  position: absolute;
   margin-left: 52vh;
   z-index: 999;
   height: 4vh;
@@ -1230,6 +1254,8 @@ form {
   margin-top: -3vh;
   cursor: pointer;
   color: black;
+  border: 2px solid black;
+  padding: 5px;
 }
 
 .footer_element2 {

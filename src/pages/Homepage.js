@@ -12,10 +12,31 @@ function Homepage(props) {
 
 const {loading, xpload, bureau, blink, arroww} = props
 const lang = useContext(LangContext);
+const [french, setFrench] = useState(true);
+const [eng, setEng] = useState(false);
+const [flags, setFlags] = useState(true)
+
+const languageFrench = () => {
+    lang.changeLanguageFr();
+    setEng(false);
+    setFrench(true);
+}
+
+const languageEng = () => {
+    lang.changeLanguageEn();
+    setFrench(false);
+    setEng(true);
+}
+
+const startup = () => {
+    setFlags(false)
+    props.gifShowing();
+}
+
 
     return (
         <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-            <p className="start-btn" onClick={() => props.gifShowing()}>"X"</p>
+            <p className="start-btn" onClick={() => startup()}>"X"</p>
             {blink && <div class="blink_me3">.</div>}
             {blink && <div class="blink_me2">.</div>}
             {blink && <div class="blink_me">.</div>}
@@ -25,9 +46,16 @@ const lang = useContext(LangContext);
             {xpload && <img className="xploading" src={xpgif}></img> }
             {bureau && <img className="bureau" src={bureaupng}></img>}
             <div style={{position: "absolute"}}>
-            <img src={frenchflag} className="frenchflag" onClick={() => lang.changeLanguageFr()}/>
-            <img src={englishflag}  className="englishflag" onClick={() => lang.changeLanguageEn()}/>
-            <p style={{zIndex: "999",width:"150px",position:"absolute", marginTop:"3vh", marginLeft:'52vh', fontFamily:"Roboto", fontWeight:"800", fontSize:'16px'}}>Choose language</p>
+
+{flags && (
+    <div >
+            <img src={frenchflag} className={french ? 'frenchflag_selected' : 'frenchflag'} onClick={() => languageFrench()}/>
+            <img src={englishflag}  className={eng ? 'englishflag_selected' : 'englishflag'} onClick={() => languageEng()}/>
+            </div>
+)}
+
+
+
             </div>
            {arroww && <p className="indicationdem" onClick={() => props.gifShowing()} style={{cursor:"pointer"}}> {lang.language === "English" ? "Start computer" : "Démarrer l'ordinateur" }</p>}
             {arroww && <img className="arrow" src={arrow}></img>} 
