@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/portfolioxp/static/css/main.e8a39f60.chunk.css",
-    "main.js": "/portfolioxp/static/js/main.3258e1fb.chunk.js",
-    "main.js.map": "/portfolioxp/static/js/main.3258e1fb.chunk.js.map",
+    "main.css": "/portfolioxp/static/css/main.3a9ceb19.chunk.css",
+    "main.js": "/portfolioxp/static/js/main.c906e49e.chunk.js",
+    "main.js.map": "/portfolioxp/static/js/main.c906e49e.chunk.js.map",
     "runtime-main.js": "/portfolioxp/static/js/runtime-main.9d7cbe39.js",
     "runtime-main.js.map": "/portfolioxp/static/js/runtime-main.9d7cbe39.js.map",
     "static/css/2.7601d764.chunk.css": "/portfolioxp/static/css/2.7601d764.chunk.css",
@@ -14,7 +14,7 @@
     "static/js/4.c88ac536.chunk.js.map": "/portfolioxp/static/js/4.c88ac536.chunk.js.map",
     "index.html": "/portfolioxp/index.html",
     "static/css/2.7601d764.chunk.css.map": "/portfolioxp/static/css/2.7601d764.chunk.css.map",
-    "static/css/main.e8a39f60.chunk.css.map": "/portfolioxp/static/css/main.e8a39f60.chunk.css.map",
+    "static/css/main.3a9ceb19.chunk.css.map": "/portfolioxp/static/css/main.3a9ceb19.chunk.css.map",
     "static/js/2.479e4d23.chunk.js.LICENSE.txt": "/portfolioxp/static/js/2.479e4d23.chunk.js.LICENSE.txt",
     "static/js/3.28fc89fe.chunk.js.LICENSE.txt": "/portfolioxp/static/js/3.28fc89fe.chunk.js.LICENSE.txt",
     "static/media/340452.2f7b53cf.png": "/portfolioxp/static/media/340452.2f7b53cf.png",
@@ -26,6 +26,7 @@
     "static/media/backarrow.93b05088.png": "/portfolioxp/static/media/backarrow.93b05088.png",
     "static/media/bios.d61838e3.gif": "/portfolioxp/static/media/bios.d61838e3.gif",
     "static/media/bureau.769ddac1.PNG": "/portfolioxp/static/media/bureau.769ddac1.PNG",
+    "static/media/escemlogo.e25ffd3f.png": "/portfolioxp/static/media/escemlogo.e25ffd3f.png",
     "static/media/hooper.b9519907.png": "/portfolioxp/static/media/hooper.b9519907.png",
     "static/media/internetlogo.b3742dd1.png": "/portfolioxp/static/media/internetlogo.b3742dd1.png",
     "static/media/ironhack.9062ee5c.png": "/portfolioxp/static/media/ironhack.9062ee5c.png",
@@ -50,7 +51,7 @@
     "static/js/runtime-main.9d7cbe39.js",
     "static/css/2.7601d764.chunk.css",
     "static/js/2.479e4d23.chunk.js",
-    "static/css/main.e8a39f60.chunk.css",
-    "static/js/main.3258e1fb.chunk.js"
+    "static/css/main.3a9ceb19.chunk.css",
+    "static/js/main.c906e49e.chunk.js"
   ]
 }
