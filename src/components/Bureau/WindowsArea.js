@@ -37,7 +37,7 @@ function WindowsArea(props) {
   const lang = useContext(LangContext);
 
   function setthatScale() {
-    fullScreenCv ? setScale(1) : setScale(2.2);
+    fullScreenCv ? setScale(1) : setScale(1.8);
 
   }
 
@@ -74,6 +74,7 @@ function WindowsArea(props) {
               closeWindow={props.closeWindow}
               hideWindow={props.hideWindow}
               width={"700px"}
+              height={"400px"}
               text={lang.language === "English" ? "Computer" : "Poste de travail"}
               logo={postetravail}
               content={<ContentPdt />}
@@ -114,7 +115,7 @@ function WindowsArea(props) {
               key={window}
               content={<ContentPopup />}
               width={"500px"}
-              height={"400px"}
+              height={"380px"}
               closeWindow={props.closeWindow}
               text={"Popup"}
               logo={
@@ -262,6 +263,7 @@ function WindowsArea(props) {
               key={window}
               content={<ContentTrash />}
               width={"550px"}
+              height={"300px"}
               closeWindow={props.closeWindow}
               text={lang.language === "English" ? "Trash" : "Corbeille"}
               logo={trashlogo}
@@ -279,7 +281,7 @@ function WindowsArea(props) {
               key={window}
               content={<ContentCv scale={scale} />}
               width={"706px"}
-              height={"700px"}
+              height={"500px"}
               closeWindow={props.closeWindow}
               text={lang.language === "English" ? "Resume.pdf" : "Mon Cv.pdf"}
               logo={

@@ -1124,11 +1124,11 @@ form {
   justify-self: flex-end;
   box-shadow: 1px 1px 2px black;
   z-index: -2;
-  margin-bottom: 135px;
-  height: 75vh;
-  max-height: 591px;
-  min-height: 540px;
-  z-index: 0;
+  margin-bottom: 140px;
+  height: 560px;
+  /* max-height: 591px; */
+  /* min-height: 540px; */
+  z-index: 1;
 }
 
 .menuderoule_container {
@@ -1230,6 +1230,30 @@ form {
   padding: 5px;
 }
 
+.aboutme_title {
+  font-size: 2em;
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.aboutme {
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutme hr {
+  width: 80%;
+}
+
+.aboutme p {
+  width: 80%;
+  text-align: justify;
+  font-size: 15px;
+  font-family: 'Roboto';
+}
 
 
 .englishflag {
