@@ -1,19 +1,24 @@
 import React from "react";
-import { HashRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 import "./App.css";
 import First from "./pages/First";
 import LangProvider from "./components/Context/LangProvider"
+import errorcomponent from "./components/errorcomponent";
+
 
 function App() {
   return (
-    <LangProvider>
-    <HashRouter basename='/'>
     <div className="App">
+    <LangProvider>
+    <HashRouter exact basename='/' hashType="noslash">
+      <Switch>
     <Route exact path="/" component={First} />
-
-    </div>
+    <Route component={errorcomponent}/>
+  
+    </Switch>
     </HashRouter>
     </LangProvider>
+    </div>
   );
 }
 
