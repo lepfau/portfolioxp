@@ -4,6 +4,18 @@ import Draggable from "react-draggable";
 function Fenetre(props) {
 
 
+  const testFunction = (array, text) => {
+if(text === "Notepad") props.moveItem(array, "Bloc-notes");
+else if (text === "Computer") props.moveItem(array, "Poste de travail")
+else if (text === "My Skills") props.moveItem(array, "Mes compétences")
+else if (text === "My Projects") props.moveItem(array, "Mes Projets")
+else if (text === "My Pictures") props.moveItem(array, "Mes Images")
+else if (text === "My Education") props.moveItem(array, "Mes Formations")
+else if (text === "Trash") props.moveItem(array, "Corbeille")
+else if (text === "Resume.pdf") props.moveItem(array, "Mon Cv.pdf")
+else props.moveItem(array, text)
+  }
+
   return (
     <div className="window_elements">
       {props.fullScreen ?
@@ -67,7 +79,7 @@ function Fenetre(props) {
                   ></button>
                 </div>
               </div>
-              <div className="window_content" onClick={() => props.moveItem(props.array, props.text)}>
+              <div className="window_content" onClick={() => testFunction(props.array, props.text)}>
                 {props.content}
               </div>
             </div>

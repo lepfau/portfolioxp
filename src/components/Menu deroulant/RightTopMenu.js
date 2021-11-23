@@ -24,6 +24,9 @@ const showWindowLang = (text) => {
   else if (text === "Internet Explorer") {
     props.showWindow("Internet Explorer")
   }
+  else if (text === "Notepad") {
+    props.showWindow("Bloc-notes")
+  }
   else props.showWindow(props.text)
 }
 

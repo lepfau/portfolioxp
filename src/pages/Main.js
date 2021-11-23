@@ -34,6 +34,7 @@ function Main(props) {
   const [mescompetences, setMescompetences] = useState(false);
   const [piano, setPiano] = useState(false);
   const [langMenu, setLangMenu] = useState(false);
+  const [notepad, setNotepad] = useState(false);
 
   const lang = useContext(LangContext);
   const enTrue = lang.language === "English";
@@ -108,6 +109,7 @@ function Main(props) {
     if (win === "Mes Formations") setMesformations(true);
     if (win === "Mes Compétences") setMescompetences(true);
     if (win === "Piano") setPiano(true);
+    if (win === "Bloc-notes") setNotepad(true);
 
     if (newArray.includes(win) === false) {
       newArray.push(win);
@@ -144,6 +146,7 @@ function Main(props) {
     else if (win === "Mes Images" || win === "My Pictures") setMesimages(false)
     else if (win === "Mes Formations" || win === "My Education") setMesformations(false)
     else if (win === "Mes Compétences" || win === "My Skills") setMescompetences(false)
+    else if (win === "Bloc-notes" || win === "Notepad") setNotepad(false);
     else if (win === "Piano") setPiano(false)
 
 
@@ -160,6 +163,7 @@ function Main(props) {
     else if (win === "Mes Images" || win === "My Pictures") setMesimages(!mesimages)
     else if (win === "Mes Formations" || win === "My Education") setMesformations(!mesformations)
     else if (win === "Mes Compétences" || win === "My Skills") setMescompetences(!mescompetences)
+    else if (win === "Bloc-notes" || win === "Notepad") setNotepad(!notepad)
     else if (win === "Piano") setPiano(!piano)
     closemenu();
   }
@@ -192,6 +196,7 @@ function Main(props) {
           mesimages={mesimages}
           popup={popup}
           piano={piano}
+          notepad={notepad}
           windowsArray={windowsArray}
           moveItem={moveItem}
           mesformations={mesformations}

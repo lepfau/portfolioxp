@@ -7,13 +7,15 @@ import ContentProjets from "../Fenetres/ContentProjets";
 import ContentInternet from "../Fenetres/ContentInternet"
 import ContentImages from "../Fenetres/ContentImages";
 import ContentPopup from "../Fenetres/ContentPopup";
+import ContentNotepad from "../Fenetres/ContentNotepad";
 import Form from "../Fenetres/Form";
 import postetravail from "../../assets/5131-tOo-Postedetravail.png";
 import logointernet from "../../assets/internetlogo.png";
+import notepadlogo from "../../assets/Notepad_Vista_10.png"
 import Piano from "./../Fenetres/Piano"
 
 import Icone from "../Icones/Icone";
-import trashlogo from "../../assets/trash.png";
+import trashlogo from "../../assets/ModernXP-76-Trash-Full-icon.png";
 import ContentFormations from "../Fenetres/ContentFormations";
 import ContentCompetences from "../Fenetres/ContentCompetences";
 
@@ -31,6 +33,7 @@ function WindowsArea(props) {
   const [fullScreenFormations, setFullscreenFormations] = useState(false);
   const [fullScreenCompetences, setFullscreenCompetences] = useState(false);
   const [fullScreenPiano, setFullscreenPiano] = useState(false);
+  const [fullScreenNotepad, setFullscreenNotepad] = useState(false);
   const [pianowidth, setPianoWidth] = useState('490')
   const [scale, setScale] = useState(1)
 
@@ -49,8 +52,9 @@ function WindowsArea(props) {
     else if (win === "Mes Projets" || win === "My Projects") setfullScreenProjets(!fullScreenProjets);
     else if (win === "Corbeille" || win === "Trash") setFullScreenTrash(!fullScreenTrash);
     else if (win === "Mes Images" || win === "My Pictures") setFullscreenImages(!fullScreenImages);
-    else if (win === "Mes Formations" || win === "My Education") setFullscreenFormations(!fullScreenFormations)
-    else if (win === "Mes Compétences" || win === "My Skills") setFullscreenCompetences(!fullScreenCompetences)
+    else if (win === "Mes Formations" || win === "My Education") setFullscreenFormations(!fullScreenFormations);
+    else if (win === "Mes Compétences" || win === "My Skills") setFullscreenCompetences(!fullScreenCompetences);
+    else if (win === "Bloc-notes" || win === "Notepad") setFullscreenNotepad(!fullScreenNotepad);
     else if (win === "Piano") { setFullscreenPiano(!fullScreenPiano); setPianoWidth(800) }
     else if ((win === "Mon Cv.pdf" || win === "Resume.pdf") && fullScreenCv === false) { setfullScreenCv(true); setthatScale() };
     if ((win === "Mon Cv.pdf" || win === "Resume.pdf") && fullScreenCv) { setfullScreenCv(false); setthatScale() }
@@ -105,6 +109,27 @@ function WindowsArea(props) {
               moveItem={props.moveItem}
               makefullScreen={makefullScreen}
               fullScreen={fullScreenPiano}
+            />
+          );
+
+          else if (window === "Bloc-notes" && props.notepad === true)
+          return (
+            <Fenetre
+              putOnTop={props.putOnTop}
+              key={window}
+              content={<ContentNotepad/>}
+              width={"500px"}
+              height={"350px"}
+              closeWindow={props.closeWindow}
+              text={lang.language === "English" ?"Notepad" : "Bloc-notes"}
+              logo={
+               notepadlogo
+              }
+              hideWindow={props.hideWindow}
+              array={props.windowsArray}
+              moveItem={props.moveItem}
+              makefullScreen={makefullScreen}
+              fullScreen={fullScreenNotepad}
             />
           );
 

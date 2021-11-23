@@ -11,6 +11,7 @@ import linkedinlogo from "../../assets/linkedin-icon-png.png"
 import logoout from "../../assets/logout.png"
 import shudownlogo from "../../assets/shutdown.png"
 import LangContext from "../Context/LangContext";
+import notepad from "../../assets/Notepad_Vista_10.png"
 
 function Menuderoule(props) {
 
@@ -68,6 +69,11 @@ function Menuderoule(props) {
             }
             text={"Piano"}
             todo={props.showWindow}
+          />
+          <MiddleMenuItem
+          picture={notepad}
+          text={lang.language === "English" ? "Notepad" : "Bloc-notes"}
+          todo={props.showWindow}
           />
 {/*       
           <div style={{ marginTop: "40px" }} class="fade_rule"></div> */}

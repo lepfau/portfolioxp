@@ -14,7 +14,7 @@ function App() {
       <Switch>
     <Route exact path="/" component={First} />
     <Route component={errorcomponent}/>
-  
+
     </Switch>
     </HashRouter>
     </LangProvider>

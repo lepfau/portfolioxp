@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import trashlogo from "../../assets/trash.png";
+import trashlogo from "../../assets/ModernXP-76-Trash-Full-icon.png";
 import Draggable from "react-draggable";
 import LangContext from "../Context/LangContext";
 

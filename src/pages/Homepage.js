@@ -57,7 +57,7 @@ const startup = () => {
 
 
             </div>
-           {arroww && <p className="indicationdem" onClick={() => props.gifShowing()} style={{cursor:"pointer"}}> {lang.language === "English" ? "Start computer" : "Démarrer l'ordinateur" }</p>}
+           {arroww && <p className="indicationdem" onClick={() => startup()} style={{cursor:"pointer"}}> {lang.language === "English" ? "Start computer" : "Démarrer l'ordinateur" }</p>}
             {arroww && <img className="arrow" src={arrow}></img>} 
                 </div>
     )

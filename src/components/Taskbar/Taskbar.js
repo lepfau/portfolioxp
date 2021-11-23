@@ -3,6 +3,7 @@ import pdtlogo from "../../assets/5131-tOo-Postedetravail.png";
 import trashlogo from "../../assets/trash.png";
 import logointernet from "../../assets/internetlogo.png";
 import LangContext from "../Context/LangContext";
+import notepadlogo from "../../assets/Notepad_Vista_10.png"
 
 function Taskbar(props) {
 
@@ -13,16 +14,19 @@ let englishTrue = lang.language === "English";
   if (nametouse === "Poste de travail" && englishTrue ) nametouse = "Computer";
   else if (nametouse === "Mes Projets" && englishTrue) nametouse = "My Projects";
   else if (nametouse === "Mes Images" && englishTrue) nametouse = "My Pictures";
+  else if (nametouse === "Bloc-notes" && englishTrue) nametouse = "Notepad";
   else if (nametouse === "Mes Compétences" && englishTrue) nametouse = "My Skills";
   else if (nametouse === "Mes Formations" && englishTrue) nametouse = "My Education";
   else if (nametouse === "Corbeille" && englishTrue) nametouse = "Trash";
   else if (nametouse === "Mon Cv.pdf" && englishTrue) nametouse = "Resume.pdf";
   else if (nametouse === "Me contacter" && englishTrue) nametouse = "Contact Me";
+  
 
 
 
   let logo = "";
   if (props.appname === "Poste de travail") logo = pdtlogo;
+  if (props.appname === "Bloc-notes") logo = notepadlogo;
   if (props.appname === "Corbeille") logo = trashlogo;
   if (props.appname === "Mes Images") logo = "https://icons.iconarchive.com/icons/dtafalonso/modern-xp/256/ModernXP-62-Folder-Images-icon.png"
   if (props.appname === "Mes Formations") logo = "https://icons.iconarchive.com/icons/dtafalonso/modern-xp/256/ModernXP-62-Folder-Images-icon.png"

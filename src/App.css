@@ -130,6 +130,11 @@ table {
   height: 100%;
 }
 
+@font-face {
+  font-family: "Lucida";
+  src: url("./assets/lucon.ttf") format("ttf"),   
+ }
+
 body {
   margin: none;
   box-sizing: border-box;
@@ -203,7 +208,7 @@ body {
   position: absolute;
   width: 100px;
   background-color: wheat;
-  margin-left: 550px;
+  margin-left: 600px;
   text-align: center;
   height: 80px;
   display: flex;
@@ -1299,18 +1304,35 @@ form {
   padding: 5px;
 }
 
+@import url(https://fr.allfont.net/allfont.css?fonts=lucida-console);
+
 .aboutme_title {
-  font-size: 2em;
+  font-size: 17px;
     margin-top: 20px;
-    text-align: center;
+    text-align: left;
     margin-bottom: 18px;
+    font-family: 'Lucida Console'
+}
+
+.blinking {
+  animation: blinky 1s  steps(1) infinite;
+  color: black;
+}
+
+@keyframes blinky {
+ 0% {color:white}
+ 50% {color:black}
+ 100%{color: white;}
+
 }
 
 .aboutme {
   display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: 'Lucida Console';
+    margin-left: 10px;
 }
 
 .aboutme hr {
@@ -1318,10 +1340,9 @@ form {
 }
 
 .aboutme p {
-  width: 80%;
-  text-align: justify;
+  width: 90%;
+  text-align: left;
   font-size: 15px;
-  font-family: 'Roboto';
 }
 
 

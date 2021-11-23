@@ -1,8 +1,14 @@
 import React from "react";
 
 function MiddleMenuItem(props) {
+
+const action = (text) => {
+  if(text === "Notepad") props.todo("Bloc-notes");
+  else props.todo(text)
+}
+
   return (
-    <div className="menuderoule_items" onClick={() => props.todo(props.text)}>
+    <div className="menuderoule_items" onClick={() => action(props.text)}>
       <div className="piccontainermenu">
         <img className="menuderoule_items_pic" src={props.picture}></img>
       </div>
