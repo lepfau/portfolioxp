@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.3a9ceb19.chunk.css",
-    "main.js": "/static/js/main.c193f906.chunk.js",
-    "main.js.map": "/static/js/main.c193f906.chunk.js.map",
+    "main.css": "/static/css/main.a46a7a22.chunk.css",
+    "main.js": "/static/js/main.cec89eab.chunk.js",
+    "main.js.map": "/static/js/main.cec89eab.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d780fb00.js",
     "runtime-main.js.map": "/static/js/runtime-main.d780fb00.js.map",
     "static/css/2.7601d764.chunk.css": "/static/css/2.7601d764.chunk.css",
@@ -14,7 +14,7 @@
     "static/js/4.c88ac536.chunk.js.map": "/static/js/4.c88ac536.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.7601d764.chunk.css.map": "/static/css/2.7601d764.chunk.css.map",
-    "static/css/main.3a9ceb19.chunk.css.map": "/static/css/main.3a9ceb19.chunk.css.map",
+    "static/css/main.a46a7a22.chunk.css.map": "/static/css/main.a46a7a22.chunk.css.map",
     "static/js/2.772865e6.chunk.js.LICENSE.txt": "/static/js/2.772865e6.chunk.js.LICENSE.txt",
     "static/js/3.28fc89fe.chunk.js.LICENSE.txt": "/static/js/3.28fc89fe.chunk.js.LICENSE.txt",
     "static/media/340452.2f7b53cf.png": "/static/media/340452.2f7b53cf.png",
@@ -22,6 +22,8 @@
     "static/media/5131-tOo-Postedetravail.968a13bf.png": "/static/media/5131-tOo-Postedetravail.968a13bf.png",
     "static/media/CV E.PFAUWADEL (en).c55700de.pdf": "/static/media/CV E.PFAUWADEL (en).c55700de.pdf",
     "static/media/CV E.PFAUWADEL 2021.2780f049.pdf": "/static/media/CV E.PFAUWADEL 2021.2780f049.pdf",
+    "static/media/ModernXP-76-Trash-Full-icon.86e27b00.png": "/static/media/ModernXP-76-Trash-Full-icon.86e27b00.png",
+    "static/media/Notepad_Vista_10.5eca158f.png": "/static/media/Notepad_Vista_10.5eca158f.png",
     "static/media/appart.88149aba.png": "/static/media/appart.88149aba.png",
     "static/media/arrow.1dc23524.png": "/static/media/arrow.1dc23524.png",
     "static/media/backarrow.93b05088.png": "/static/media/backarrow.93b05088.png",
@@ -34,6 +36,7 @@
     "static/media/kitchen.fb95ce46.png": "/static/media/kitchen.fb95ce46.png",
     "static/media/logout.a201d267.png": "/static/media/logout.a201d267.png",
     "static/media/logoxp.a858afc6.png": "/static/media/logoxp.a858afc6.png",
+    "static/media/App.css": "/static/media/lucon.c52c29b6.ttf",
     "static/media/msn.25ac9683.mp3": "/static/media/msn.25ac9683.mp3",
     "static/media/phonebookmail.2feecb25.PNG": "/static/media/phonebookmail.2feecb25.PNG",
     "static/media/photoed.03646f6c.PNG": "/static/media/photoed.03646f6c.PNG",
@@ -52,7 +55,7 @@
     "static/js/runtime-main.d780fb00.js",
     "static/css/2.7601d764.chunk.css",
     "static/js/2.772865e6.chunk.js",
-    "static/css/main.3a9ceb19.chunk.css",
-    "static/js/main.c193f906.chunk.js"
+    "static/css/main.a46a7a22.chunk.css",
+    "static/js/main.cec89eab.chunk.js"
   ]
 }
