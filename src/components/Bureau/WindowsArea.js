@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+//Components
 import Fenetre from "../Fenetres/Fenetre";
 import ContentPdt from "../Fenetres/ContentPdt";
 import ContentTrash from "../Fenetres/ContentTrash";
@@ -14,11 +15,13 @@ import logointernet from "../../assets/internetlogo.png";
 import notepadlogo from "../../assets/Notepad_Vista_10.png"
 import Piano from "./../Fenetres/Piano"
 
+//Assets
 import Icone from "../Icones/Icone";
 import trashlogo from "../../assets/ModernXP-76-Trash-Full-icon.png";
 import ContentFormations from "../Fenetres/ContentFormations";
 import ContentCompetences from "../Fenetres/ContentCompetences";
 
+//Context
 import LangContext from "../Context/LangContext"
 
 function WindowsArea(props) {
@@ -38,12 +41,14 @@ function WindowsArea(props) {
   const [scale, setScale] = useState(1)
 
   const lang = useContext(LangContext);
+  const enTrue = lang.language === "English"
 
+  //Augmenter l'échelle quand le cv est fullscreen
   function setthatScale() {
     fullScreenCv ? setScale(1) : setScale(1.8);
-
   }
 
+  //Fullscreen state pour chaque fenetre
   function makefullScreen(win) {
     if (win === "Poste de travail" || win === "Computer") setFullscreenPdt(!fullScreenPdt);
     else if (win === "Popup") setFullscreenPopup(!fullScreenPopup);
@@ -60,11 +65,11 @@ function WindowsArea(props) {
     if ((win === "Mon Cv.pdf" || win === "Resume.pdf") && fullScreenCv) { setfullScreenCv(false); setthatScale() }
   }
 
+  //fermer le menu deroulant ou la fenetre langue quand le bureau est cliqué
   function closeAll() {
     props.closemenu();
     props.closelang()
   }
-
 
   return (
     <div className="windows_all" onClick={() => closeAll()}>
@@ -79,7 +84,7 @@ function WindowsArea(props) {
               hideWindow={props.hideWindow}
               width={"65vw"}
               height={"50vh"}
-              text={lang.language === "English" ? "Computer" : "Poste de travail"}
+              text={enTrue ? "Computer" : "Poste de travail"}
               logo={postetravail}
               content={<ContentPdt />}
               array={props.windowsArray}
@@ -88,7 +93,6 @@ function WindowsArea(props) {
               fullScreen={fullScreenPdt}
             />
           );
-
 
         else if (window === "Piano" && props.piano === true)
           return (
@@ -112,18 +116,18 @@ function WindowsArea(props) {
             />
           );
 
-          else if (window === "Bloc-notes" && props.notepad === true)
+        else if (window === "Bloc-notes" && props.notepad === true)
           return (
             <Fenetre
               putOnTop={props.putOnTop}
               key={window}
-              content={<ContentNotepad/>}
+              content={<ContentNotepad />}
               width={"500px"}
               height={"350px"}
               closeWindow={props.closeWindow}
-              text={lang.language === "English" ?"Notepad" : "Bloc-notes"}
+              text={enTrue ? "Notepad" : "Bloc-notes"}
               logo={
-               notepadlogo
+                notepadlogo
               }
               hideWindow={props.hideWindow}
               array={props.windowsArray}
@@ -163,7 +167,7 @@ function WindowsArea(props) {
               width={"700px"}
               height={"500px"}
               closeWindow={props.closeWindow}
-              text={lang.language === "English" ? "My Pictures" : "Mes Images"}
+              text={enTrue ? "My Pictures" : "Mes Images"}
               logo={
                 "https://icons.iconarchive.com/icons/dtafalonso/modern-xp/256/ModernXP-62-Folder-Images-icon.png"
 
@@ -185,7 +189,7 @@ function WindowsArea(props) {
               width={"700px"}
               height={"500px"}
               closeWindow={props.closeWindow}
-              text={lang.language === "English" ? "My Education" : "Mes Formations"}
+              text={enTrue ? "My Education" : "Mes Formations"}
               logo={
                 "https://icons.iconarchive.com/icons/dtafalonso/modern-xp/256/ModernXP-62-Folder-Images-icon.png"
 
@@ -207,7 +211,7 @@ function WindowsArea(props) {
               width={"700px"}
               height={"500px"}
               closeWindow={props.closeWindow}
-              text={lang.language === "English" ? "My Skills" : "Mes Compétences"}
+              text={enTrue ? "My Skills" : "Mes Compétences"}
               logo={
                 "https://iconarchive.com/download/i95231/dtafalonso/modern-xp/ModernXP-16-Folder-Documents.ico"
 
@@ -250,7 +254,7 @@ function WindowsArea(props) {
               width={"550px"}
               height={"350px"}
               closeWindow={props.closeWindow}
-              text={lang.language === "English" ? "Contact Me" : "Me contacter"}
+              text={enTrue ? "Contact Me" : "Me contacter"}
               logo={
                 "https://upload.wikimedia.org/wikipedia/fr/5/53/Outlook_express_logo-200-200.jpg"
               }
@@ -271,7 +275,7 @@ function WindowsArea(props) {
               width={"50vw"}
               height={"50vh"}
               closeWindow={props.closeWindow}
-              text={lang.language === "English" ? "My Projects" : "Mes Projets"}
+              text={enTrue ? "My Projects" : "Mes Projets"}
               logo={
                 "https://icons.iconarchive.com/icons/dtafalonso/modern-xp/512/ModernXP-38-Folder-Music-icon.png"
               }
@@ -291,7 +295,7 @@ function WindowsArea(props) {
               width={"550px"}
               height={"300px"}
               closeWindow={props.closeWindow}
-              text={lang.language === "English" ? "Trash" : "Corbeille"}
+              text={enTrue ? "Trash" : "Corbeille"}
               logo={trashlogo}
               hideWindow={props.hideWindow}
               array={props.windowsArray}
@@ -309,7 +313,7 @@ function WindowsArea(props) {
               width={"706px"}
               height={"500px"}
               closeWindow={props.closeWindow}
-              text={lang.language === "English" ? "Resume.pdf" : "Mon Cv.pdf"}
+              text={enTrue ? "Resume.pdf" : "Mon Cv.pdf"}
               logo={
                 "https://seeklogo.com/images/A/adobe-pdf-logo-1480D328A9-seeklogo.com.png"
               }
@@ -326,14 +330,14 @@ function WindowsArea(props) {
       <div className="icones">
         <Icone
           showWindow={props.showWindow}
-          name={lang.language === "English" ? "Trash" : "Corbeille"}
+          name={enTrue ? "Trash" : "Corbeille"}
           logo={trashlogo}
           bottom={"71px"}
           right={"44px"}
         />
         <Icone
           showWindow={props.showWindow}
-          name={lang.language === "English" ? "Resume.pdf" : "Mon Cv.pdf"}
+          name={enTrue ? "Resume.pdf" : "Mon Cv.pdf"}
           logo={
             "https://seeklogo.com/images/A/adobe-pdf-logo-1480D328A9-seeklogo.com.png"
           }

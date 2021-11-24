@@ -6,13 +6,9 @@ import Clock from "react-digital-clock";
 import photoed from "../assets/photoed.PNG";
 import useSound from "use-sound";
 import msnsound from "../assets/msn.mp3";
-import msnlogo from "../assets/msn_messenger.png";
 import volumepng from "../assets/volume.png"
 import WindowsArea from "../components/Bureau/WindowsArea";
 import Zoom from 'react-reveal/Zoom';
-import LightSpeed from 'react-reveal/LightSpeed';
-import RubberBand from 'react-reveal/RubberBand';
-import Face from "../components/Face"
 import LangContext from "../components/Context/LangContext";
 
 function Main(props) {
@@ -57,7 +53,6 @@ function Main(props) {
 
   function showLang() {
     setLangMenu(!langMenu)
-    console.log("lang menu")
   }
 
   function changeLanguageEN() {
@@ -79,11 +74,6 @@ function Main(props) {
     setLangMenu(false)
   }
 
-  function showPopup() {
-    setPopup(true)
-
-  }
-
   //fonction pour mettre fenetre cliquée au premier plan
   function moveItem(arr, element) {
     if (arr.length > 0) {
@@ -94,9 +84,10 @@ function Main(props) {
   };
 
   function showWindow(win) {
+    //création array pour les fenetres(et faire mise au premier plan) et array pour la taskbar
     let newArray = windowsArray;
     let newTaskbar = taskbarArray;
-
+    //affichage des fenetres
     setMenuderoule(false);
     if (win === "Poste de travail") setPostetravail(true);
     if (win === "Mes Images") setMesimages(true);
@@ -116,7 +107,6 @@ function Main(props) {
     }
     if (newArray.includes("Internet Explorer") && !newArray.includes("Popup")) newArray.push("Popup")
 
-
     if (newTaskbar.includes(win) === false) {
       newTaskbar.push(win);
     }
@@ -127,12 +117,11 @@ function Main(props) {
 
 
   function closeWindow(win) {
-
     let arr = windowsArray;
     arr.splice(arr.indexOf(win), 1);
+
     let arr2 = taskbarArray;
     arr2.splice(arr2.indexOf(win), 1);
-
     setTaskbararray(arr2)
     setWindowsarray(arr);
 
@@ -148,8 +137,6 @@ function Main(props) {
     else if (win === "Mes Compétences" || win === "My Skills") setMescompetences(false)
     else if (win === "Bloc-notes" || win === "Notepad") setNotepad(false);
     else if (win === "Piano") setPiano(false)
-
-
   }
 
   function hideWindow(win) {
@@ -181,6 +168,7 @@ function Main(props) {
 
         }}
       >
+        {/* Emplacement fenetres et icones */}
         <WindowsArea
           closemenu={closemenu}
           closelang={closelang}
@@ -203,6 +191,10 @@ function Main(props) {
           mescompetences={mescompetences}
         />
 
+        {/* Menu deroulant taskbar et bas droite*/}
+        <div className="menuderoule_container">
+          {menuderoule && <Menuderoule shutdown={props.shutdown} showWindow={showWindow} />}
+        </div>
 
         <div className="full_bottom">
           <div>
@@ -220,11 +212,10 @@ function Main(props) {
               );
             })}
           </div>
-          ;
 
-          <div className="horloge">
-            {enTrue ? <p className='langmenuchose' onClick={() => showLang()}>ENG</p> : <p className="langmenuchose" onClick={() => showLang()}>FRA</p>}
-
+          <div className="taskbar_right">
+            {enTrue ? <p className='langmenuchose' onClick={() => showLang()}>ENG</p> :
+              <p className="langmenuchose" onClick={() => showLang()}>FRA</p>}
             <img
               onClick={() => showMsn()}
               style={{ height: "15px", marginRight: "10px", marginLeft: "10px" }}
@@ -238,10 +229,6 @@ function Main(props) {
             />
             <Clock format={"hh-mm"} hour12={false} />
           </div>
-        </div>
-
-        <div className="menuderoule_container">
-          {menuderoule && <Menuderoule shutdown={props.shutdown} showWindow={showWindow} />}
         </div>
 
         {msn && <div className="msncontainer">
@@ -265,18 +252,18 @@ function Main(props) {
                 alt="moi"
               ></img>
               <div className="msncontent_text">
-                <p style={{ marginBottom: "10px", fontStyle: 'italic' }}>{lang.language === "English" ? 'Edouard says' : 'Edouard dit'}:</p>
-                <p style={{ margin: "0px" }}>{lang.language === "English" ? "Thanks for coming here ! " : "Merci de votre visite !"}</p>
+                <p style={{ marginBottom: "10px", fontStyle: 'italic' }}>{enTrue ? 'Edouard says' : 'Edouard dit'}:</p>
+                <p style={{ margin: "0px" }}>{enTrue ? "Thanks for coming here ! " : "Merci de votre visite !"}</p>
               </div>
             </div>
           </div>
         </div>}
-        {langMenu && <div className="langmenu">
-          <p className="langmenuitem" onClick={() => changeLanguageEN()} >ENG</p>
-          <p className="langmenuitem" onClick={() => changeLanguageFR()}>FRA</p>
-
-        </div>}
-
+        {langMenu &&
+          <div className="langmenu">
+            <p className="langmenuitem" onClick={() => changeLanguageEN()} >ENG</p>
+            <p className="langmenuitem" onClick={() => changeLanguageFR()}>FRA</p>
+          </div>
+        }
       </div>
     </Zoom>
   );

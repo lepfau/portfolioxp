@@ -9,8 +9,6 @@ import LangContext from "../components/Context/LangContext"
 
 function First() {
 
-
-
     const [play] = useSound(postbeep);
     const [playxp] = useSound(xpsound)
 
