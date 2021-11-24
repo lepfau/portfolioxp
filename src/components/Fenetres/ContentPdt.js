@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import LangContext from "../Context/LangContext";
-import Face from "../Face";
 
 function ContentPdt() {
 
