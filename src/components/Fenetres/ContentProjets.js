@@ -91,12 +91,12 @@ function ContentProjets() {
           rel="noreferrer"
           target="_blank"
         >
-          Run!Run!Run
+          Run!Run!Run!
         </a>
       </div>
       <div style={{width:"35%"}}> <p>HTML, CSS, JS, Socket.io</p></div>
 
-      <div style={{width:"22%"}}> <p>Avril 2021</p></div> 
+      <div style={{width:"22%"}}> <p>Novembre 2021</p></div> 
       </div>
       <div style={{display:"flex", alignItems:"center"}}>
       <div className="pdt_fulldrive_projets">
