@@ -4,6 +4,7 @@ import supertyper from "../../assets/supertyper.png";
 import myface from "../../assets/photoed.PNG"
 import LangContext from "../Context/LangContext";
 
+
 function ContentProjets() {
 
   const lang = useContext(LangContext)
@@ -81,6 +82,24 @@ function ContentProjets() {
       </div>
       <div style={{display:"flex", alignItems:"center"}}>
       <div className="pdt_fulldrive_projets">
+        <img className="pdt_drive_projets" alt="drivepicture" src="https://i.pinimg.com/originals/dc/1f/5a/dc1f5a697d31de36519e43fa58d38485.gif" />{" "}
+        <a
+          style={{ marginTop: "10px" }}
+          href="https://edbasicchat.herokuapp.com
+"
+          alt="link"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Run!Run!Run
+        </a>
+      </div>
+      <div style={{width:"35%"}}> <p>HTML, CSS, JS, Socket.io</p></div>
+
+      <div style={{width:"22%"}}> <p>Avril 2021</p></div> 
+      </div>
+      <div style={{display:"flex", alignItems:"center"}}>
+      <div className="pdt_fulldrive_projets">
         <img className="pdt_drive_projets" alt="drivepicture" src={supertyper} />{" "}
         <a
           style={{ marginTop: "10px" }}
@@ -95,6 +114,8 @@ function ContentProjets() {
       </div>
       <div style={{width:"35%"}}> <p>HTML, CSS, JS</p></div>
       
+
+
       <div style={{width:"22%"}}> <p>Novembre 2020</p></div> 
       </div>
       <div style={{display:"flex", alignItems:"center"}}>
